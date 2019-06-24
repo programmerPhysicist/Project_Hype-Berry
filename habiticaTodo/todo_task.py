@@ -44,7 +44,7 @@ class TodTask(object):
     @property
     #Is this task recurring?
     def recurring(self):
-        if self.__task_dict['date_string'] == None:
+        if self.__task_dict.get('date_string', None) == None:
             return 'No'
         elif 'ev' in self.__task_dict['date_string']:
             return  'Yes'
