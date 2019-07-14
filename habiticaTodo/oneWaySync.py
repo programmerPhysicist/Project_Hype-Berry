@@ -17,10 +17,14 @@ import json
 from hab_task import HabTask
 from todo_task import TodTask
 from datetime import datetime
+# from datetime import timedelta
 from dateutil import parser
 
 #Here's where I'm putting my login stuff for Todoist.
 tod_user = main.tod_login('auth.cfg')
+# todayFilter = tod_user.filters.add('todayFilter', 'today')
+# tod_user.commit()
+
 tod_user.sync()
 tod_projects = tod_user.projects.all()
 tod_inboxID = tod_projects[0].data['id']
@@ -28,6 +32,7 @@ tod_inboxID = tod_projects[0].data['id']
 #Telling the site where the config stuff for Habitica can go and get a list of habitica tasks...
 auth = main.get_started('auth.cfg')  
 
+# import pdb 
 #Getting all complete and incomplete habitica dailies and todos
 hab_tasks, r1 = main.get_all_habtasks(auth)
 
@@ -35,8 +40,19 @@ hab_tasks, r1 = main.get_all_habtasks(auth)
 tod_tasks = []
 tod_items = tod_user.items
 tod_tasklist = tod_items.all()
+today = datetime.now()
+today_str = today.strftime("%Y-%m-%d")
+# one_day = timedelta(days=1)
+# yesterday = datetime.now() - one_day
+# yesterday_str = yesterday.strftime("%Y-%m-%d")
+
+# tod_tasklist = (list(filter(lambda x: x['due'] != None and x['checked'] == 0 and x['is_deleted'] == 0 and x['due'] != None and (x['due']['date'][:10] == today_str or x['due']['date'][:10] == yesterday_str), tod_tasklist)))
+tod_tasklist = (list(filter(lambda x: x['due'] != None and x['checked'] == 0 and x['is_deleted'] == 0 and x['due'] != None and (x['due']['date'][:10] == today_str), tod_tasklist)))
 for i in range(0, len(tod_tasklist)):
     tod_tasks.append(TodTask(tod_tasklist[i].data))
+# tod_tasks = (list(filter(lambda x: x['due'] != None and x['checked'] == 0 and x['is_deleted'] == 0 and x['due'] != None and x['due']['date'][:10] == today, tod_tasklist)))
+# pdb.set_trace()
+
 
 """
 Okay, I want to write a little script that checks whether or not a task is there or not and, if not, ports it. 	
