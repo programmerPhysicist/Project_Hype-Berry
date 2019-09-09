@@ -4,4 +4,4 @@ login = [your API User ID]
 password = [your API key]
 
 [Todoist]
-api-token = [your Todoist toekn]
+api-token = [your Todoist token]
