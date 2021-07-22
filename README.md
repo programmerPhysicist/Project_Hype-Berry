@@ -13,10 +13,14 @@ That means that if you create a task in Todoist and then check it off, right now
 
 ## INSTALLATION
 
-There are two dependencies you'll need to install, and the commands to install them are as follows:
+There are a number dependencies you'll need to install, and the commands to install them are as follows:
 ```
 pip install todoist-python
 pip install requests
+pip install scriptabit
+pip install tzlocal
+pip install iso8601
+pip install python-dateutil
 ```
 Finally, you need to add your API tokens to the `Habitica-Plus-Todoist/source/auth.cfg.example` file. You can find your Habitica API User ID and API key by visiting https://habitica.com/user/settings/api while logged in, and your Todoist API token can be found by visiting https://todoist.com/prefs/integrations while logged in. Once you've added these tokens, you should rename the file to `Habitica-Plus-Todoist/source/auth.cfg` (remove the '.example' at the end).
 
@@ -35,7 +39,7 @@ If you'd like to change how the sync interprets difficulty or priority, please e
 
 ## USAGE
 
-Try running `python source/oneWaySync.py` in your terminal.
+Try running `python oneWaySync.py` in your terminal. (You have to run the command from the same directory that auth.cfg exists in).
 
 ## Credit
 

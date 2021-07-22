@@ -7,7 +7,6 @@ This is a version which should work only for people who have paid accounts with 
 #Python library imports - this will be functionalities I want to shorten
 from os import path # will let me call files from a specific path
 import requests
-import scriptabit
 import pickle
 import todoist
 import main
@@ -76,20 +75,28 @@ for tod in tod_uniq:
     matchDict[tid]['hab'] = fin_hab
     matchDict[tid]['recurs'] = tod.recurring
 
-#And we do the same with habs unique to tods...
+#And we do the same with tasks unique to habitica, to tods...
 for hab in hab_uniq:
     try: 
         tid = int(hab.alias)
+        #tid = hab.alias
     except:
         tid = 'NEW'
     if tid == 'NEW':
         newTod = main.make_tod_from_hab
         tod_items.add(newTod)
     else:
-        cruft = tod_user.activity.get(object_type='item',object_id=tid)[0]['event_type']
+        #cruft = tod_user.activity.get(object_type='item',object_id=tid)['events'][0]['event_type']
+        somelist = tod_user.activity.get(object_type='item',object_id=tid)['events']
+        if not somelist:
+            cruft = 'Nothing'
+        else:
+            cruft = somelist[0]['event_type']
         if cruft == 'deleted':
             r = main.delete_hab(hab)
             print(r)
+        elif cruft == 'updated':
+            print("INFO: Updated task, TID %s" % tid)
         else:
             print("ERROR. PLEASE CHECK HAB WITH TID %s" % tid)
 
