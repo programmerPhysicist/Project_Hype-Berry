@@ -1,6 +1,8 @@
-# Habitica-todo
+# Habitica+Todoist
 
-This is intended to be a two-way sync of Habitica and todoist. Any tasks that can't be found in both services should appear on the others, with the same status. If you complete a task on one service, it should appear as completed on another. Tasks that are created on Habitica should be sent to the 'Inbox' project on Todoist.
+## __:warning: This script is a work in progress, and may or may not currently work!__
+
+This is intended to be a two-way sync of Habitica and Todoist. Any tasks that can't be found in both services should appear on the others, with the same status. If you complete a task on one service, it should appear as completed on another. Tasks that are created on Habitica should be sent to the 'Inbox' project on Todoist.
 
 AS A NOTE: in order to have two way syncing, you MUST have a paid copy of Todoist. It's not possible for me to port complete tasks from Todoist otherwise. If you do not have a paid copy of Todoist, the following will happen:
 
@@ -8,8 +10,6 @@ AS A NOTE: in order to have two way syncing, you MUST have a paid copy of Todois
 2. Tasks that you begin and complete from one service to the other will not transfer between the two.
 
 That means that if you create a task in Todoist and then check it off, right now it will _not_ send the points to Habitica.
-
-I encourage people without paid todoist to pick up todoist-habitrpg, which doesn't care one way or the other. (I rather hope that kusold's success with that means that Habitica-todoist will be able to figure this out eventually, but right now that's my workaround.) Or you could pony up the $30 for a year's subscription of Todoist. I'm pretty sure it's worth it.
 
 ## INSTALLATION
 
@@ -37,13 +37,6 @@ If you'd like to change how the sync interprets difficulty or priority, please e
 
 Try running `python Habitica-todo/oneWaySync.py` in your terminal.
 
-## INSPIRATION
+## Credit
 
-I'd like to credit several existing apps that I pulled from in order to create this. Notably:
-
-* Philadams' existing habitica app, for a lot of initial code and many helpful explanations of how to do things
-* The existing API!
-* Pytodoist
-* Dee Dee whose scriptabit which provided a lot of ideas
-
-THANKS
+This program is a hard fork of [Habitica-Todo](https://github.com/eringiglio/Habitica-todo), with some fixes added. Habitica-Todo has been abandoned by its original author.
