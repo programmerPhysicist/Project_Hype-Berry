@@ -9,7 +9,7 @@ Logging in via pytodoist...
 
 	# If you want to insert your own filepath, you *must* insert a full filepath starting from ~. 
 	# if len(sys.argv) == 1:
-		# config = '~/Habitica-todo/auth.cfg'
+		# config = '~/Habitica-Plus-Todoist/auth.cfg'
 	# else:
 		# config = path.expanduser(file_path) 
 		

@@ -18,7 +18,7 @@ There are two dependencies you'll need to install, and the commands to install t
 pip install todoist-python
 pip install requests
 ```
-Finally, you need to add your API tokens to the `Habitica-todo/auth.cfg.example` file. You can find your Habitica API User ID and API key by visiting https://habitica.com/user/settings/api while logged in, and your Todoist API token can be found by visiting https://todoist.com/prefs/integrations while logged in. Once you've added these tokens, you should rename the file to `Habitica-todo/auth.cfg` (remove the '.example' at the end).
+Finally, you need to add your API tokens to the `Habitica-Plus-Todoist/source/auth.cfg.example` file. You can find your Habitica API User ID and API key by visiting https://habitica.com/user/settings/api while logged in, and your Todoist API token can be found by visiting https://todoist.com/prefs/integrations while logged in. Once you've added these tokens, you should rename the file to `Habitica-Plus-Todoist/source/auth.cfg` (remove the '.example' at the end).
 
 ## TASK DIFFICULTY
 
@@ -35,7 +35,7 @@ If you'd like to change how the sync interprets difficulty or priority, please e
 
 ## USAGE
 
-Try running `python Habitica-todo/oneWaySync.py` in your terminal.
+Try running `python source/oneWaySync.py` in your terminal.
 
 ## Credit
 

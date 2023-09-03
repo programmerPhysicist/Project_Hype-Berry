@@ -1,4 +1,4 @@
-""" Habitica-todo 
+""" Habitica-Plus-Todoist 
 
 	Python scripts that should convert and sync tasks between Habitica and Todoist.
 """
