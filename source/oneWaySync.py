@@ -16,7 +16,7 @@ import main
 import random
 import json
 #from hab_task import HabTask
-#from todo_task import TodTask
+from todo_task import TodTask
 from datetime import datetime
 from datetime import timedelta
 # from dateutil import parser
@@ -46,7 +46,11 @@ hab_tasks, r1 = habitica.get_all_habtasks(auth)
 todoToken = config.getTodoistToken('auth.cfg')
 
 #Okay, now I need a list of todoist tasks.
-todoTasks, todoApi = get_tasks(todoToken)
+todoist_tasks, todoApi = get_tasks(todoToken) # todoist_tasks used to be tod_tasks
+
+tod_tasks = []
+for i in range(0, len(todoist_tasks)):
+    tod_tasks.append(TodTask(todoist_tasks[i]))
 
 # date stuff
 today = datetime.now()
@@ -55,38 +59,26 @@ one_day = timedelta(days=1)
 yesterday = datetime.now() - one_day
 yesterday_str = yesterday.strftime("%Y-%m-%d")
 
-overdue_tasks = [] # overdue_tasks used to be tod_tasklist
-todoist_tasks = []   # todoist_tasks used to be tod_tasks
-other_tasks = []
-for task in todoTasks:
-    if task.due != None and not task.is_completed:
-        # filter by due date
-        if task.due.datetime == None and task.due.date != None:
-            dateStr = task.due.date
-            if dateStr == today_str:
-                todoist_tasks.append(task)
-                overdue_tasks.append(task)
-            elif dateStr == yesterday_str:
-                overdue_tasks.append(task)
-            else:
-                other_tasks.append(task)
-
 """
 Okay, I want to write a little script that checks whether or not a task is there or not and, if not, ports it. 	
 """
 matchDict = main.openMatchDict()
 
 #Also, update lists of tasks with matchDict file...
-matchDict = main.update_tod_matchDict(todoist_tasks, matchDict)
+matchDict = main.update_tod_matchDict(tod_tasks, matchDict)
 matchDict = main.update_hab_matchDict(hab_tasks, matchDict)
 
 #We'll want to just... pull all the unmatched completed tasks out of our lists of tasks. Yeah? 
-tod_uniq, hab_uniq = main.get_uniqs(matchDict, todoist_tasks, hab_tasks)
+tod_uniq, hab_uniq = main.get_uniqs(matchDict, tod_tasks, hab_tasks)
 
 #Okay, so what if there are two matched tasks in the two uniq lists that really should be paired?
 matchDict = main.check_newMatches(matchDict,tod_uniq,hab_uniq)
 
 #Here anything new in todoist gets added to habitica
+tod_uniq = []
+hab_uniq = []
+tod_uniq, hab_uniq = main.getNewTodoTasks(matchDict, tod_tasks, hab_tasks)
+
 for tod in tod_uniq:
     tid = tod.id
     if tod.recurring == "Yes":

@@ -15,7 +15,7 @@ import logging
 import configparser
 
 from datetime import datetime
-#from dateutil import parser
+from dateutil import parser
 import re
 
 
@@ -269,7 +269,7 @@ def get_uniqs(matchDict,tod_tasks,hab_tasks):
 
     for tod in tod_tasks:
         tid = tod.id
-        if tod.is_completed:
+        if tod.complete:
             if tid not in matchDict.keys():
                 tod_uniq.append(tod)
 
@@ -278,6 +278,21 @@ def get_uniqs(matchDict,tod_tasks,hab_tasks):
         if tid not in matchDict.keys():
             hab_uniq.append(hab)
     
+    return tod_uniq, hab_uniq
+
+def getNewTodoTasks(matchDict,tod_tasks,hab_tasks):
+    tod_uniq = []
+    hab_uniq = []
+
+    for todo in tod_tasks:
+        tid = todo.id
+        if tid not in matchDict.keys():
+            tod_uniq.append(todo)
+    for hab in hab_tasks:
+        tid = hab.id
+        if tid not in matchDict.keys():
+            hab_uniq.append(hab)
+
     return tod_uniq, hab_uniq
 '''
 def make_daily_from_tod(tod):
@@ -346,7 +361,7 @@ def make_daily_from_tod(tod):
         
     finished_hab = HabTask(new_hab)
     return finished_hab
-
+'''
 def make_hab_from_tod(tod_task):
     new_hab = {'type':'todo'}
     new_hab['text'] = tod_task.name
@@ -369,6 +384,7 @@ def make_hab_from_tod(tod_task):
     finished = HabTask(new_hab)
     return finished
 
+'''
 def make_tod_from_hab(hab):
     project_id = tod_projects[0].data['id']
     tod = {}

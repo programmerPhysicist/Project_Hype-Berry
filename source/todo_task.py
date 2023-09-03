@@ -20,7 +20,7 @@ So what if I did todoist work a sliiiightly different way, using all my task IDs
 """
 
 class TodTask(object):
-    def __init__(self, task_dict=None):
+    def __init__(self, task=None):
         """ Initialise the task.
 
         Args:
@@ -28,8 +28,10 @@ class TodTask(object):
         """
         super().__init__()
 
-        if not task_dict:
+        if not task:
             task_dict = {'text': 'scriptabit todo'}
+
+        task_dict = task.to_dict()
 
         if not isinstance(task_dict, dict):
             raise TypeError(type(task_dict))
@@ -104,7 +106,7 @@ class TodTask(object):
     @property
     #is task complete? 0 for no, 1 for yes
     def complete(self):
-        return self.__task_dict['checked']
+        return self.__task_dict['is_completed']
     
     @complete.setter
     def complete(self, status):
