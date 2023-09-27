@@ -4,5 +4,5 @@ unset http_proxy
 unset https_proxy
 
 pwd
-cd habiticaTodo
+cd source
 python3.9 oneWaySync.py
