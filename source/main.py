@@ -5,17 +5,14 @@ Main.py overdue for an overhaul! Let's see.
 """
 
 """Here's where we import stuff we need..."""
-import todoist
+#import todoist
 import requests
 import json
 from hab_task import HabTask
 from todo_task import TodTask
 import os
 import logging
-try:
-    import ConfigParser as configparser
-except:
-    import configparser	
+import configparser
 
 from datetime import datetime
 from dateutil import parser
@@ -132,7 +129,7 @@ def check_matchDict(matchDict):
             print("something is weird check tod %s" % t)
 
 def check_newMatches(matchDict,tod_uniq,hab_uniq):
-    from main import add_hab_id, make_tod_from_hab
+    #from main import add_hab_id
     matchesHab = []
     matchesTod = []
     for tod in tod_uniq:
@@ -272,18 +269,32 @@ def get_uniqs(matchDict,tod_tasks,hab_tasks):
 
     for tod in tod_tasks:
         tid = tod.id
-        if tod.complete == 0:
+        if tod.complete:
             if tid not in matchDict.keys():
                 tod_uniq.append(tod)
 
     for hab in hab_tasks:
         tid = hab.alias
         if tid not in matchDict.keys():
-            print(tid)
             hab_uniq.append(hab)
     
     return tod_uniq, hab_uniq
 
+def getNewTodoTasks(matchDict,tod_tasks,hab_tasks):
+    tod_uniq = []
+    hab_uniq = []
+
+    for todo in tod_tasks:
+        tid = todo.id
+        if tid not in matchDict.keys():
+            tod_uniq.append(todo)
+    for hab in hab_tasks:
+        tid = hab.id
+        if tid not in matchDict.keys():
+            hab_uniq.append(hab)
+
+    return tod_uniq, hab_uniq
+'''
 def make_daily_from_tod(tod):
     import re
     new_hab = {'type':'daily'}
@@ -350,7 +361,7 @@ def make_daily_from_tod(tod):
         
     finished_hab = HabTask(new_hab)
     return finished_hab
-
+'''
 def make_hab_from_tod(tod_task):
     new_hab = {'type':'todo'}
     new_hab['text'] = tod_task.name
@@ -373,6 +384,7 @@ def make_hab_from_tod(tod_task):
     finished = HabTask(new_hab)
     return finished
 
+'''
 def make_tod_from_hab(hab):
     project_id = tod_projects[0].data['id']
     tod = {}
@@ -386,12 +398,11 @@ def make_tod_from_hab(hab):
         tod['priority'] == 3
     else:
         tod['priority'] == 4
-
-
-
-def matchDates(matchDict):
-    '''Error/debugging script to match all hab dates with tod dates.'''
-    from main import sync_hab2todo
+'''
+#def matchDates(matchDict):
+    #'''Error/debugging script to match all hab dates with tod dates.'''
+    #from main import sync_hab2todo
+'''
     for tid in matchDict:
         tod = matchDict[tid]['tod']
         hab = matchDict[tid]['hab']
@@ -412,6 +423,7 @@ def matchDates(matchDict):
             r = update_hab(newHab)
             matchDict[tid]['hab'] = newHab
             rList.append(r,hab.name)
+'''
 
 def openMatchDict():
     import pickle
@@ -514,6 +526,7 @@ def sync_hab2todo_todo(hab, tod):
     new_hab = HabTask(habDict)
     return new_hab
 
+'''
 def syncHistories(matchDict):
 
     """
@@ -578,37 +591,7 @@ def syncHistories(matchDict):
                     print(hab.due)
     tod_user.commit()
     return matchDict
-
-def tod_login(configfile):
-    logging.debug('Loading todoist auth data from %s' % configfile)
-
-    try:
-        cf = open(configfile)
-    except IOError:
-        logging.error("Unable to find '%s'." % configfile)
-        exit(1)
-
-    config = configparser.SafeConfigParser()
-    config.readfp(cf)
-
-    cf.close()
-
-    # Get data from config
-    try:
-        rv = config.get('Todoist', 'api-token')
-
-    except configparser.NoSectionError:
-        logging.error("No 'Todoist' section in '%s'" % configfile)
-        exit(1)
-
-    except configparser.NoOptionError as e:
-        logging.error("Missing option in auth file '%s': %s" % (configfile, e.message))
-        exit(1)
-    
-    tod_user = todoist.TodoistAPI(rv)
-    #tod_user = todoist.login_with_api_token(rv)
-    # Return auth data
-    return tod_user
+'''
 
 def update_hab(hab):
     import requests
@@ -642,9 +625,11 @@ def update_hab_matchDict(hab_tasks, matchDict):
         if 'alias' in hab.task_dict.keys():
             try:
                 tid = int(hab.alias)
+                tid = hab.alias
                 tid_list.append(tid)
             except:
                 aliasError.append(hab)
+                tid = None
             if tid in matchDict.keys():
                 try:
                     date1 = hab.due.date()

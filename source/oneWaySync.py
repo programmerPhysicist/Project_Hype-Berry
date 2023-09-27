@@ -2,41 +2,62 @@
 
 """
 One way sync. All the features of todoist-habitrpg; nothing newer or shinier.
-Well. Okay, not *technically* one-way--it will sync two way for simple tasks/habitica to-dos, just not for recurring todo tasks or dailies. I'm workin' on that.
+Well. Okay, not *technically* one-way--it will sync two way for simple tasks/habitica to-dos, 
+just not for recurring todo tasks or dailies. I'm workin' on that.
 """
 
 #Python library imports - this will be functionalities I want to shorten
 from os import path # will let me call files from a specific path
 import requests
-import scriptabit
 import pickle
-import todoist
+#import todoist
+from todoist_api_python.api import TodoistAPI
 import main
 import random
 import json
-from hab_task import HabTask
+#from hab_task import HabTask
 from todo_task import TodTask
 from datetime import datetime
-from dateutil import parser
+from datetime import timedelta
+# from dateutil import parser
+import logging
+import configparser	
+import config
+import habitica
 
-#Here's where I'm putting my login stuff for Todoist.
-tod_user = main.tod_login('auth.cfg')
-tod_user.sync()
-tod_projects = tod_user.projects.all()
-tod_inboxID = tod_projects[0].data['id']
+def get_tasks(token):
+    tasks = []
+    api = TodoistAPI(token)
+    try:
+        tasks = api.get_tasks()
+    except Exception as error:
+        print(error)
+    return tasks, api
+
+# todayFilter = todoApi.filters.add('todayFilter', 'today')
 
 #Telling the site where the config stuff for Habitica can go and get a list of habitica tasks...
-auth = main.get_started('auth.cfg')  
+auth = config.get_started('auth.cfg')
 
 #Getting all complete and incomplete habitica dailies and todos
-hab_tasks, r1 = main.get_all_habtasks(auth)
+hab_tasks, r1 = habitica.get_all_habtasks(auth)
 
-#Okay, now I need a list of todoist tasks. How do achieve that. 
+# get token for todoist
+todoToken = config.getTodoistToken('auth.cfg')
+
+#Okay, now I need a list of todoist tasks.
+todoist_tasks, todoApi = get_tasks(todoToken) # todoist_tasks used to be tod_tasks
+
 tod_tasks = []
-tod_items = tod_user.items
-tod_tasklist = tod_items.all()
-for i in range(0, len(tod_tasklist)):
-    tod_tasks.append(TodTask(tod_tasklist[i].data))
+for i in range(0, len(todoist_tasks)):
+    tod_tasks.append(TodTask(todoist_tasks[i]))
+
+# date stuff
+today = datetime.now()
+today_str = today.strftime("%Y-%m-%d")
+one_day = timedelta(days=1)
+yesterday = datetime.now() - one_day
+yesterday_str = yesterday.strftime("%Y-%m-%d")
 
 """
 Okay, I want to write a little script that checks whether or not a task is there or not and, if not, ports it. 	
@@ -53,11 +74,11 @@ tod_uniq, hab_uniq = main.get_uniqs(matchDict, tod_tasks, hab_tasks)
 #Okay, so what if there are two matched tasks in the two uniq lists that really should be paired?
 matchDict = main.check_newMatches(matchDict,tod_uniq,hab_uniq)
 
+#Here anything new in todoist gets added to habitica
 tod_uniq = []
 hab_uniq = []
-tod_uniq, hab_uniq = main.get_uniqs(matchDict, tod_tasks, hab_tasks)
+tod_uniq, hab_uniq = main.getNewTodoTasks(matchDict, tod_tasks, hab_tasks)
 
-#Here anything new in tod gets added to hab
 for tod in tod_uniq:
     tid = tod.id
     if tod.recurring == "Yes":
@@ -84,8 +105,7 @@ for tod in tod_uniq:
     else:
         matchDict[tid]['duelast'] = 'NA'
 
-
-#Check that anything which has recently been completed gets updated in hab
+#Check that anything which has recently been completed gets updated in habitica
 for tid in matchDict:
     tod = matchDict[tid]['tod']
     hab = matchDict[tid]['hab']
@@ -103,7 +123,7 @@ for tid in matchDict:
                     print("error in daily Hab")
             elif hab.completed == True:
                 if tod.dueToday == 'Yes':
-                    fix_tod = tod_user.items.get_by_id(tid)
+                    fix_tod = todoApi.items.get_by_id(tid)
 #                    fix_tod.close()
                     print('fix the tod! TID %s, NAMED %s' %(tid, tod.name))
                 elif tod.dueToday == 'No':
@@ -140,7 +160,7 @@ for tid in matchDict:
                 matched_hab = main.sync_hab2todo(hab, tod)
                 r = main.update_hab(matched_hab)
             elif hab.completed == True:
-                fix_tod = tod_user.items.get_by_id(tid)
+                fix_tod = todoApi.items.get_by_id(tid)
                 fix_tod.close()
                 print('completed tod %s' % tod.name)
             else: 
@@ -169,8 +189,10 @@ for tid in matchDict:
 #    if dueNow != matchDict[tid]['hab'].date and matchDict[tid]['hab'].category == 'todo':
 #        matchDict[tid]['hab'].task_dict['date'] = dueNow
 #        r = main.update_hab(matchDict[tid]['hab']) 
+
 pkl_file = open('oneWay_matchDict.pkl','wb')
 pkl_out = pickle.Pickler(pkl_file, -1)
 pkl_out.dump(matchDict)
 pkl_file.close()
-#tod_user.commit()
+#todoApi.commit()
+
