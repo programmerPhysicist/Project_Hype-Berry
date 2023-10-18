@@ -87,23 +87,25 @@ for tod in tod_uniq:
         new_hab = main.make_hab_from_tod(tod)
     newDict = new_hab.task_dict
     r = main.write_hab_task(newDict)
-    print("Added hab to %s!" % tod.name)
-    print(r)
     if r.ok == False:
-        fin_hab = main.get_hab_fromID(tid)
+        errMsg = r.json()['errors'][0]['message']
+        alias = r.json()['errors'][0]['value']
+        print("ERROR: Code: "+str(r.status_code)+", Error message: \""
+                             +errMsg+"\", Task alias: "+alias)
     else:
+        print("Added hab to %s!" % tod.name)
         fin_hab = main.get_hab_fromID(tid)
-    matchDict[tid] = {}
-    matchDict[tid]['tod'] = tod
-    matchDict[tid]['hab'] = fin_hab
-    matchDict[tid]['recurs'] = tod.recurring
-    if matchDict[tid]['recurs'] == 'Yes':
-        if tod.dueToday == 'Yes':
-            matchDict[tid]['duelast'] = 'Yes'
+        matchDict[tid] = {}
+        matchDict[tid]['tod'] = tod
+        matchDict[tid]['hab'] = fin_hab
+        matchDict[tid]['recurs'] = tod.recurring
+        if matchDict[tid]['recurs'] == 'Yes':
+            if tod.dueToday == 'Yes':
+                matchDict[tid]['duelast'] = 'Yes'
+            else:
+                matchDict[tid]['duelast'] = 'No'
         else:
-            matchDict[tid]['duelast'] = 'No'
-    else:
-        matchDict[tid]['duelast'] = 'NA'
+            matchDict[tid]['duelast'] = 'NA'
 
 #Check that anything which has recently been completed gets updated in habitica
 for tid in matchDict:
