@@ -38,28 +38,28 @@ SECTION_CACHE_QUEST = 'Quest'
 
 """
 List of utilities and what they do: scroll down for specific things
-add_hab_id: 
+add_hab_id:
     used to add a new alias (usually the tod ID number) to a habitica task
-check_matchDict: 
+check_matchDict:
 
-check_newMatches: 
+check_newMatches:
 
 clean_matchDict:
 
 complete_hab:
 
-delete_hab: 
+delete_hab:
     Takes a HabTask object and sends an API call to delete it from the habitica account.
 get_all_habtasks:
 
 get_hab_fromID:
     Takes an integer, like a tod ID, and calls hab tasks by that alias from API.
 get_started:
-    Takes auth document and logs the user into todoist and habitica for active work. 
+    Takes auth document and logs the user into todoist and habitica for active work.
 get_uniqs:
 
 make_daily_from_tod:
-    Takes a repeating tod task and turns it into a habitica daily. 
+    Takes a repeating tod task and turns it into a habitica daily.
 make_hab_from_tod:
     Takes a single tod task and turns it into a habitica todo.
 make_tod_from_hab:
@@ -85,7 +85,7 @@ update_hab:
 update_hab_matchDict:
 
 update_tod_matchDict:
-    
+
 write_hab_task:
     takes HabTask object, writes to habitica API (used to make a new task in habitica)
 
@@ -96,7 +96,7 @@ write_hab_task:
 Small utilities written by me start here.
 """
 
-def add_hab_id(tid,hab): 
+def add_hab_id(tid,hab):
     import requests
     import json
     auth = get_started('auth.cfg')
@@ -115,7 +115,7 @@ def check_matchDict(matchDict):
                 print("both undone")
             elif t.completed == True:
                 print("hab done, tod undone")
-            else: 
+            else:
                 print("something is wroooong check hab %s" % t)
         elif matchDict[t].complete == 1:
             if t.completed == False:
@@ -133,7 +133,7 @@ def check_newMatches(matchDict,tod_uniq,hab_uniq):
     matchesHab = []
     matchesTod = []
     for tod in tod_uniq:
-        tid = tod.id 
+        tid = tod.id
         for hab in hab_uniq:
             if tod.id == hab.alias:
                 matchDict[tid] = {}
@@ -144,7 +144,7 @@ def check_newMatches(matchDict,tod_uniq,hab_uniq):
                 matchesHab.append(hab)
         hab_uniqest = list(set(hab_uniq) - set(matchesHab))
         tod_uniqest = list(set(tod_uniq) - set(matchesTod))
-        
+
         for tod_task in tod_uniqest:
             tid = tod_task.id
             if tid not in matchDict.keys():
@@ -185,7 +185,7 @@ def complete_hab(hab):
     hab_dict['completed'] = True
     data = json.dumps(hab_dict)
     r = requests.post(headers=auth, url=url, data=data)
-    return r    
+    return r
 
 def delete_hab(hab):
     import requests
@@ -202,16 +202,16 @@ def get_all_habtasks(auth):
     response = requests.get(url,headers=auth)
     hab_raw = response.json()
     hab_tasklist = hab_raw['data'] #FINALLY getting something I can work with... this will be a list of dicts I want to turn into a list of objects with class hab_tasks. Hrm. Weeeelll, if I make a class elsewhere....
-    
+
     #keeping records of all our tasks
-    hab_tasks = [] 
-    
+    hab_tasks = []
+
     #No habits right now, I'm afraid, in hab_tasks--Todoist gets upset. So we're going to make a list of dailies and todos instead...
-    for task in hab_tasklist: 
+    for task in hab_tasklist:
         item = HabTask(task)
         if item.category == 'reward':
             pass
-        elif item.category == 'habit': 
+        elif item.category == 'habit':
             pass
         else:
             hab_tasks.append(item)
@@ -224,8 +224,12 @@ def get_hab_fromID(tid):
     url = 'https://habitica.com/api/v3/tasks/'
     url += str(tid)
     r = requests.get(headers=auth, url=url)
-    task = r.json()
-    hab = HabTask(task['data'])
+    if r.ok == True:
+        task = r.json()
+        hab = HabTask(task['data'])
+    else:
+        #TODO: log error
+        hab = HabTask()
     return hab
 
 def get_started(configfile):
@@ -264,12 +268,13 @@ def get_started(configfile):
     return rv
 
 def get_uniqs(matchDict,tod_tasks,hab_tasks):
+# TODO: Rename this function
     tod_uniq = []
     hab_uniq = []
 
     for tod in tod_tasks:
         tid = tod.id
-        if tod.complete:
+        if tod.is_completed:
             if tid not in matchDict.keys():
                 tod_uniq.append(tod)
 
@@ -277,7 +282,7 @@ def get_uniqs(matchDict,tod_tasks,hab_tasks):
         tid = hab.alias
         if tid not in matchDict.keys():
             hab_uniq.append(hab)
-    
+
     return tod_uniq, hab_uniq
 
 def getNewTodoTasks(matchDict,tod_tasks,hab_tasks):
@@ -301,7 +306,7 @@ def make_daily_from_tod(tod):
     new_hab['text'] = tod.name
     new_hab['alias'] = tod.id
     reg = re.compile(r"ev.{0,}(?<!other)\b (mon[^t]|tues|wed|thurs|fri|sun|sat|w(or|ee)kday|weekend)", re.I)
-    
+
     match = reg.match(tod.date_string)
     if match:
         new_hab['frequency'] = 'weekly'
@@ -348,8 +353,8 @@ def make_daily_from_tod(tod):
         new_hab['frequency'] = 'daily'
         todStart = str(parser.parse(tod.due_date).date())
         new_hab['startDate'] = todStart
-        new_hab['everyX'] = 1 
-   
+        new_hab['everyX'] = 1
+
     if tod.priority == 1:
         new_hab['priority'] = '2'
     elif tod.priority == 2:
@@ -358,7 +363,7 @@ def make_daily_from_tod(tod):
         new_hab['priority'] = '1'
     elif tod.priority == 4:
         new_hab['priority'] = '1'
-        
+
     finished_hab = HabTask(new_hab)
     return finished_hab
 '''
@@ -370,7 +375,7 @@ def make_hab_from_tod(tod_task):
         dueNow = str(parser.parse(dateListed).date())
     except:
         dueNow = ''
-        
+
     new_hab['date'] = dueNow
     new_hab['alias'] = tod_task.id
     if tod_task.priority == 1:
@@ -392,9 +397,9 @@ def make_tod_from_hab(hab):
     tod['due_date_utc'] = hab.date
     if hab.priority == '2':
         tod['priority'] = 1
-    elif hab.priority == '1.5': 
+    elif hab.priority == '1.5':
         tod['priority'] == 2
-    elif hab.priority == '1': 
+    elif hab.priority == '1':
         tod['priority'] == 3
     else:
         tod['priority'] == 4
@@ -410,12 +415,12 @@ def make_tod_from_hab(hab):
             hab_date = parse_date_utc(hab.date).date()
         except:
             hab_date = ''
-        
+
         try:
             tod_date = tod.due.date()
         except:
             tod_date = ''
-        
+
         rList = []
         if tod_date != hab_date:
             print(tod.name)
@@ -427,7 +432,7 @@ def make_tod_from_hab(hab):
 
 def openMatchDict():
     import pickle
-    try: 
+    try:
         pkl_file = open('oneWay_matchDict.pkl','rb')
         pkl_load = pickle.Unpickler(pkl_file)
         matchDict = pkl_load.load()
@@ -443,7 +448,7 @@ def openMatchDict():
 
 def openMatchDictTwo():
     import pickle
-    try: 
+    try:
         pkl_file = open('twoWay_matchDict.pkl','rb')
         pkl_load = pickle.Unpickler(pkl_file)
         matchDict = pkl_load.load()
@@ -476,8 +481,9 @@ def sync_hab2todo(hab, tod):
     elif hab.category == 'todo':
         new_hab = sync_hab2todo_todo(hab,tod)
         return new_hab
-    else: 
+    else:
         print("Error! Hab of incorrect type!")
+        exit(1)
 
 def sync_hab2todo_daily(hab, tod):
     from dates import parse_date_utc
@@ -493,7 +499,7 @@ def sync_hab2todo_daily(hab, tod):
         habDict['priority'] = 1
 
     now = datetime.now().replace(tzinfo=pytz.utc).date()
-        
+
     if hab.due.date() != (tod.due.date() - timedelta(days=1)):
         habDict['startDate'] = str(tod.due.date() - timedelta(days=1))
 
@@ -501,7 +507,7 @@ def sync_hab2todo_daily(hab, tod):
 
     return newHab
 
-def sync_hab2todo_todo(hab, tod): 
+def sync_hab2todo_todo(hab, tod):
     from dates import parse_date_utc
     habDict = hab.task_dict
     if tod.priority == 4:
@@ -510,7 +516,7 @@ def sync_hab2todo_todo(hab, tod):
         habDict['priority'] = 1.5
     else:
         habDict['priority'] = 1
-    
+
     try:
         dueNow = tod.due.date()
     except:
@@ -519,10 +525,10 @@ def sync_hab2todo_todo(hab, tod):
         dueOld = parse_date_utc(hab.date).date()
     except:
         dueOld = ''
-        
+
     if dueOld != dueNow:
         habDict['date'] = str(dueNow)
-    
+
     new_hab = HabTask(habDict)
     return new_hab
 
@@ -530,7 +536,7 @@ def sync_hab2todo_todo(hab, tod):
 def syncHistories(matchDict):
 
     """
-    I wanted to see if I could convince recurring habs and tods to sync based on history. 
+    I wanted to see if I could convince recurring habs and tods to sync based on history.
     Assuming both recur...
     """
     from dates import parse_date_utc
@@ -542,7 +548,7 @@ def syncHistories(matchDict):
     tod_user = tod_login('auth.cfg')
     todList = {}
     for tid in matchDict:
-        try: 
+        try:
             matchDict[tid]['recurs']
         except:
             print(tid)
@@ -562,7 +568,7 @@ def syncHistories(matchDict):
             except:
                 lastHab = hab.due.date() - timedelta(days=1)
             lastNow = datetime.today().date()
-            if lastHab > hab.due.date(): 
+            if lastHab > hab.due.date():
                 newHab = sync_hab2todo(hab, tod)
                 r = update_hab(newHab)
             if lastTod != lastHab:
@@ -594,6 +600,7 @@ def syncHistories(matchDict):
 '''
 
 def update_hab(hab):
+    # TODO: Only update when there are actual changes
     import requests
     import json
     from datetime import datetime
@@ -611,9 +618,9 @@ def update_hab(hab):
     if r.ok == 'No':
         print(r.text)
     return r
- 
+
 def update_hab_matchDict(hab_tasks, matchDict):
-    from main import delete_hab 
+    from main import delete_hab
     from main import sync_hab2todo
     from main import update_hab
     from dates import parse_date_utc
@@ -621,7 +628,7 @@ def update_hab_matchDict(hab_tasks, matchDict):
     tid_list = []
     expired_tids = []
     aliasError = []
-    for hab in hab_tasks: 
+    for hab in hab_tasks:
         if 'alias' in hab.task_dict.keys():
             try:
                 tid = int(hab.alias)
@@ -635,11 +642,11 @@ def update_hab_matchDict(hab_tasks, matchDict):
                     date1 = hab.due.date()
                 except:
                     date1 = ''
-                try: 
+                try:
                     date2 = matchDict[tid]['hab'].due.date()
                 except:
                     date2 = ''
-                    
+
                 if date1 != date2 and matchDict[tid]['recurs'] == 'No':
     #if the hab I see and the matchDict don't agree... sync to the todoist task
                     print(date1)
@@ -687,12 +694,12 @@ def update_tod_matchDict(tod_tasks, matchDict):
     for tid in list(matchDict):
         if tid not in tid_list:
             matchDict.pop(tid)
-            
+
     return matchDict
 
-def write_hab_task(task): 
+def write_hab_task(task):
     """
-    writes a task, if inserted, to Habitica API as a todo. 
+    writes a task, if inserted, to Habitica API as a todo.
     To be added: functionality allowing you to specify things like difficulty
     """
     import requests
