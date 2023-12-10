@@ -2,7 +2,8 @@
 
 """
 One way sync. All the features of todoist-habitrpg; nothing newer or shinier.
-Well. Okay, not *technically* one-way--it will sync two way for simple tasks/habitica to-dos,
+Well. Okay, not *technically* one-way--it will sync two way for simple tasks/
+habitica to-dos,
 just not for recurring todo tasks or dailies. I'm workin' on that.
 """
 
@@ -56,7 +57,6 @@ def sync_todoist_to_habitica():
     # yesterday_str = yesterday.strftime("%Y-%m-%d")
 
     # Okay, I want to write a little script that checks whether or not a task is there or not and, if not, ports it.
-
     match_dict = main.openMatchDict()
 
     # Also, update lists of tasks with match_dict file...
