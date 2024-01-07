@@ -83,12 +83,12 @@ write_hab_task:
 
 """
 
-
 """
 Small utilities written by me start here.
 """
 
-def add_hab_id(tid,hab):
+
+def add_hab_id(tid, hab):
     import requests
     import json
     auth = get_started('auth.cfg')
@@ -98,6 +98,7 @@ def add_hab_id(tid,hab):
     data = json.dumps(hab.task_dict)
     r = requests.put(headers=auth, url=url, data=data)
     return r
+
 
 def check_matchDict(matchDict):
     """Troubleshooting"""
@@ -159,6 +160,7 @@ def check_newMatches(matchDict, tod_uniq, hab_uniq):
                             matchDict[tid]['recurs'] = tod_task.recurring
     return matchDict
 
+
 def clean_matchDict(matchDict):
     for tid in matchDict:
         if 'recurs' not in matchDict[tid].keys():
@@ -181,6 +183,7 @@ def complete_hab(hab):
     r = requests.post(headers=auth, url=url, data=data)
     return r
 
+
 def delete_hab(hab):
     import requests
     import json
@@ -189,6 +192,7 @@ def delete_hab(hab):
     url += hab.task_dict['id']
     r = requests.delete(headers=auth, url=url)
     return r
+
 
 def get_all_habtasks(auth):
     # Todoist tasks are, I think, classes. Let's make Habitica tasks classes, too.
@@ -449,6 +453,7 @@ def openMatchDict():
             matchDict[tid]['recurs'] = tod.recurring
     return matchDict
 
+
 def openMatchDictTwo():
     import pickle
     try:
@@ -464,6 +469,7 @@ def openMatchDictTwo():
             tod = matchDict[tid]['tod']
             matchDict[tid]['recurs'] = tod.recurring
     return matchDict
+
 
 def purge_habs(hab_uniq, matchDict):
     hab_uniqest = []
@@ -511,6 +517,7 @@ def sync_hab2todo_daily(hab, tod):
     newHab = HabTask(habDict)
 
     return newHab
+
 
 def sync_hab2todo_todo(hab, tod):
     from dates import parse_date_utc
