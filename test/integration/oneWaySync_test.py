@@ -125,6 +125,14 @@ class TestIntegration:
         # mock out put to Habitica
         when(requests).put(...).thenReturn(response)
 
+        # mock dump of pickle file
+        pkl_out = mock()
+        pkl_file = mock()
+        when2(open, ...).thenCallOriginalImplementation()
+        when2(open, 'oneWay_matchDict.pkl', 'wb').thenReturn(pkl_file)
+        when(pickle).Pickler(...).thenReturn(pkl_out)
+        when(pkl_out).dump(...)
+
         # using get_all_habtasks() which contains requests.get(), uses the monkeypatch
         sync_todoist_to_habitica()
 
@@ -151,6 +159,34 @@ class TestIntegration:
         assert data['alias'] == '96935939'
         assert data['text'] == 'Some test task'
         assert data['priority'] == 1
+
+        # verify pickle dump
+        dumpDict = captor(any(dict))
+        verify(pkl_out, times=1).dump(dumpDict)
+        data = dumpDict.value
+        # check 'simple' values
+        assert '8296278113' in data.keys()
+        data = data['8296278113']
+        assert data['recurs'] == 'No'
+        assert data['duelast'] == 'NA'
+        # Get objects to verify
+        assert 'tod' in data.keys()
+        todTask = data['tod']
+        assert 'hab' in data.keys()
+        habTask = data['hab']
+        # Check todTask
+        todData = todTask.task_dict
+        assert todData['content'] == 'Test task 1'
+        assert todData['id'] == '8296278113'
+        assert todData['created_at'] == '1987-11-04T09:54:16.1134110Z'
+        # TODO: this doesn't seem right, maybe fix?
+        assert todData['priority'] == 1
+        # Check habTask
+        habData = habTask.task_dict
+        assert habData['type'] == 'todo'
+        assert habData['alias'] == '96935939'
+        assert habData['text'] == 'Some test task'
+        assert habData['priority'] == 1
 
         # clean-up
         unstub()
