@@ -11,15 +11,14 @@ just not for recurring todo tasks or dailies. I'm workin' on that.
 # from datetime import datetime, timedelta
 import pickle
 import time
+import json
 
 
 import main
-import json
 from todo_task import TodTask
 from todo_api_plus import TodoAPIPlus
 import config
 import habitica
-import time
 
 
 def get_tasks(token):
@@ -96,8 +95,12 @@ def sync_todoist_to_habitica():
             except:
                 print("Unknown json error!")
             else:
-                err_msg = json_str['errors'][0]['message']
-                alias = json_str['errors'][0]['value']
+                if 'errors' in json_str.keys():
+                    err_msg = json_str['errors'][0]['message']
+                    alias = json_str['errors'][0]['value']
+                elif 'error' in json_str.keys():
+                    breakpoint()
+                    err_msg = json_str['message']
                 msg = "Error Code " + str(response.status_code) + ": \"" + err_msg + "\", Task alias: " + alias
                 print(msg)
         else:
@@ -199,7 +202,7 @@ def sync_todoist_to_habitica():
     #        dueNow = ''
     #    if dueNow != match_dict[tid]['hab'].date and match_dict[tid]['hab'].category == 'todo':
     #        match_dict[tid]['hab'].task_dict['date'] = dueNow
-    #        r = main.update_hab(match_dict[tid]['hab'])
+    #        response = main.update_hab(match_dict[tid]['hab'])
 
     pkl_file = open('oneWay_match_dict.pkl', 'wb')
     pkl_out = pickle.Pickler(pkl_file, -1)

@@ -1,0 +1,2181 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      url:
+      - https://habitica.com
+      x-api-key:
+      - 18f22441-2c87-6d8e-fb2a-3fa670837b5a
+      x-api-user:
+      - cd18fc9f-b649-4384-932a-f3bda6fe8102
+    method: GET
+    uri: https://habitica.com/api/v3/tasks/user/
+  response:
+    body:
+      string: '{"success": true, "data": [{"challenge": {}, "group": {"completedBy":
+        {}, "assignedUsers": []}, "_id": "64224417-c8f1-4ce7-a6bd-fc1dc2221f11", "up":
+        true, "down": false, "counterUp": 1, "counterDown": 0, "frequency": "daily",
+        "history": [{"date": 1711855633168, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1712467677921, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1712968776692, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1713155633827,
+        "value": 1.243614090235369, "scoredUp": 1, "scoredDown": 0}, {"date": 1714177946272,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1716434202866, "value":
+        1, "scoredUp": 1, "scoredDown": 0}, {"date": 1717992911611, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1718492240795, "value": 1, "scoredUp": 1, "scoredDown":
+        0}], "type": "habit", "text": "some test habit 1", "notes": "Test notes",
+        "alias": "sometesthabit1", "tags": [], "value": 1, "priority": 1.5, "attribute":
+        "str", "byHabitica": false, "reminders": [], "createdAt": "2024-03-02T22:14:06.221Z",
+        "updatedAt": "2024-06-15T22:57:20.825Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "64224417-c8f1-4ce7-a6bd-fc1dc2221f11"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "f5d2c8e2-634f-4c48-864d-efd5fca555ae",
+        "up": true, "down": true, "counterUp": 4, "counterDown": 0, "frequency": "daily",
+        "history": [{"date": 1709444368619, "value": 2.9253562257358428, "scoredUp":
+        3, "scoredDown": 0}, {"date": 1709532013739, "value": 5.6443010177121415,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1711344173008, "value": 7.355994112832055,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1711853430423, "value": 9.789136098905757,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1711946015395, "value": 12.07805882370548,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1712465241534, "value": 14.23897787876845,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1712974359357, "value": 17.59209644337522,
+        "scoredUp": 5, "scoredDown": 0}, {"date": 1713153398312, "value": 18.229210169447946,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1713758817973, "value": 19.472815809469076,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1714172584059, "value": 21.2663929405333,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1714368615091, "value": 23.005875522458528,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1714861462510, "value": 24.165494846441664,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1714966471841, "value": 24.745304508433232,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1715366818751, "value": 25.90492383241637,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1715572401029, "value": 27.064543156399505,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1716070716968, "value": 27.644352818391074,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1716178747888, "value": 28.224162480382642,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1716262582990, "value": 28.80397214237421,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1716781873216, "value": 29.963591466357347,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1716952641131, "value": 30.543401128348915,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1717387453867, "value": 31.123210790340483,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1717644495818, "value": 31.70302045233205,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1717797627134, "value": 32.28283011432362,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1718496691766, "value": 34.602068762289896,
+        "scoredUp": 4, "scoredDown": 0}], "type": "habit", "text": "some test habit
+        2", "notes": "Test notes", "alias": "sometesthabit2", "tags": [], "value":
+        34.602068762289896, "priority": 1, "attribute": "str", "byHabitica": false,
+        "reminders": [], "createdAt": "2024-03-02T22:14:06.014Z", "updatedAt": "2024-06-16T00:11:31.801Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "f5d2c8e2-634f-4c48-864d-efd5fca555ae"},
+        {"challenge": {}, "group": {"completedBy": {}, "approval": {"required": false,
+        "approved": false, "requested": false}, "assignedUsers": [], "sharedCompletion":
+        "singleCompletion"}, "_id": "aa191f3f-5d31-4b32-9274-3a4a04e47f7e", "up":
+        true, "down": true, "counterUp": 2, "counterDown": 0, "frequency": "monthly",
+        "history": [{"date": 1642734094969, "value": 66.51500318950802}, {"date":
+        1672104399666, "value": 105.78507526963593}, {"date": 1672641548024, "value":
+        111.26427657545632}, {"date": 1675391055155, "value": 119.13123948929656},
+        {"date": 1678246453259, "value": 125.71120065341306}, {"date": 1680387270697,
+        "value": 132.27944015844764}, {"date": 1691073725583, "value": 136.04232963298642},
+        {"date": 1694216596702, "value": 137.49185378796534}, {"date": 1696800153148,
+        "value": 138.94137794294423}, {"date": 1697174486886, "value": 139.5211876049358,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1698552885263, "value": 140.10099726692735,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1698811140272, "value": 140.6808069289189,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1699325384098, "value": 141.26061659091047,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1699506045735, "value": 141.84042625290203,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1700461342768, "value": 142.4202359148936,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1700595234720, "value": 143.00004557688516,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1701057980564, "value": 143.57985523887672,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1702077732772, "value": 144.15966490086828,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1702254162757, "value": 144.73947456285984,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1702357917192, "value": 145.3192842248514,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1703147341573, "value": 146.47890354883452,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1703825464147, "value": 147.05871321082608,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1704526677784, "value": 148.2183325348092,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1704836945394, "value": 148.79814219680077,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1705111537591, "value": 149.37795185879233,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1706241088142, "value": 150.53757118277545,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1709411969113, "value": 151.117380844767,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1709528828722, "value": 151.69719050675857,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1709958286959, "value": 152.27700016875013,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1710124923704, "value": 152.8568098307417,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1711645384140, "value": 153.43661949273326,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1717387108332, "value": 154.01642915472482,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1717998844277, "value": 154.59623881671638,
+        "scoredUp": 1, "scoredDown": 0}], "type": "habit", "notes": "", "tags": [],
+        "value": 154.59623881671638, "priority": 1, "attribute": "str", "byHabitica":
+        false, "text": "some test habit 3", "reminders": [], "createdAt": "2022-01-21T03:01:31.493Z",
+        "updatedAt": "2024-06-10T05:54:04.280Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "aa191f3f-5d31-4b32-9274-3a4a04e47f7e"}, {"challenge": {}, "group":
+        {"completedBy": {}, "approval": {"required": false, "approved": false, "requested":
+        false}, "assignedUsers": [], "sharedCompletion": "singleCompletion"}, "_id":
+        "52dfa8c5-eb02-4795-a01b-f12c8af4530b", "up": true, "down": false, "counterUp":
+        4, "counterDown": 0, "frequency": "monthly", "history": [{"date": 1620537483964,
+        "value": 3.718872532018828}, {"date": 1641190082442, "value": 3.0831829978126604},
+        {"date": 1648089675096, "value": 1}, {"date": 1648961467274, "value": 4.000888520478331},
+        {"date": 1651633304968, "value": 1.1345456096160602}, {"date": 1655436208443,
+        "value": 2.454845601084358}, {"date": 1656800986717, "value": 1.48735}, {"date":
+        1659748764191, "value": 1.4143037050272407}, {"date": 1666588843418, "value":
+        4.039756760690042}, {"date": 1668240122767, "value": 2.239209598787064}, {"date":
+        1670217954245, "value": 2.8811713071101206}, {"date": 1672190603466, "value":
+        7.483279472545471, "scoredUp": 8, "scoredDown": 0}, {"date": 1672384189317,
+        "value": 2.8639161649542153, "scoredUp": 2, "scoredDown": 0}, {"date": 1672550423218,
+        "value": 5.151145122216976, "scoredUp": 4, "scoredDown": 0}, {"date": 1674618874941,
+        "value": 4.759112700885761, "scoredUp": 5, "scoredDown": 0}, {"date": 1675052170820,
+        "value": 4.890590568220645, "scoredUp": 5, "scoredDown": 0}, {"date": 1675311141612,
+        "value": 1.5957803791557708, "scoredUp": 1, "scoredDown": 0}, {"date": 1675549170328,
+        "value": 1.1943739960902082, "scoredUp": 1, "scoredDown": 0}, {"date": 1675665484980,
+        "value": 5.287414880382958, "scoredUp": 5, "scoredDown": 0}, {"date": 1676349453270,
+        "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0}, {"date": 1676872305519,
+        "value": 4.759112700885761, "scoredUp": 5, "scoredDown": 0}, {"date": 1676949959407,
+        "value": 3.3204008204943234, "scoredUp": 1, "scoredDown": 0}, {"date": 1677036517703,
+        "value": 5.358456530346874, "scoredUp": 4, "scoredDown": 0}, {"date": 1677475868714,
+        "value": 2.13380289428996, "scoredUp": 2, "scoredDown": 0}, {"date": 1678077253477,
+        "value": 4.759112700885761, "scoredUp": 5, "scoredDown": 0}, {"date": 1678686747138,
+        "value": 1.9747, "scoredUp": 2, "scoredDown": 0}, {"date": 1679285502109,
+        "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0}, {"date": 1679371138065,
+        "value": 2.425889937921327, "scoredUp": 1, "scoredDown": 0}, {"date": 1679546413626,
+        "value": 2.551099850204717, "scoredUp": 2, "scoredDown": 0}, {"date": 1679885795605,
+        "value": 1.155366243126128, "scoredUp": 1, "scoredDown": 0}, {"date": 1680073976167,
+        "value": 3.0592374387223034, "scoredUp": 3, "scoredDown": 0}, {"date": 1680496900303,
+        "value": 3.102612909301542, "scoredUp": 3, "scoredDown": 0}, {"date": 1681094753788,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1681617538866, "value":
+        1, "scoredUp": 1, "scoredDown": 0}, {"date": 1681850279356, "value": 8.28532388964044,
+        "scoredUp": 9, "scoredDown": 0}, {"date": 1682209511624, "value": 2.009475068423505,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1692752103723, "value": 1.9747,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1693370087265, "value": 2.9253562257358428,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1695791178717, "value": 1.9747,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1697174517711, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1699325523347, "value": 4.759112700885761, "scoredUp":
+        5, "scoredDown": 0}, {"date": 1699338937568, "value": 5.6443010177121415,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1699506044344, "value": 2.37556162660404,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1699764671798, "value": 2.256863902251278,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1700275053393, "value": 1.1374459328021966,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1701058502646, "value": 6.5096362419810205,
+        "scoredUp": 7, "scoredDown": 0}, {"date": 1702357920691, "value": 3.853133245658556,
+        "scoredUp": 4, "scoredDown": 0}, {"date": 1703825470777, "value": 7.355994112832055,
+        "scoredUp": 8, "scoredDown": 0}, {"date": 1704496768586, "value": 1.055997120836185,
+        "scoredUp": 1, "scoredDown": 0}, {"date": 1709528825772, "value": 3.853133245658556,
+        "scoredUp": 4, "scoredDown": 0}, {"date": 1710020868533, "value": 3.0369767361298483,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1711669337288, "value": 1.9747,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1714367662070, "value": 3.853133245658556,
+        "scoredUp": 4, "scoredDown": 0}, {"date": 1717643495663, "value": 1.9747,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1718484096562, "value": 1.9747,
+        "scoredUp": 2, "scoredDown": 0}], "type": "habit", "notes": "Test notes",
+        "tags": ["05f0fe45-08fd-42d8-83e4-489fab5d2798"], "value": 1.9747, "priority":
+        1, "attribute": "str", "byHabitica": false, "text": "some test habit 4", "reminders":
+        [], "createdAt": "2021-05-09T03:05:45.158Z", "updatedAt": "2024-06-15T20:41:36.565Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "52dfa8c5-eb02-4795-a01b-f12c8af4530b"},
+        {"challenge": {}, "group": {"completedBy": {}, "approval": {"required": false,
+        "approved": false, "requested": false}, "assignedUsers": [], "sharedCompletion":
+        "singleCompletion"}, "_id": "760941b4-aefd-432b-85f0-bf2bf955dcbb", "up":
+        true, "down": false, "counterUp": 0, "counterDown": 0, "frequency": "weekly",
+        "history": [{"date": 1656135822090, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1656902931785, "value": 1.9747, "scoredUp": 2, "scoredDown":
+        0}, {"date": 1659739663947, "value": 1.9747, "scoredUp": 2, "scoredDown":
+        0}, {"date": 1664775295460, "value": 1.9747, "scoredUp": 2, "scoredDown":
+        0}, {"date": 1668240092209, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1668745161261, "value": 1.0608996851441646, "scoredUp": 1, "scoredDown": 0},
+        {"date": 1670732077551, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1670825464779, "value": 2.449874004850711, "scoredUp": 2, "scoredDown": 0},
+        {"date": 1672464698629, "value": 2.9253562257358428, "scoredUp": 3, "scoredDown":
+        0}, {"date": 1672549600613, "value": 2.425889937921327, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1673133545760, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1673765494994, "value": 3.853133245658556, "scoredUp": 4, "scoredDown": 0},
+        {"date": 1674702332703, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1675549151975, "value": 1.9747, "scoredUp": 2, "scoredDown": 0}, {"date":
+        1675652864464, "value": 1.9623660130663714, "scoredUp": 1, "scoredDown": 0},
+        {"date": 1677738386285, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1679544548647, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1699759465226,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1709411971741, "value":
+        1, "scoredUp": 1, "scoredDown": 0}, {"date": 1709958296466, "value": 2.9253562257358428,
+        "scoredUp": 3, "scoredDown": 0}], "type": "habit", "notes": "", "tags": ["05f0fe45-08fd-42d8-83e4-489fab5d2798"],
+        "value": 0, "priority": 1.5, "attribute": "str", "byHabitica": false, "text":
+        "some test habit 5", "reminders": [], "createdAt": "2022-06-17T03:22:21.377Z",
+        "updatedAt": "2024-03-20T05:53:36.724Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "760941b4-aefd-432b-85f0-bf2bf955dcbb"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "8a1e14ae-6a17-46f2-8bd1-06e962f85bff",
+        "up": false, "down": false, "counterUp": 0, "counterDown": 0, "frequency":
+        "daily", "history": [], "type": "habit", "notes": "", "tags": [], "value":
+        0, "priority": 1, "attribute": "str", "byHabitica": false, "text": "some test
+        habit 6", "reminders": [], "createdAt": "2023-03-20T04:13:22.591Z", "updatedAt":
+        "2023-03-20T04:17:37.607Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "8a1e14ae-6a17-46f2-8bd1-06e962f85bff"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "67ed283b-1ae5-4378-9bc2-839f9e24c988",
+        "up": true, "down": true, "counterUp": 0, "counterDown": 0, "frequency": "daily",
+        "history": [{"date": 1715049768319, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1717643502930, "value": 1, "scoredUp": 1, "scoredDown": 0}],
+        "type": "habit", "text": "some test habit 7", "notes": "", "tags": ["856446b2-7165-495c-8a17-ab7901c634c4"],
+        "value": 1, "priority": 1, "attribute": "str", "reminders": [], "byHabitica":
+        false, "createdAt": "2024-04-29T05:12:44.955Z", "updatedAt": "2024-06-07T04:07:14.975Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "67ed283b-1ae5-4378-9bc2-839f9e24c988"},
+        {"challenge": {}, "group": {"completedBy": {}, "approval": {"required": false,
+        "approved": false, "requested": false}, "assignedUsers": [], "sharedCompletion":
+        "singleCompletion"}, "_id": "57996587-1472-476b-9a81-a375c0f51adc", "up":
+        true, "down": true, "counterUp": 0, "counterDown": 0, "frequency": "monthly",
+        "history": [{"date": 1620632503911, "value": -40.93652611736706}, {"date":
+        1641156021703, "value": -69.73840878565943}, {"date": 1651456432110, "value":
+        -110.04469397688977}, {"date": 1654135993830, "value": -106.10041137353122},
+        {"date": 1657944016986, "value": -110.35992437168244}, {"date": 1659414813215,
+        "value": -113.52085716533601}, {"date": 1662428781336, "value": -126.45134340844868},
+        {"date": 1665468236297, "value": -126.78062162365876}, {"date": 1668476948008,
+        "value": -122.24341634831765}, {"date": 1670034065590, "value": -101.81387765301592},
+        {"date": 1673325658091, "value": -92.854973343029}, {"date": 1676870405976,
+        "value": -94.86703925991648, "scoredUp": 0, "scoredDown": 1}, {"date": 1677209744337,
+        "value": -91.50912630406211, "scoredUp": 1, "scoredDown": 0}, {"date": 1678420515538,
+        "value": -88.15121334820773, "scoredUp": 1, "scoredDown": 0}, {"date": 1679285813001,
+        "value": -91.8422357430224, "scoredUp": 0, "scoredDown": 1}, {"date": 1679544541424,
+        "value": -99.22428053265173, "scoredUp": 0, "scoredDown": 2}, {"date": 1680073571482,
+        "value": -95.86636757679736, "scoredUp": 1, "scoredDown": 0}, {"date": 1681839103342,
+        "value": -92.50845462094298, "scoredUp": 1, "scoredDown": 0}, {"date": 1704287320083,
+        "value": -89.15054166508861, "scoredUp": 1, "scoredDown": 0}, {"date": 1709774840467,
+        "value": -92.84156405990328, "scoredUp": 0, "scoredDown": 1}], "type": "habit",
+        "notes": "Test notes", "tags": ["856446b2-7165-495c-8a17-ab7901c634c4"], "value":
+        -92.84156405990328, "priority": 2, "attribute": "str", "byHabitica": false,
+        "text": "some test habit 8", "reminders": [], "createdAt": "2021-05-10T07:41:21.983Z",
+        "updatedAt": "2024-04-02T03:41:28.670Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "57996587-1472-476b-9a81-a375c0f51adc"}, {"challenge": {}, "group":
+        {"completedBy": {}, "approval": {"required": false, "approved": false, "requested":
+        false}, "assignedUsers": [], "sharedCompletion": "singleCompletion"}, "_id":
+        "26926792-19be-4a69-bb36-86cc95e4ef5b", "up": true, "down": false, "counterUp":
+        3, "counterDown": 0, "frequency": "monthly", "history": [{"date": 1623215571352,
+        "value": 1.663034415965897}, {"date": 1642402128234, "value": 1.4462001795146264},
+        {"date": 1651633270059, "value": 2.1257273804749874}, {"date": 1654136000420,
+        "value": 1.6921353647698834}, {"date": 1656902933061, "value": 1.0506431402767649},
+        {"date": 1659938362078, "value": 1.6230373284441832}, {"date": 1662428787568,
+        "value": 1.9747}, {"date": 1665714435969, "value": 1.48735}, {"date": 1668899834862,
+        "value": 1.24363448015713}, {"date": 1670034077141, "value": 1.4857682379297232},
+        {"date": 1672641570775, "value": 1.6340717308683197}, {"date": 1675665492909,
+        "value": 1}, {"date": 1677643650384, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1677738393256, "value": 1.48726896031426, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1678077265445, "value": 2.063015447766556, "scoredUp": 2, "scoredDown":
+        0}, {"date": 1679285364561, "value": 1.9747, "scoredUp": 2, "scoredDown":
+        0}, {"date": 1680073950419, "value": 1.9747, "scoredUp": 2, "scoredDown":
+        0}, {"date": 1682309078999, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1697174525055, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1701061084766,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1709774927717, "value":
+        8.511880102979319e-07, "scoredUp": 2, "scoredDown": 2}, {"date": 1710735708449,
+        "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0}, {"date": 1715049778671,
+        "value": 3.853133245658556, "scoredUp": 4, "scoredDown": 0}, {"date": 1715577050086,
+        "value": 2.089103420758484, "scoredUp": 2, "scoredDown": 0}, {"date": 1717643523172,
+        "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0}], "type": "habit",
+        "notes": "Test notes", "tags": ["856446b2-7165-495c-8a17-ab7901c634c4"], "value":
+        0, "priority": 1.5, "attribute": "str", "byHabitica": false, "text": "some
+        test habit 9", "reminders": [], "createdAt": "2021-06-09T05:11:55.697Z", "updatedAt":
+        "2024-06-15T20:29:14.381Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "26926792-19be-4a69-bb36-86cc95e4ef5b"}, {"challenge": {}, "group":
+        {"completedBy": {}, "approval": {"required": false, "approved": false, "requested":
+        false}, "assignedUsers": [], "sharedCompletion": "singleCompletion"}, "_id":
+        "dc80b443-e1ef-4981-a1dd-6e2dd76ad498", "up": true, "down": true, "counterUp":
+        0, "counterDown": 0, "frequency": "monthly", "history": [{"date": 1620581685388,
+        "value": 39.87661439837304}, {"date": 1641090181741, "value": 51.945103837589464},
+        {"date": 1648793098136, "value": 65.48405691442784}, {"date": 1651456443683,
+        "value": 71.0483131701949}, {"date": 1654136003059, "value": 74.62701010199181},
+        {"date": 1657606198494, "value": 74.16973623129988}, {"date": 1659487486503,
+        "value": 72.79406504775291}, {"date": 1662428783633, "value": 71.66769000544295},
+        {"date": 1665986469337, "value": 70.01223169510865}, {"date": 1668571838371,
+        "value": 69.71351687150334}, {"date": 1674449558326, "value": 70.8731361954865},
+        {"date": 1675665483369, "value": 71.45294585747807, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1676523657417, "value": 70.26689655566638, "scoredUp": 1, "scoredDown":
+        3}, {"date": 1676949963707, "value": 70.84670621765795, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1678682126246, "value": 69.66946690845577, "scoredUp": 0, "scoredDown":
+        2}, {"date": 1678938843188, "value": 68.4922275992536, "scoredUp": 0, "scoredDown":
+        2}, {"date": 1680329419071, "value": 67.9036079446525, "scoredUp": 0, "scoredDown":
+        1}, {"date": 1697174528179, "value": 67.31498829005142, "scoredUp": 0, "scoredDown":
+        1}, {"date": 1709774948005, "value": 70.79384626200087, "scoredUp": 6, "scoredDown":
+        0}], "type": "habit", "notes": "Test notes", "tags": ["856446b2-7165-495c-8a17-ab7901c634c4",
+        "5b399ed0-9339-491f-ac48-105d2fc82b72"], "value": 70.79384626200087, "priority":
+        1.5, "attribute": "str", "byHabitica": false, "text": "some test habit 10",
+        "reminders": [], "createdAt": "2021-05-09T05:17:30.471Z", "updatedAt": "2024-04-02T03:41:28.670Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "dc80b443-e1ef-4981-a1dd-6e2dd76ad498"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "5f2ca513-60d3-40fc-a0d6-fbfa8b98a6f3", "up": false, "down": false, "counterUp":
+        0, "counterDown": 0, "frequency": "daily", "history": [], "type": "habit",
+        "notes": "", "tags": [], "value": 0, "priority": 1, "attribute": "str", "byHabitica":
+        false, "text": "some test habit 11", "reminders": [], "createdAt": "2023-03-20T04:16:03.176Z",
+        "updatedAt": "2023-03-20T04:17:52.121Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "5f2ca513-60d3-40fc-a0d6-fbfa8b98a6f3"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "0db26aac-7927-4cd8-aa8a-98934016b17c",
+        "up": true, "down": false, "counterUp": 0, "counterDown": 0, "frequency":
+        "monthly", "history": [{"date": 1679286449260, "value": 1, "scoredUp": 1,
+        "scoredDown": 0}, {"date": 1684122811463, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1686547296278, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1691073742720, "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0},
+        {"date": 1693370098106, "value": 2.9253562257358428, "scoredUp": 3, "scoredDown":
+        0}, {"date": 1704287333184, "value": 1, "scoredUp": 1, "scoredDown": 0}],
+        "type": "habit", "notes": "", "tags": [], "value": 0, "priority": 1, "attribute":
+        "str", "byHabitica": false, "text": "some test habit 12", "reminders": [],
+        "createdAt": "2023-03-20T04:27:20.695Z", "updatedAt": "2024-02-02T02:25:26.999Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "0db26aac-7927-4cd8-aa8a-98934016b17c"},
+        {"challenge": {}, "group": {"completedBy": {}, "approval": {"required": false,
+        "approved": false, "requested": false}, "assignedUsers": [], "sharedCompletion":
+        "singleCompletion"}, "_id": "97e63fe7-4ce1-4343-acbc-b3f2b4f82512", "up":
+        true, "down": false, "counterUp": 0, "counterDown": 0, "frequency": "monthly",
+        "history": [{"date": 1623563444221, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1624165178891, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1624772496015, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1625954304087,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1641012544209, "value":
+        1, "scoredUp": 1, "scoredDown": 0}, {"date": 1642305295141, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1642731653554, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1645319679851, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1645511946541, "value": 1.243614090235369, "scoredUp": 1, "scoredDown": 0},
+        {"date": 1648956412021, "value": 1.9747, "scoredUp": 2, "scoredDown": 0},
+        {"date": 1649638315647, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1650161746427, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1654743946079,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1656135823682, "value":
+        1, "scoredUp": 1, "scoredDown": 0}, {"date": 1656902900537, "value": 1.9747,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1658288364223, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1658643732797, "value": 2.0934644004044816,
+        "scoredUp": 2, "scoredDown": 0}, {"date": 1659739658571, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1670732142912, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1672549601666, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1673133541493, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1675549137629,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1681617531088, "value":
+        1.9747, "scoredUp": 2, "scoredDown": 0}, {"date": 1699759449669, "value":
+        1, "scoredUp": 1, "scoredDown": 0}], "type": "habit", "notes": "", "tags":
+        ["1094f207-ea65-4727-9932-95a16319d431"], "value": 0, "priority": 1.5, "attribute":
+        "str", "byHabitica": false, "text": "some test habit 13", "reminders": [],
+        "createdAt": "2021-06-11T05:10:59.154Z", "updatedAt": "2023-12-02T01:17:37.442Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "97e63fe7-4ce1-4343-acbc-b3f2b4f82512"},
+        {"challenge": {}, "group": {"completedBy": {}, "approval": {"required": false,
+        "approved": false, "requested": false}, "assignedUsers": [], "sharedCompletion":
+        "singleCompletion"}, "_id": "1f5ac12e-e82f-4683-8790-bb9f0139b10c", "up":
+        true, "down": false, "counterUp": 0, "counterDown": 0, "frequency": "monthly",
+        "history": [{"date": 1620534705789, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1620709885484, "value": 1.243614090235369, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1621386015383, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1621574402334, "value": 4.0794179678725015, "scoredUp": 4, "scoredDown": 0},
+        {"date": 1622951870273, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1624165174207, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1624946345975,
+        "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0}, {"date": 1625021208721,
+        "value": 4.282986694701841, "scoredUp": 3, "scoredDown": 0}, {"date": 1625268777933,
+        "value": 1.5217477816992964, "scoredUp": 1, "scoredDown": 0}, {"date": 1625366895644,
+        "value": 1.7415649336147778, "scoredUp": 1, "scoredDown": 0}, {"date": 1625624200257,
+        "value": 2.1815484715223286, "scoredUp": 2, "scoredDown": 0}, {"date": 1625716651525,
+        "value": 2.0632095825584917, "scoredUp": 1, "scoredDown": 0}, {"date": 1625802502079,
+        "value": 2.0055157109911206, "scoredUp": 1, "scoredDown": 0}, {"date": 1626400536867,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1626586494501, "value":
+        2.2122482406699344, "scoredUp": 2, "scoredDown": 0}, {"date": 1626833969538,
+        "value": 2.237462397097872, "scoredUp": 2, "scoredDown": 0}, {"date": 1627264783738,
+        "value": 1.068130547919743, "scoredUp": 1, "scoredDown": 0}, {"date": 1627363067521,
+        "value": 1.5204727824769109, "scoredUp": 1, "scoredDown": 0}, {"date": 1627853659026,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1628386739570, "value":
+        1, "scoredUp": 1, "scoredDown": 0}, {"date": 1630207023101, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1632277298316, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1633240575040, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1633846890472, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1636237103487,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1637537120706, "value":
+        1, "scoredUp": 1, "scoredDown": 0}, {"date": 1642731661362, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1645319675214, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1645511931289, "value": 1.243614090235369, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1645755563268, "value": 1.1514761485217568, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1647147942711, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1648956386258, "value": 3.853133245658556, "scoredUp": 4, "scoredDown": 0},
+        {"date": 1650161761401, "value": 5.6443010177121415, "scoredUp": 6, "scoredDown":
+        0}, {"date": 1650849962586, "value": 2.9253562257358428, "scoredUp": 3, "scoredDown":
+        0}, {"date": 1652936299423, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1653108882449, "value": 1.243614090235369, "scoredUp": 1, "scoredDown": 0},
+        {"date": 1653282081733, "value": 1.3029681025403126, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1653970933033, "value": 1.0793508528745115, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1654743953988, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1656135835750, "value": 1.9747, "scoredUp": 2, "scoredDown": 0}, {"date":
+        1658288370881, "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0},
+        {"date": 1658643736023, "value": 1.3563428124571946, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1659739669976, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1661558477950, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1661663615619,
+        "value": 1.48726896031426, "scoredUp": 1, "scoredDown": 0}, {"date": 1668745167336,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1669098701960, "value":
+        2.0340797665238974, "scoredUp": 2, "scoredDown": 0}, {"date": 1670732116534,
+        "value": 5.6443010177121415, "scoredUp": 6, "scoredDown": 0}, {"date": 1672549609175,
+        "value": 1.9747, "scoredUp": 2, "scoredDown": 0}, {"date": 1675549160736,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1676867570822, "value":
+        1, "scoredUp": 1, "scoredDown": 0}, {"date": 1680073959913, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1681617522767, "value": 1.9747, "scoredUp":
+        2, "scoredDown": 0}, {"date": 1686547304012, "value": 3.853133245658556, "scoredUp":
+        4, "scoredDown": 0}, {"date": 1699759447695, "value": 1.9747, "scoredUp":
+        2, "scoredDown": 0}, {"date": 1709411951535, "value": 1, "scoredUp": 1, "scoredDown":
+        0}], "type": "habit", "notes": "", "tags": ["1094f207-ea65-4727-9932-95a16319d431"],
+        "value": 0, "priority": 1, "attribute": "str", "byHabitica": false, "text":
+        "some test habit 14", "reminders": [], "createdAt": "2021-05-09T03:05:45.161Z",
+        "updatedAt": "2024-04-02T03:41:28.670Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "1f5ac12e-e82f-4683-8790-bb9f0139b10c"}, {"challenge": {"taskId": "b6d02376-bbe8-43ec-a2c4-347520d22712",
+        "id": "1a2f57dd-7492-4fb9-a441-72523b95a7d8", "shortName": "Test challenge"},
+        "group": {"completedBy": {}, "assignedUsers": []}, "_id": "fa71e1c7-fe34-474a-9682-8787035b78ba",
+        "up": true, "down": false, "counterUp": 0, "counterDown": 0, "frequency":
+        "daily", "history": [{"date": 1672542816499, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1704287343153, "value": 1.9747, "scoredUp": 2, "scoredDown":
+        0}], "type": "habit", "notes": "Test notes", "tags": ["1a2f57dd-7492-4fb9-a441-72523b95a7d8"],
+        "value": 0, "priority": 1.5, "attribute": "str", "byHabitica": false, "reminders":
+        [], "text": "some test habit 15", "createdAt": "2023-01-01T02:46:09.627Z",
+        "updatedAt": "2024-01-13T02:05:08.881Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "fa71e1c7-fe34-474a-9682-8787035b78ba"}, {"challenge": {"taskId": "9b819be4-218f-4c95-966b-64c9e36827e8",
+        "id": "2ecdaa3f-c229-4590-889c-6ec22d56eb3d", "shortName": "Test challenge",
+        "broken": "CHALLENGE_CLOSED", "winner": "Bumbleshoot (she/her)"}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "8b6b18a8-3e06-4f15-8dfe-932117829780",
+        "up": true, "down": false, "counterUp": 0, "counterDown": 0, "frequency":
+        "daily", "history": [{"date": 1672546821616, "value": 2.9253562257358428,
+        "scoredUp": 3, "scoredDown": 0}, {"date": 1676341331987, "value": 1, "scoredUp":
+        1, "scoredDown": 0}, {"date": 1677390967776, "value": 1, "scoredUp": 1, "scoredDown":
+        0}, {"date": 1679285517203, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1680073969052, "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0},
+        {"date": 1695791206277, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date":
+        1696800177129, "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1699759315774,
+        "value": 1, "scoredUp": 1, "scoredDown": 0}, {"date": 1701061100700, "value":
+        1.9747, "scoredUp": 2, "scoredDown": 0}, {"date": 1703641316231, "value":
+        2.9253562257358428, "scoredUp": 3, "scoredDown": 0}, {"date": 1708929097839,
+        "value": 2.9253562257358428, "scoredUp": 3, "scoredDown": 0}, {"date": 1711669096455,
+        "value": 1.9747, "scoredUp": 2, "scoredDown": 0}, {"date": 1717643552439,
+        "value": 5.6443010177121415, "scoredUp": 6, "scoredDown": 0}], "type": "habit",
+        "notes": "Test notes", "tags": ["2ecdaa3f-c229-4590-889c-6ec22d56eb3d"], "value":
+        0.08819220340175221, "priority": 1.5, "attribute": "str", "byHabitica": false,
+        "reminders": [], "text": "some test habit 16", "createdAt": "2023-01-01T03:12:54.458Z",
+        "updatedAt": "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "8b6b18a8-3e06-4f15-8dfe-932117829780"}, {"challenge": {}, "group":
+        {"completedBy": {}, "approval": {"required": false, "approved": false, "requested":
+        false}, "assignedUsers": [], "sharedCompletion": "singleCompletion"}, "_id":
+        "bfbf6748-502d-4afd-ab85-f0bc709a0abb", "up": false, "down": true, "counterUp":
+        0, "counterDown": 0, "frequency": "monthly", "history": [{"date": 1621121411498,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1621303428741,
+        "value": -2.352416097052813, "scoredUp": 0, "scoredDown": 2}, {"date": 1622418440091,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1623907494202,
+        "value": -2.081442996376489, "scoredUp": 0, "scoredDown": 2}, {"date": 1626400592115,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1627542007501,
+        "value": -3.165953482194662, "scoredUp": 0, "scoredDown": 3}, {"date": 1627701098663,
+        "value": -2.6533341259791783, "scoredUp": 0, "scoredDown": 1}, {"date": 1628994554125,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1629083803936,
+        "value": -1.5539525155173857, "scoredUp": 0, "scoredDown": 1}, {"date": 1629427481624,
+        "value": -1.126406974849274, "scoredUp": 0, "scoredDown": 1}, {"date": 1629573236778,
+        "value": -1.3158968133753906, "scoredUp": 0, "scoredDown": 1}, {"date": 1631345936978,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1632624144794,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1633127924821,
+        "value": -1.09255862966097, "scoredUp": 0, "scoredDown": 1}, {"date": 1637552521392,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1637552521391,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1638165278173,
+        "value": -4.281925793719871, "scoredUp": 0, "scoredDown": 4}, {"date": 1638763440086,
+        "value": -2.222700219074796, "scoredUp": 0, "scoredDown": 2}, {"date": 1639365688562,
+        "value": -1.169336639710731, "scoredUp": 0, "scoredDown": 1}, {"date": 1639937279014,
+        "value": -2.081442996376489, "scoredUp": 0, "scoredDown": 2}, {"date": 1640579172044,
+        "value": -2.3561288696298694, "scoredUp": 0, "scoredDown": 2}, {"date": 1641697663433,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1642292823785,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1642728904355,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1643598921970,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1644122711072,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1644387214446,
+        "value": -1.2902806818508115, "scoredUp": 0, "scoredDown": 1}, {"date": 1644463055104,
+        "value": -1.689381903234705, "scoredUp": 0, "scoredDown": 1}, {"date": 1644981368704,
+        "value": -1.0808779566241447, "scoredUp": 0, "scoredDown": 1}, {"date": 1645157356887,
+        "value": -1.3042047140032489, "scoredUp": 0, "scoredDown": 1}, {"date": 1645511937924,
+        "value": -1.1103749647380259, "scoredUp": 0, "scoredDown": 1}, {"date": 1647824304247,
+        "value": -3.165953482194662, "scoredUp": 0, "scoredDown": 3}, {"date": 1648010555401,
+        "value": -1.8397617418597512, "scoredUp": 0, "scoredDown": 1}, {"date": 1648524012320,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1649570219060,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1649727611637,
+        "value": -1.2902806818508115, "scoredUp": 0, "scoredDown": 1}, {"date": 1649908485748,
+        "value": -1.3579812618104106, "scoredUp": 0, "scoredDown": 1}, {"date": 1650081344594,
+        "value": -1.3753678260077828, "scoredUp": 0, "scoredDown": 1}, {"date": 1651197403193,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1652422935135,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1652900796880,
+        "value": -3.165953482194662, "scoredUp": 0, "scoredDown": 3}, {"date": 1653720791928,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1655257386102,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1656902894289,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1658287823986,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}, {"date": 1668240106815,
+        "value": -2.081442996376489, "scoredUp": 0, "scoredDown": 2}, {"date": 1690165374557,
+        "value": -1.026657310999762, "scoredUp": 0, "scoredDown": 1}], "type": "habit",
+        "notes": "", "tags": ["05f0fe45-08fd-42d8-83e4-489fab5d2798"], "value": 0,
+        "priority": 2, "attribute": "str", "byHabitica": false, "text": "some test
+        habit 17", "reminders": [], "createdAt": "2021-05-15T23:30:08.818Z", "updatedAt":
+        "2023-08-03T03:53:17.290Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "bfbf6748-502d-4afd-ab85-f0bc709a0abb"}, {"repeat": {"m": false, "t":
+        false, "w": false, "th": false, "f": true, "s": false, "su": false}, "challenge":
+        {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id": "58f4da4c-105f-4997-bc08-e337ad621e8d",
+        "frequency": "weekly", "everyX": 2, "startDate": "2024-03-14T07:00:00.000Z",
+        "streak": 5, "daysOfMonth": [], "weeksOfMonth": [], "nextDue": ["Fri Jun 21
+        2024 00:00:00 GMT-0600", "Fri Jul 05 2024 00:00:00 GMT-0600", "Fri Jul 19
+        2024 00:00:00 GMT-0600", "Fri Aug 02 2024 00:00:00 GMT-0600", "Fri Aug 16
+        2024 00:00:00 GMT-0600", "Fri Aug 30 2024 00:00:00 GMT-0600"], "yesterDaily":
+        true, "history": [{"date": 1710124875347, "value": -0.729872439383058}, {"date":
+        1712029288644, "value": 0.025956704627064786}, {"date": 1712508963018, "value":
+        0.025956704627064786, "isDue": false, "completed": false}, {"date": 1712637700381,
+        "value": 0.025956704627064786, "isDue": false, "completed": false}, {"date":
+        1712642662490, "value": 0.025956704627064786, "isDue": false, "completed":
+        false}, {"date": 1712796744183, "value": 0.025956704627064786, "isDue": false,
+        "completed": false}, {"date": 1712937526235, "value": 0.025956704627064786,
+        "isDue": false, "completed": false}, {"date": 1712937714062, "value": 1.0252917710224885,
+        "isDue": true, "completed": true}, {"date": 1713151919822, "value": 1.0252917710224885,
+        "isDue": false, "completed": false}, {"date": 1713244187182, "value": 1.0252917710224885,
+        "isDue": false, "completed": false}, {"date": 1713499874772, "value": 1.0252917710224885,
+        "isDue": false, "completed": false}, {"date": 1713576476318, "value": 1.0252917710224885,
+        "isDue": false, "completed": false}, {"date": 1713644499711, "value": 1.0252917710224885,
+        "isDue": false, "completed": false}, {"date": 1713682565415, "value": 1.0252917710224885,
+        "isDue": false, "completed": false}, {"date": 1714012394346, "value": 1.0252917710224885,
+        "isDue": false, "completed": false}, {"date": 1714160987437, "value": 1.0252917710224885,
+        "isDue": false, "completed": false}, {"date": 1714164530765, "value": 1.999360257529945,
+        "isDue": true, "completed": true}, {"date": 1714290493701, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1714448083036, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1714494449274, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1714543905326, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1714855833418, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1714973670790, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1715049757566, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1715217903811, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1715303580969, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1715362707893, "value": 1.999360257529945,
+        "isDue": false, "completed": false}, {"date": 1715365788615, "value": 2.949415922378421,
+        "isDue": true, "completed": true}, {"date": 1715575125797, "value": 2.949415922378421,
+        "isDue": false, "completed": false}, {"date": 1715651876629, "value": 2.949415922378421,
+        "isDue": false, "completed": false}, {"date": 1715753469633, "value": 2.949415922378421,
+        "isDue": false, "completed": false}, {"date": 1715920608126, "value": 2.949415922378421,
+        "isDue": false, "completed": false}, {"date": 1716069227344, "value": 2.949415922378421,
+        "isDue": false, "completed": false}, {"date": 1716255007671, "value": 2.949415922378421,
+        "isDue": false, "completed": false}, {"date": 1716586901962, "value": 2.949415922378421,
+        "isDue": false, "completed": false}, {"date": 1716685383495, "value": 3.87662110426386,
+        "isDue": true, "completed": true}, {"date": 1716738047825, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1716947604006, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1717293144267, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1717386988684, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1717556774209, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1717642757255, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1717733234859, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1717998377787, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1718072683397, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1718332611496, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1718418512529, "value": 3.87662110426386,
+        "isDue": false, "completed": false}, {"date": 1718483354344, "value": 3.87662110426386,
+        "isDue": false, "completed": false}], "completed": false, "collapseChecklist":
+        false, "checklist": [], "type": "daily", "text": "some test task 18", "notes":
+        "", "tags": [], "value": 3.87662110426386, "priority": 1, "attribute": "str",
+        "reminders": [], "byHabitica": false, "createdAt": "2024-03-09T21:41:41.456Z",
+        "updatedAt": "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "isDue": false, "id": "58f4da4c-105f-4997-bc08-e337ad621e8d"}, {"repeat":
+        {"m": true, "t": true, "w": true, "th": true, "f": true, "s": true, "su":
+        true}, "challenge": {}, "group": {"completedBy": {}, "assignedUsers": []},
+        "_id": "b2681b98-b3bc-422c-b6c8-fddbb8082266", "frequency": "weekly", "everyX":
+        1, "streak": 0, "nextDue": ["Mon Jun 17 2024 00:00:00 GMT-0600", "Tue Jun
+        18 2024 00:00:00 GMT-0600", "Wed Jun 19 2024 00:00:00 GMT-0600", "Thu Jun
+        20 2024 00:00:00 GMT-0600", "Fri Jun 21 2024 00:00:00 GMT-0600", "Sat Jun
+        22 2024 00:00:00 GMT-0600"], "yesterDaily": true, "history": [{"date": 1700274705110,
+        "value": 2.5249035934539794}, {"date": 1701479857391, "value": -5.453830470898693},
+        {"date": 1704166388466, "value": -10.300439280982511}, {"date": 1706895529947,
+        "value": -2.2958531763416814}, {"date": 1709329450740, "value": -8.980764362588843},
+        {"date": 1712029303051, "value": -7.734862042074274}, {"date": 1712260620912,
+        "value": -8.315520639520832, "isDue": true, "completed": false}, {"date":
+        1712290198731, "value": -7.078024902911123, "isDue": true, "completed": true},
+        {"date": 1712467525375, "value": -5.879156320144043, "isDue": true, "completed":
+        true}, {"date": 1712637700148, "value": -4.716558966132942, "isDue": true,
+        "completed": true}, {"date": 1712642662489, "value": -5.845030854648906, "isDue":
+        true, "completed": false}, {"date": 1712796744182, "value": -7.006611980577954,
+        "isDue": true, "completed": false}, {"date": 1712815100496, "value": -5.809935315403575,
+        "isDue": true, "completed": true}, {"date": 1712974192748, "value": -4.649398379034677,
+        "isDue": true, "completed": true}, {"date": 1713151919517, "value": -3.522866950638228,
+        "isDue": true, "completed": true}, {"date": 1713155032635, "value": -2.428391295452944,
+        "isDue": true, "completed": true}, {"date": 1713244237385, "value": -1.3641854278130299,
+        "isDue": true, "completed": true}, {"date": 1713576476315, "value": -2.399761640119744,
+        "isDue": true, "completed": false}, {"date": 1713644499710, "value": -3.4631870388206867,
+        "isDue": true, "completed": false}, {"date": 1713682565414, "value": -4.555990158344678,
+        "isDue": true, "completed": false}, {"date": 1714012394344, "value": -5.679828304303358,
+        "isDue": true, "completed": false}, {"date": 1714160987433, "value": -6.836502380024925,
+        "isDue": true, "completed": false}, {"date": 1714199036199, "value": -8.027973903356301,
+        "isDue": true, "completed": false}, {"date": 1714290493699, "value": -9.25638461274203,
+        "isDue": true, "completed": false}, {"date": 1714369008715, "value": -7.988690076649183,
+        "isDue": true, "completed": true}, {"date": 1714494449271, "value": -9.21586480456781,
+        "isDue": true, "completed": false}, {"date": 1714543905324, "value": -10.482243722981368,
+        "isDue": true, "completed": false}, {"date": 1714855833417, "value": -11.790392821048378,
+        "isDue": true, "completed": false}, {"date": 1714973670789, "value": -13.143137025037397,
+        "isDue": true, "completed": false}, {"date": 1715049757564, "value": -14.543596086559536,
+        "isDue": true, "completed": false}, {"date": 1715052576913, "value": -13.091965286182043,
+        "isDue": true, "completed": true}, {"date": 1715233406652, "value": -11.69334144846259,
+        "isDue": true, "completed": true}, {"date": 1715362707892, "value": -13.042725564951063,
+        "isDue": true, "completed": false}, {"date": 1715465064014, "value": -14.439585739278634,
+        "isDue": true, "completed": false}, {"date": 1715575125795, "value": -15.887352627562077,
+        "isDue": true, "completed": false}, {"date": 1715576961990, "value": -14.384865061918868,
+        "isDue": true, "completed": true}, {"date": 1715753469632, "value": -15.830603245661864,
+        "isDue": true, "completed": false}, {"date": 1715920608125, "value": -17.330907430776385,
+        "isDue": true, "completed": false}, {"date": 1715920902148, "value": -15.771799226312819,
+        "isDue": true, "completed": true}, {"date": 1716255007670, "value": -17.269844327773843,
+        "isDue": true, "completed": false}, {"date": 1716586901959, "value": -18.826514785747758,
+        "isDue": true, "completed": false}, {"date": 1716685383847, "value": -20.446536821581038,
+        "isDue": true, "completed": false}, {"date": 1716738047824, "value": -22.135227873550704,
+        "isDue": true, "completed": false}, {"date": 1716947604004, "value": -23.898598905892047,
+        "isDue": true, "completed": false}, {"date": 1717293144265, "value": -25.743479736163486,
+        "isDue": true, "completed": false}, {"date": 1717386988683, "value": -27.677673860210646,
+        "isDue": true, "completed": false}, {"date": 1717556774207, "value": -29.71015147763282,
+        "isDue": true, "completed": false}, {"date": 1717642757252, "value": -31.851292558002648,
+        "isDue": true, "completed": false}, {"date": 1717733234855, "value": -34.113196282803464,
+        "isDue": true, "completed": false}, {"date": 1717998377785, "value": -36.510079745918276,
+        "isDue": true, "completed": false}, {"date": 1718072683395, "value": -39.05879851098776,
+        "isDue": true, "completed": false}, {"date": 1718332611494, "value": -41.77953633394556,
+        "isDue": true, "completed": false}, {"date": 1718418512527, "value": -44.69673413592887,
+        "isDue": true, "completed": false}, {"date": 1718483354342, "value": -47.840364471491014,
+        "isDue": true, "completed": false}], "completed": false, "collapseChecklist":
+        false, "type": "daily", "notes": "", "tags": [], "value": -47.840364471491014,
+        "priority": 1, "attribute": "str", "byHabitica": false, "text": "some test
+        task 19", "startDate": "2023-11-17T07:00:00.000Z", "checklist": [], "reminders":
+        [], "daysOfMonth": [], "weeksOfMonth": [], "createdAt": "2023-11-17T20:13:33.923Z",
+        "updatedAt": "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "isDue": true, "id": "b2681b98-b3bc-422c-b6c8-fddbb8082266"}, {"repeat": {"m":
+        false, "t": false, "w": false, "th": false, "f": false, "s": false, "su":
+        true}, "challenge": {}, "group": {"completedBy": {}, "assignedUsers": []},
+        "_id": "3a16e179-f44c-4cef-a90b-b1729c8a5e91", "frequency": "weekly", "everyX":
+        2, "streak": 0, "nextDue": ["Sun Jun 23 2024 00:00:00 GMT-0600", "Sun Jul
+        07 2024 00:00:00 GMT-0600", "Sun Jul 21 2024 00:00:00 GMT-0600", "Sun Aug
+        04 2024 00:00:00 GMT-0600", "Sun Aug 18 2024 00:00:00 GMT-0600", "Sun Sep
+        01 2024 00:00:00 GMT-0600"], "yesterDaily": true, "history": [{"date": 1677992778996,
+        "value": 2.4393610702732245}, {"date": 1688251704773, "value": 2.122450036683293},
+        {"date": 1691034797219, "value": 3.3460990745316295}, {"date": 1693636380346,
+        "value": 3.9189695616050924}, {"date": 1696201717683, "value": 4.821655326721141},
+        {"date": 1698977817601, "value": 3.487705000603148}, {"date": 1701479857390,
+        "value": 3.677551856489307}, {"date": 1704166388465, "value": 4.852830927640817},
+        {"date": 1706840726962, "value": 6.399426554867678}, {"date": 1709329450738,
+        "value": 8.225173768309284}, {"date": 1712029288640, "value": 8.62091492136531},
+        {"date": 1712796744181, "value": 9.125936346345185, "isDue": false, "completed":
+        false}, {"date": 1712937526233, "value": 9.125936346345185, "isDue": false,
+        "completed": false}, {"date": 1712988987057, "value": 9.125936346345185, "isDue":
+        false, "completed": false}, {"date": 1713151919819, "value": 9.125936346345185,
+        "isDue": false, "completed": false}, {"date": 1713244187180, "value": 9.125936346345185,
+        "isDue": false, "completed": false}, {"date": 1713499874769, "value": 9.125936346345185,
+        "isDue": false, "completed": false}, {"date": 1713576476314, "value": 9.125936346345185,
+        "isDue": false, "completed": false}, {"date": 1713644499709, "value": 9.125936346345185,
+        "isDue": false, "completed": false}, {"date": 1713682565256, "value": 9.917411242791271,
+        "isDue": true, "completed": true}, {"date": 1714012394342, "value": 9.917411242791271,
+        "isDue": false, "completed": false}, {"date": 1714160987432, "value": 9.917411242791271,
+        "isDue": false, "completed": false}, {"date": 1714199036198, "value": 9.917411242791271,
+        "isDue": false, "completed": false}, {"date": 1714290493698, "value": 9.917411242791271,
+        "isDue": false, "completed": false}, {"date": 1714448083033, "value": 9.917411242791271,
+        "isDue": false, "completed": false}, {"date": 1714494449269, "value": 9.917411242791271,
+        "isDue": false, "completed": false}, {"date": 1714543905322, "value": 9.917411242791271,
+        "isDue": false, "completed": false}, {"date": 1714855833416, "value": 9.917411242791271,
+        "isDue": false, "completed": false}, {"date": 1714973670788, "value": 9.141827327516607,
+        "isDue": true, "completed": false}, {"date": 1715049757562, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1715217903809, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1715303580967, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1715362707890, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1715465064012, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1715575125794, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1715651876625, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1715753469630, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1715920608123, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1716069227341, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1716255007668, "value": 9.141827327516607,
+        "isDue": true, "completed": false}, {"date": 1716586901957, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1716685383846, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1716738047822, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1716947604003, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1717293144264, "value": 9.141827327516607,
+        "isDue": false, "completed": false}, {"date": 1717386988682, "value": 8.350674665981783,
+        "isDue": true, "completed": false}, {"date": 1717556774206, "value": 8.350674665981783,
+        "isDue": true, "completed": false}, {"date": 1717642757252, "value": 8.350674665981783,
+        "isDue": false, "completed": false}, {"date": 1717733234853, "value": 8.350674665981783,
+        "isDue": false, "completed": false}, {"date": 1717998377784, "value": 8.350674665981783,
+        "isDue": false, "completed": false}, {"date": 1718072683394, "value": 8.350674665981783,
+        "isDue": false, "completed": false}, {"date": 1718332611493, "value": 8.350674665981783,
+        "isDue": false, "completed": false}, {"date": 1718418512525, "value": 8.350674665981783,
+        "isDue": false, "completed": false}, {"date": 1718483354341, "value": 8.350674665981783,
+        "isDue": false, "completed": false}], "completed": false, "collapseChecklist":
+        false, "type": "daily", "notes": "", "tags": ["bd02e324-54b5-4ac7-98fc-1f7d1a700fce"],
+        "value": 8.350674665981783, "priority": 1, "attribute": "str", "byHabitica":
+        false, "text": "some test task 20", "reminders": [], "checklist": [], "startDate":
+        "2023-03-07T06:00:00.000Z", "daysOfMonth": [], "weeksOfMonth": [], "createdAt":
+        "2023-03-05T02:13:23.568Z", "updatedAt": "2024-06-15T20:29:14.382Z", "userId":
+        "cd18fc9f-b649-4384-932a-f3bda6fe8102", "isDue": false, "id": "3a16e179-f44c-4cef-a90b-b1729c8a5e91"},
+        {"repeat": {"m": true, "t": true, "w": true, "th": true, "f": true, "s": true,
+        "su": true}, "challenge": {}, "group": {"completedBy": {}, "assignedUsers":
+        []}, "_id": "ffb5fc60-1333-4e41-940d-b22da54a5c4c", "frequency": "weekly",
+        "everyX": 1, "streak": 0, "nextDue": ["Mon Jun 17 2024 00:00:00 GMT-0600",
+        "Tue Jun 18 2024 00:00:00 GMT-0600", "Wed Jun 19 2024 00:00:00 GMT-0600",
+        "Thu Jun 20 2024 00:00:00 GMT-0600", "Fri Jun 21 2024 00:00:00 GMT-0600",
+        "Sat Jun 22 2024 00:00:00 GMT-0600"], "yesterDaily": true, "history": [{"date":
+        1672556667869, "value": 32.24498287298586}, {"date": 1688251704769, "value":
+        26.042454911619643}, {"date": 1691034797215, "value": 17.75536484604613},
+        {"date": 1693636380341, "value": 9.964758088196739}, {"date": 1696201717680,
+        "value": -7.140327386268257}, {"date": 1699131387149, "value": -37.19309083353433},
+        {"date": 1701479857386, "value": -86.52114424348731}, {"date": 1704166388460,
+        "value": -145.2560531102435}, {"date": 1706840726959, "value": -220.69821291600329},
+        {"date": 1709329450734, "value": -276.87025796833217}, {"date": 1712029288637,
+        "value": -288.90563476163675}, {"date": 1712796744176, "value": -293.1030259564547,
+        "isDue": true, "completed": false}, {"date": 1712937526225, "value": -296.4609389123091,
+        "isDue": true, "completed": false}, {"date": 1712988987050, "value": -299.81885186816345,
+        "isDue": true, "completed": false}, {"date": 1713151919814, "value": -303.1767648240178,
+        "isDue": true, "completed": false}, {"date": 1713244186948, "value": -299.81885186816345,
+        "isDue": true, "completed": true}, {"date": 1713499874765, "value": -303.1767648240178,
+        "isDue": true, "completed": false}, {"date": 1713576476311, "value": -306.5346777798722,
+        "isDue": true, "completed": false}, {"date": 1713644499705, "value": -309.89259073572657,
+        "isDue": true, "completed": false}, {"date": 1713644505964, "value": -306.5346777798722,
+        "isDue": true, "completed": true}, {"date": 1714012394334, "value": -309.89259073572657,
+        "isDue": true, "completed": false}, {"date": 1714160987428, "value": -313.25050369158095,
+        "isDue": true, "completed": false}, {"date": 1714199036194, "value": -316.6084166474353,
+        "isDue": true, "completed": false}, {"date": 1714290493451, "value": -313.25050369158095,
+        "isDue": true, "completed": true}, {"date": 1714448082790, "value": -309.89259073572657,
+        "isDue": true, "completed": true}, {"date": 1714494449258, "value": -313.25050369158095,
+        "isDue": true, "completed": false}, {"date": 1714543904640, "value": -309.89259073572657,
+        "isDue": true, "completed": true}, {"date": 1714855833412, "value": -313.25050369158095,
+        "isDue": true, "completed": false}, {"date": 1714855848197, "value": -309.89259073572657,
+        "isDue": true, "completed": true}, {"date": 1714973871378, "value": -306.5346777798722,
+        "isDue": true, "completed": true}, {"date": 1715217903804, "value": -309.89259073572657,
+        "isDue": true, "completed": false}, {"date": 1715303580961, "value": -313.25050369158095,
+        "isDue": true, "completed": false}, {"date": 1715362707886, "value": -316.6084166474353,
+        "isDue": true, "completed": false}, {"date": 1715465064008, "value": -319.9663296032897,
+        "isDue": true, "completed": false}, {"date": 1715575125790, "value": -323.32424255914407,
+        "isDue": true, "completed": false}, {"date": 1715575130651, "value": -319.9663296032897,
+        "isDue": true, "completed": true}, {"date": 1715753469622, "value": -323.32424255914407,
+        "isDue": true, "completed": false}, {"date": 1715920608118, "value": -326.68215551499844,
+        "isDue": true, "completed": false}, {"date": 1716069227337, "value": -330.0400684708528,
+        "isDue": true, "completed": false}, {"date": 1716069248030, "value": -326.68215551499844,
+        "isDue": true, "completed": true}, {"date": 1716586901943, "value": -330.0400684708528,
+        "isDue": true, "completed": false}, {"date": 1716685383842, "value": -333.3979814267072,
+        "isDue": true, "completed": false}, {"date": 1716738047816, "value": -336.75589438256156,
+        "isDue": true, "completed": false}, {"date": 1716947603999, "value": -340.11380733841594,
+        "isDue": true, "completed": false}, {"date": 1717293144260, "value": -343.4717202942703,
+        "isDue": true, "completed": false}, {"date": 1717293175221, "value": -340.11380733841594,
+        "isDue": true, "completed": true}, {"date": 1717387031159, "value": -336.75589438256156,
+        "isDue": true, "completed": true}, {"date": 1717642757248, "value": -340.11380733841594,
+        "isDue": true, "completed": false}, {"date": 1717733234844, "value": -343.4717202942703,
+        "isDue": true, "completed": false}, {"date": 1717998377777, "value": -346.8296332501247,
+        "isDue": true, "completed": false}, {"date": 1717998835052, "value": -343.4717202942703,
+        "isDue": true, "completed": true}, {"date": 1718332611487, "value": -346.8296332501247,
+        "isDue": true, "completed": false}, {"date": 1718418512521, "value": -350.18754620597906,
+        "isDue": true, "completed": false}, {"date": 1718483354334, "value": -353.54545916183343,
+        "isDue": true, "completed": false}], "completed": false, "collapseChecklist":
+        false, "type": "daily", "notes": "", "tags": ["856446b2-7165-495c-8a17-ab7901c634c4"],
+        "value": -353.54545916183343, "priority": 1.5, "attribute": "str", "byHabitica":
+        false, "text": "some test task 21", "reminders": [], "checklist": [], "startDate":
+        "2022-12-31T06:00:00.000Z", "daysOfMonth": [], "weeksOfMonth": [], "createdAt":
+        "2022-12-31T22:38:43.228Z", "updatedAt": "2024-06-15T20:29:14.382Z", "userId":
+        "cd18fc9f-b649-4384-932a-f3bda6fe8102", "isDue": true, "id": "ffb5fc60-1333-4e41-940d-b22da54a5c4c"},
+        {"repeat": {"m": false, "t": false, "w": false, "th": false, "f": false, "s":
+        true, "su": false}, "challenge": {}, "group": {"completedBy": {}, "assignedUsers":
+        []}, "_id": "c9a53bd9-c358-46f0-9922-2335a6a4a61c", "frequency": "weekly",
+        "everyX": 2, "streak": 9, "nextDue": ["2024-06-29T06:00:00.000Z", "2024-07-13T06:00:00.000Z",
+        "2024-07-27T06:00:00.000Z", "2024-08-10T06:00:00.000Z", "2024-08-24T06:00:00.000Z",
+        "2024-09-07T06:00:00.000Z"], "yesterDaily": true, "history": [{"date": 1666588912777,
+        "value": 2.7406796852900888}, {"date": 1672556668055, "value": 12.752184543227957},
+        {"date": 1688251704761, "value": 15.401432999072126}, {"date": 1691034797212,
+        "value": 15.748768855346347}, {"date": 1693636380337, "value": 16.426474514251392},
+        {"date": 1696201717674, "value": 14.087537143737753}, {"date": 1698977817588,
+        "value": 11.942190941863768}, {"date": 1701479857383, "value": 9.181497138090284},
+        {"date": 1704166388453, "value": 5.573903665920909}, {"date": 1706840726956,
+        "value": 2.784042953866379}, {"date": 1709329450731, "value": 4.350416736047891},
+        {"date": 1712029288633, "value": 4.444046226917685}, {"date": 1712430897068,
+        "value": 4.444046226917685, "isDue": false, "completed": false}, {"date":
+        1712437731606, "value": 5.336410262250128, "isDue": true, "completed": true},
+        {"date": 1712637700372, "value": 5.336410262250128, "isDue": false, "completed":
+        false}, {"date": 1712642662481, "value": 5.336410262250128, "isDue": false,
+        "completed": false}, {"date": 1712796744172, "value": 5.336410262250128, "isDue":
+        false, "completed": false}, {"date": 1712937526221, "value": 5.336410262250128,
+        "isDue": false, "completed": false}, {"date": 1712988987046, "value": 5.336410262250128,
+        "isDue": false, "completed": false}, {"date": 1713151919810, "value": 5.336410262250128,
+        "isDue": false, "completed": false}, {"date": 1713244187174, "value": 5.336410262250128,
+        "isDue": false, "completed": false}, {"date": 1713499874758, "value": 5.336410262250128,
+        "isDue": false, "completed": false}, {"date": 1713576476308, "value": 5.336410262250128,
+        "isDue": false, "completed": false}, {"date": 1713644499702, "value": 5.336410262250128,
+        "isDue": false, "completed": false}, {"date": 1713682565259, "value": 6.208599872820054,
+        "isDue": true, "completed": true}, {"date": 1714012394331, "value": 6.208599872820054,
+        "isDue": false, "completed": false}, {"date": 1714160987423, "value": 6.208599872820054,
+        "isDue": false, "completed": false}, {"date": 1714199036190, "value": 6.208599872820054,
+        "isDue": false, "completed": false}, {"date": 1714290493689, "value": 6.208599872820054,
+        "isDue": false, "completed": false}, {"date": 1714448083024, "value": 6.208599872820054,
+        "isDue": false, "completed": false}, {"date": 1714494449256, "value": 6.208599872820054,
+        "isDue": false, "completed": false}, {"date": 1714543905317, "value": 6.208599872820054,
+        "isDue": false, "completed": false}, {"date": 1714855833411, "value": 6.208599872820054,
+        "isDue": false, "completed": false}, {"date": 1714973670634, "value": 7.061511983953674,
+        "isDue": true, "completed": true}, {"date": 1715049757554, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1715217903803, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1715303580959, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1715362707885, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1715465064006, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1715575125789, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1715651876620, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1715753469621, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1715920608115, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1716069227335, "value": 7.061511983953674,
+        "isDue": false, "completed": false}, {"date": 1716069245660, "value": 7.895984799834825,
+        "isDue": true, "completed": true}, {"date": 1716586901942, "value": 7.895984799834825,
+        "isDue": false, "completed": false}, {"date": 1716685383840, "value": 7.895984799834825,
+        "isDue": false, "completed": false}, {"date": 1716738047815, "value": 7.895984799834825,
+        "isDue": false, "completed": false}, {"date": 1716947603997, "value": 7.895984799834825,
+        "isDue": false, "completed": false}, {"date": 1717293144259, "value": 7.895984799834825,
+        "isDue": false, "completed": false}, {"date": 1717293177688, "value": 8.712802832925195,
+        "isDue": true, "completed": true}, {"date": 1717556774203, "value": 8.712802832925195,
+        "isDue": false, "completed": false}, {"date": 1717642757247, "value": 8.712802832925195,
+        "isDue": false, "completed": false}, {"date": 1717733234841, "value": 8.712802832925195,
+        "isDue": false, "completed": false}, {"date": 1717998377776, "value": 8.712802832925195,
+        "isDue": false, "completed": false}, {"date": 1718072683387, "value": 8.712802832925195,
+        "isDue": false, "completed": false}, {"date": 1718332611486, "value": 8.712802832925195,
+        "isDue": false, "completed": false}, {"date": 1718418512520, "value": 8.712802832925195,
+        "isDue": false, "completed": false}, {"date": 1718483354332, "value": 8.712802832925195,
+        "isDue": false, "completed": false}, {"date": 1718483426357, "value": 9.512701405155571,
+        "isDue": true, "completed": true}], "completed": true, "collapseChecklist":
+        false, "type": "daily", "notes": "", "tags": ["05f0fe45-08fd-42d8-83e4-489fab5d2798",
+        "bd02e324-54b5-4ac7-98fc-1f7d1a700fce"], "value": 9.512701405155571, "priority":
+        1, "attribute": "str", "byHabitica": false, "text": "some test task 22", "reminders":
+        [], "checklist": [], "startDate": "2024-03-09T07:00:00.000Z", "daysOfMonth":
+        [], "weeksOfMonth": [], "createdAt": "2022-10-24T05:08:58.507Z", "updatedAt":
+        "2024-06-15T20:30:26.362Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "isDue": true, "id": "c9a53bd9-c358-46f0-9922-2335a6a4a61c"}, {"repeat": {"m":
+        false, "t": false, "w": false, "th": false, "f": false, "s": false, "su":
+        true}, "challenge": {}, "group": {"completedBy": {}, "approval": {"required":
+        false, "approved": false, "requested": false}, "assignedUsers": [], "sharedCompletion":
+        "singleCompletion"}, "_id": "7bb092cc-cccd-42cd-bad1-21d5995f3aba", "frequency":
+        "weekly", "everyX": 2, "streak": 16, "nextDue": ["Sun Jun 16 2024 00:00:00
+        GMT-0600", "Sun Jun 30 2024 00:00:00 GMT-0600", "Sun Jul 14 2024 00:00:00
+        GMT-0600", "Sun Jul 28 2024 00:00:00 GMT-0600", "Sun Aug 11 2024 00:00:00
+        GMT-0600", "Sun Aug 25 2024 00:00:00 GMT-0600"], "yesterDaily": true, "history":
+        [{"date": 1620627156752, "value": 10.330900046113243}, {"date": 1641090172836,
+        "value": 25.56170542860142}, {"date": 1672556668039, "value": 32.29296762270466},
+        {"date": 1688251704757, "value": 34.53827917057518}, {"date": 1691034797208,
+        "value": 35.15414391571458}, {"date": 1693636380331, "value": 36.35007162353123},
+        {"date": 1696201717671, "value": 36.74144012553354}, {"date": 1698977817582,
+        "value": 37.93875009738812}, {"date": 1701479857380, "value": 39.2538742832406},
+        {"date": 1704166388449, "value": 39.855147192557816}, {"date": 1706840726952,
+        "value": 40.98905871353001}, {"date": 1709329450727, "value": 42.23714486782669},
+        {"date": 1712119325750, "value": 42.802580081948044}, {"date": 1713499874755,
+        "value": 43.334072272106994, "isDue": false, "completed": false}, {"date":
+        1713576476306, "value": 43.334072272106994, "isDue": false, "completed": false},
+        {"date": 1713644499699, "value": 43.334072272106994, "isDue": false, "completed":
+        false}, {"date": 1713682565404, "value": 43.334072272106994, "isDue": false,
+        "completed": false}, {"date": 1714012394328, "value": 43.334072272106994,
+        "isDue": false, "completed": false}, {"date": 1714160987421, "value": 43.334072272106994,
+        "isDue": false, "completed": false}, {"date": 1714199036188, "value": 43.334072272106994,
+        "isDue": false, "completed": false}, {"date": 1714290493684, "value": 43.334072272106994,
+        "isDue": false, "completed": false}, {"date": 1714367527095, "value": 43.91388193409856,
+        "isDue": true, "completed": true}, {"date": 1714494449254, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1714543905316, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1714855833410, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1714973670782, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1715049757553, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1715217903802, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1715303580957, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1715362707884, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1715465064005, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1715575125787, "value": 43.91388193409856,
+        "isDue": false, "completed": false}, {"date": 1715576792644, "value": 44.49369159609013,
+        "isDue": true, "completed": true}, {"date": 1715753469620, "value": 44.49369159609013,
+        "isDue": false, "completed": false}, {"date": 1715920608110, "value": 44.49369159609013,
+        "isDue": false, "completed": false}, {"date": 1716069227334, "value": 44.49369159609013,
+        "isDue": false, "completed": false}, {"date": 1716255007663, "value": 44.49369159609013,
+        "isDue": false, "completed": false}, {"date": 1716586901941, "value": 44.49369159609013,
+        "isDue": false, "completed": false}, {"date": 1716685383839, "value": 44.49369159609013,
+        "isDue": false, "completed": false}, {"date": 1716738047814, "value": 44.49369159609013,
+        "isDue": false, "completed": false}, {"date": 1716787698903, "value": 45.0735012580817,
+        "isDue": true, "completed": true}, {"date": 1717293144258, "value": 45.0735012580817,
+        "isDue": false, "completed": false}, {"date": 1717386988675, "value": 45.0735012580817,
+        "isDue": false, "completed": false}, {"date": 1717556774201, "value": 45.0735012580817,
+        "isDue": false, "completed": false}, {"date": 1717642757246, "value": 45.0735012580817,
+        "isDue": false, "completed": false}, {"date": 1717733234839, "value": 45.0735012580817,
+        "isDue": false, "completed": false}, {"date": 1717998377775, "value": 45.0735012580817,
+        "isDue": false, "completed": false}, {"date": 1717998829158, "value": 45.65331092007327,
+        "isDue": true, "completed": true}, {"date": 1718332611485, "value": 45.65331092007327,
+        "isDue": false, "completed": false}, {"date": 1718418512519, "value": 45.65331092007327,
+        "isDue": false, "completed": false}, {"date": 1718483354331, "value": 45.65331092007327,
+        "isDue": false, "completed": false}], "completed": false, "collapseChecklist":
+        false, "type": "daily", "notes": "Test notes", "tags": ["05f0fe45-08fd-42d8-83e4-489fab5d2798",
+        "bd02e324-54b5-4ac7-98fc-1f7d1a700fce"], "value": 45.65331092007327, "priority":
+        1, "attribute": "str", "byHabitica": false, "text": "some test task 23", "reminders":
+        [], "checklist": [], "startDate": "2021-05-14T06:00:00.000Z", "daysOfMonth":
+        [], "weeksOfMonth": [], "createdAt": "2021-05-09T18:24:21.024Z", "updatedAt":
+        "2024-06-15T20:29:14.381Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "isDue": false, "id": "7bb092cc-cccd-42cd-bad1-21d5995f3aba"}, {"repeat":
+        {"m": true, "t": true, "w": true, "th": true, "f": true, "s": true, "su":
+        true}, "challenge": {}, "group": {"completedBy": {}, "approval": {"required":
+        false, "approved": false, "requested": false}, "assignedUsers": [], "sharedCompletion":
+        "singleCompletion"}, "_id": "28cca472-2e47-43cb-8151-c381154adea5", "frequency":
+        "daily", "everyX": 1, "streak": 8, "nextDue": ["Sun Jun 16 2024 00:00:00 GMT-0600",
+        "Mon Jun 17 2024 00:00:00 GMT-0600", "Tue Jun 18 2024 00:00:00 GMT-0600",
+        "Wed Jun 19 2024 00:00:00 GMT-0600", "Thu Jun 20 2024 00:00:00 GMT-0600",
+        "Fri Jun 21 2024 00:00:00 GMT-0600"], "yesterDaily": true, "history": [{"date":
+        1620540278185, "value": 90.46774700570988}, {"date": 1641155988911, "value":
+        238.47506458437527}, {"date": 1672634902438, "value": 310.2825210611648},
+        {"date": 1688251704538, "value": 325.98954151353996}, {"date": 1691034796946,
+        "value": 338.1983142764681}, {"date": 1693636380073, "value": 346.81990825038537},
+        {"date": 1696201717319, "value": 351.72836545986695}, {"date": 1698977817568,
+        "value": 362.22876524608546}, {"date": 1701557146200, "value": 374.31478064742896},
+        {"date": 1704166388441, "value": 382.3605016905026}, {"date": 1706895529949,
+        "value": 392.0752376803848}, {"date": 1709394232862, "value": 402.0923207780826},
+        {"date": 1712029299871, "value": 408.2476171947251}, {"date": 1713499882079,
+        "value": 412.0405387335868, "isDue": true, "completed": true}, {"date": 1713644499557,
+        "value": 412.6203483955784, "isDue": true, "completed": true}, {"date": 1713682565261,
+        "value": 413.20015805757, "isDue": true, "completed": true}, {"date": 1714012394135,
+        "value": 413.77996771956157, "isDue": true, "completed": true}, {"date": 1714160987417,
+        "value": 413.77996771956157, "isDue": true, "completed": false}, {"date":
+        1714199035996, "value": 414.35977738155316, "isDue": true, "completed": true},
+        {"date": 1714290493463, "value": 414.93958704354475, "isDue": true, "completed":
+        true}, {"date": 1714367527098, "value": 415.51939670553634, "isDue": true,
+        "completed": true}, {"date": 1714494442149, "value": 416.0992063675279, "isDue":
+        true, "completed": true}, {"date": 1714543904645, "value": 416.6790160295195,
+        "isDue": true, "completed": true}, {"date": 1714626655989, "value": 417.2588256915111,
+        "isDue": true, "completed": true}, {"date": 1714973670778, "value": 416.6790160295195,
+        "isDue": true, "completed": false}, {"date": 1714973870268, "value": 417.2588256915111,
+        "isDue": true, "completed": true}, {"date": 1715052807318, "value": 417.8386353535027,
+        "isDue": true, "completed": true}, {"date": 1715232392881, "value": 418.4184450154943,
+        "isDue": true, "completed": true}, {"date": 1715362707642, "value": 418.9982546774859,
+        "isDue": true, "completed": true}, {"date": 1715465062815, "value": 419.57806433947746,
+        "isDue": true, "completed": true}, {"date": 1715575125566, "value": 420.15787400146905,
+        "isDue": true, "completed": true}, {"date": 1715575135194, "value": 420.73768366346064,
+        "isDue": true, "completed": true}, {"date": 1715753453091, "value": 421.31749332545223,
+        "isDue": true, "completed": true}, {"date": 1715920607952, "value": 421.8973029874438,
+        "isDue": true, "completed": true}, {"date": 1715920613052, "value": 422.4771126494354,
+        "isDue": true, "completed": true}, {"date": 1716255007465, "value": 423.056922311427,
+        "isDue": true, "completed": true}, {"date": 1716261444153, "value": 423.6367319734186,
+        "isDue": true, "completed": true}, {"date": 1716685383833, "value": 423.056922311427,
+        "isDue": true, "completed": false}, {"date": 1716738047616, "value": 423.6367319734186,
+        "isDue": true, "completed": true}, {"date": 1716787699729, "value": 424.2165416354102,
+        "isDue": true, "completed": true}, {"date": 1716954864672, "value": 424.79635129740177,
+        "isDue": true, "completed": true}, {"date": 1717386988671, "value": 424.2165416354102,
+        "isDue": true, "completed": false}, {"date": 1717387495495, "value": 424.79635129740177,
+        "isDue": true, "completed": true}, {"date": 1717556793716, "value": 425.37616095939336,
+        "isDue": true, "completed": true}, {"date": 1717643348833, "value": 425.95597062138495,
+        "isDue": true, "completed": true}, {"date": 1717734042570, "value": 426.53578028337654,
+        "isDue": true, "completed": true}, {"date": 1717998683034, "value": 427.11558994536813,
+        "isDue": true, "completed": true}, {"date": 1718332611323, "value": 427.6953996073597,
+        "isDue": true, "completed": true}, {"date": 1718418512349, "value": 428.2752092693513,
+        "isDue": true, "completed": true}, {"date": 1718483354060, "value": 428.8550189313429,
+        "isDue": true, "completed": true}], "completed": false, "collapseChecklist":
+        false, "type": "daily", "notes": "Test notes", "tags": ["1ed97737-8020-49f9-a12e-194627286b8d"],
+        "value": 428.8550189313429, "priority": 1.5, "attribute": "str", "byHabitica":
+        false, "text": "some test task 24", "reminders": [], "checklist": [], "startDate":
+        "2021-05-08T06:00:00.000Z", "daysOfMonth": [], "weeksOfMonth": [], "createdAt":
+        "2021-05-09T03:11:21.770Z", "updatedAt": "2024-06-15T20:29:14.381Z", "userId":
+        "cd18fc9f-b649-4384-932a-f3bda6fe8102", "isDue": true, "id": "28cca472-2e47-43cb-8151-c381154adea5"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "efacadce-a887-4e5d-b68f-0072c3810b8e", "date": "2024-06-20T20:40:00.000Z",
+        "completed": false, "collapseChecklist": false, "type": "todo", "text": "some
+        test task 25", "notes": "Test notes", "tags": ["856446b2-7165-495c-8a17-ab7901c634c4"],
+        "value": 0, "priority": 1, "attribute": "str", "byHabitica": false, "checklist":
+        [], "reminders": [], "createdAt": "2024-06-15T20:40:24.801Z", "updatedAt":
+        "2024-06-15T20:41:16.115Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "efacadce-a887-4e5d-b68f-0072c3810b8e"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "a2daae19-c740-4b72-a09f-3f8298b61dfc",
+        "date": "2024-06-22T20:37:29.201Z", "completed": false, "collapseChecklist":
+        false, "type": "todo", "text": "some test task 26", "notes": "Test notes",
+        "tags": ["4eb8d4c0-12ee-4b9d-a5f9-d2342e327bb4", "bcbc6071-c6e0-4836-9495-5e3927c52aa5"],
+        "value": 0, "priority": 1.5, "attribute": "str", "byHabitica": false, "checklist":
+        [], "reminders": [], "createdAt": "2024-06-15T20:37:29.307Z", "updatedAt":
+        "2024-06-15T20:37:29.308Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "a2daae19-c740-4b72-a09f-3f8298b61dfc"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "3269a7f8-7e62-4c5a-aac2-c5b9855dd062",
+        "date": "2024-06-18T09:16:47.458Z", "completed": false, "collapseChecklist":
+        false, "type": "todo", "text": "some test task 27", "notes": "Test notes",
+        "tags": ["1094f207-ea65-4727-9932-95a16319d431"], "value": -3.0792442306676366,
+        "priority": 1, "attribute": "str", "byHabitica": false, "checklist": [], "reminders":
+        [], "createdAt": "2024-06-11T09:16:47.547Z", "updatedAt": "2024-06-15T20:29:14.382Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "3269a7f8-7e62-4c5a-aac2-c5b9855dd062"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "e83c60c4-87c7-4420-8f4d-afa142bba2e1", "date": "2024-06-15T09:16:00.000Z",
+        "completed": false, "collapseChecklist": false, "type": "todo", "text": "some
+        test task 28", "notes": "Test notes", "tags": ["7788a72c-7d93-4779-b355-84db9b60e9ba",
+        "4eb8d4c0-12ee-4b9d-a5f9-d2342e327bb4", "2ecdaa3f-c229-4590-889c-6ec22d56eb3d",
+        "809f863b-4f73-4efc-a2a9-8f4db5a00af8"], "value": -4.161348258391508, "priority":
+        1.5, "attribute": "str", "byHabitica": false, "checklist": [], "reminders":
+        [], "createdAt": "2024-06-10T09:16:45.446Z", "updatedAt": "2024-06-15T20:29:37.773Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "e83c60c4-87c7-4420-8f4d-afa142bba2e1"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "933b44a4-751b-46f6-b44e-03b67826a248", "date": null, "completed": false,
+        "collapseChecklist": false, "type": "todo", "text": "some test task 29", "notes":
+        "", "alias": "7537459267", "tags": [], "value": -5.2738783997395196, "priority":
+        2, "attribute": "str", "byHabitica": false, "checklist": [], "reminders":
+        [], "createdAt": "2024-06-08T23:20:47.416Z", "updatedAt": "2024-06-15T20:29:14.446Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "933b44a4-751b-46f6-b44e-03b67826a248"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "c24d505e-7267-45c2-98bc-5224d820fcc3", "completed": false, "collapseChecklist":
+        false, "checklist": [], "type": "todo", "text": "some test task 30", "notes":
+        "", "tags": [], "value": -6.418582324043852, "priority": 1, "attribute": "str",
+        "reminders": [], "byHabitica": false, "createdAt": "2024-06-06T03:11:04.379Z",
+        "updatedAt": "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "date": "2024-06-18T03:11:00.000Z", "id": "c24d505e-7267-45c2-98bc-5224d820fcc3"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "139b0480-85ee-4823-9b4d-7f8309fe613f", "completed": false, "collapseChecklist":
+        false, "checklist": [], "type": "todo", "text": "some test task 31", "notes":
+        "", "tags": [], "value": -6.418582324043852, "priority": 1, "attribute": "str",
+        "reminders": [], "byHabitica": false, "createdAt": "2024-06-06T03:10:25.159Z",
+        "updatedAt": "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "date": "2024-06-18T03:10:00.000Z", "id": "139b0480-85ee-4823-9b4d-7f8309fe613f"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "c315295a-a9d2-4a89-867a-39348496dff1", "date": "2024-06-21T20:35:39.941Z",
+        "completed": false, "collapseChecklist": false, "type": "todo", "text": "some
+        test task 32", "notes": "Test notes", "tags": [], "value": -8.812292068721371,
+        "priority": 1, "attribute": "str", "byHabitica": false, "checklist": [], "reminders":
+        [], "createdAt": "2024-06-03T09:17:49.597Z", "updatedAt": "2024-06-15T20:35:40.081Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "c315295a-a9d2-4a89-867a-39348496dff1"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "f7401012-3995-4635-be04-f109aec9c186", "date": "2024-06-16T09:19:00.000Z",
+        "completed": false, "collapseChecklist": false, "type": "todo", "text": "some
+        test task 33", "notes": "Test notes", "tags": ["7788a72c-7d93-4779-b355-84db9b60e9ba",
+        "05f0fe45-08fd-42d8-83e4-489fab5d2798", "bcbc6071-c6e0-4836-9495-5e3927c52aa5"],
+        "value": -18.55139045257033, "priority": 1.5, "attribute": "str", "byHabitica":
+        false, "checklist": [], "reminders": [], "createdAt": "2024-05-19T09:19:17.328Z",
+        "updatedAt": "2024-06-15T20:30:08.095Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "f7401012-3995-4635-be04-f109aec9c186"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "41a3d1a0-b052-45ca-8c12-f9a6f8c5dd14",
+        "completed": false, "collapseChecklist": false, "checklist": [], "type": "todo",
+        "text": "some test task 34", "notes": "", "tags": [], "value": -107.7183174955431,
+        "priority": 1, "attribute": "str", "reminders": [], "byHabitica": false, "createdAt":
+        "2024-04-07T05:16:06.224Z", "updatedAt": "2024-06-15T20:29:14.382Z", "userId":
+        "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "41a3d1a0-b052-45ca-8c12-f9a6f8c5dd14"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "5ecfaa33-24a1-4fc9-8857-635586694c3a", "completed": false, "collapseChecklist":
+        false, "checklist": [], "type": "todo", "text": "some test task 35", "notes":
+        "", "tags": [], "value": -134.58162114237808, "priority": 1, "attribute":
+        "str", "reminders": [], "byHabitica": false, "createdAt": "2024-03-28T23:42:14.251Z",
+        "updatedAt": "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "5ecfaa33-24a1-4fc9-8857-635586694c3a"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "ae17000f-4e0e-4de7-a544-5ecbd1759f93",
+        "completed": false, "collapseChecklist": false, "checklist": [], "type": "todo",
+        "text": "some test task 36", "notes": "", "tags": [], "value": -134.58162114237808,
+        "priority": 1, "attribute": "str", "reminders": [], "byHabitica": false, "createdAt":
+        "2024-03-28T23:38:51.137Z", "updatedAt": "2024-06-15T20:29:14.382Z", "userId":
+        "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "ae17000f-4e0e-4de7-a544-5ecbd1759f93"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "e5f8d4b4-9758-49a0-b74b-7eeba62e00b0", "completed": false, "collapseChecklist":
+        false, "checklist": [], "type": "todo", "text": "some test task 37", "notes":
+        "", "tags": [], "value": -148.01327296579558, "priority": 1, "attribute":
+        "str", "reminders": [], "byHabitica": false, "createdAt": "2024-03-24T03:43:28.264Z",
+        "updatedAt": "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "e5f8d4b4-9758-49a0-b74b-7eeba62e00b0"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "b13fa87a-f206-4dde-9da0-a7737b16d43a",
+        "date": null, "completed": false, "collapseChecklist": false, "type": "todo",
+        "text": "some test task 38", "notes": "", "alias": "7659234747", "tags": [],
+        "value": -258.8244005089899, "priority": 2, "attribute": "str", "byHabitica":
+        false, "checklist": [], "reminders": [], "createdAt": "2024-02-09T05:10:28.605Z",
+        "updatedAt": "2024-06-15T20:29:14.445Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "b13fa87a-f206-4dde-9da0-a7737b16d43a"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "f94ba56b-59b6-4752-b866-5cca1b60c796",
+        "date": null, "completed": false, "collapseChecklist": false, "type": "todo",
+        "text": "some test task 39", "notes": "", "alias": "4986052922", "tags": [],
+        "value": -258.8244005089899, "priority": 1, "attribute": "str", "byHabitica":
+        false, "checklist": [], "reminders": [], "createdAt": "2024-02-09T05:08:56.500Z",
+        "updatedAt": "2024-06-15T20:29:14.451Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "f94ba56b-59b6-4752-b866-5cca1b60c796"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "957f7dfe-866a-4250-ab51-08ecb437c380",
+        "date": null, "completed": false, "collapseChecklist": false, "type": "todo",
+        "text": "some test task 40", "notes": "", "alias": "7593975409", "tags": [],
+        "value": -315.9089207585143, "priority": 1, "attribute": "str", "byHabitica":
+        false, "checklist": [], "reminders": [], "createdAt": "2024-01-21T05:16:15.959Z",
+        "updatedAt": "2024-06-15T20:29:14.450Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "957f7dfe-866a-4250-ab51-08ecb437c380"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "e5e2a61f-a2e1-4b5d-82b9-997b3b9f86c3",
+        "date": null, "completed": false, "collapseChecklist": false, "type": "todo",
+        "text": "some test task 41", "notes": "", "alias": "7593974424", "tags": [],
+        "value": -315.9089207585143, "priority": 1, "attribute": "str", "byHabitica":
+        false, "checklist": [], "reminders": [], "createdAt": "2024-01-21T05:16:12.975Z",
+        "updatedAt": "2024-06-15T20:29:14.444Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "e5e2a61f-a2e1-4b5d-82b9-997b3b9f86c3"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "55f2378b-8adc-44e9-b92b-d94b6aa1f3d1",
+        "date": null, "completed": false, "collapseChecklist": false, "type": "todo",
+        "text": "some test task 42", "notes": "", "alias": "7593971961", "tags": [],
+        "value": -315.9089207585143, "priority": 1, "attribute": "str", "byHabitica":
+        false, "checklist": [], "reminders": [], "createdAt": "2024-01-21T05:16:09.781Z",
+        "updatedAt": "2024-06-15T20:29:14.444Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "55f2378b-8adc-44e9-b92b-d94b6aa1f3d1"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "feb2449b-89a9-41bd-a65f-8db52ff20b34",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 43", "date": null, "alias": "7561038910",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:47.716Z",
+        "updatedAt": "2024-06-15T20:29:14.443Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "feb2449b-89a9-41bd-a65f-8db52ff20b34"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "64711b3f-6279-43c0-80c7-a5ae5a8a8bb3",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 44", "date": null, "alias": "7561035934",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:43.830Z",
+        "updatedAt": "2024-06-15T20:29:14.443Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "64711b3f-6279-43c0-80c7-a5ae5a8a8bb3"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "3ce45936-0641-4778-aec4-c6e2ffdb9abf",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 45", "date": null, "alias": "7561035342",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:39.832Z",
+        "updatedAt": "2024-06-15T20:29:14.442Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "3ce45936-0641-4778-aec4-c6e2ffdb9abf"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "75a3d8d2-b43c-4dcc-bb7d-ea2642c9fafc",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 46", "date": null, "alias": "7561033180",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:35.545Z",
+        "updatedAt": "2024-06-15T20:29:14.442Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "75a3d8d2-b43c-4dcc-bb7d-ea2642c9fafc"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "67382110-45da-41d7-87f4-a183f6fd0eae",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 47", "date": null, "alias": "7561032075",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:31.389Z",
+        "updatedAt": "2024-06-15T20:29:14.441Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "67382110-45da-41d7-87f4-a183f6fd0eae"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "c52be8d9-0e73-4ba8-9206-c5756093e30e",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 48", "date": null, "alias": "7560990338",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:26.944Z",
+        "updatedAt": "2024-06-15T20:29:14.441Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "c52be8d9-0e73-4ba8-9206-c5756093e30e"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "df9ff13e-1048-4ec1-8636-819287360f10",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 49", "date": null, "alias": "7560982835",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:23.037Z",
+        "updatedAt": "2024-06-15T20:29:14.440Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "df9ff13e-1048-4ec1-8636-819287360f10"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "d803f539-068b-4e6d-9eec-7a8cb51dfa19",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 50", "date": null, "alias": "7560981747",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:19.152Z",
+        "updatedAt": "2024-06-15T20:29:14.439Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "d803f539-068b-4e6d-9eec-7a8cb51dfa19"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "6c4a3705-c912-4bf9-b6bd-8697cd882014",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 51", "date": null, "alias": "7560981204",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:31:15.151Z",
+        "updatedAt": "2024-06-15T20:29:14.439Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "6c4a3705-c912-4bf9-b6bd-8697cd882014"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "08140b17-1419-42b6-9774-eacdc5742bd6",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 52", "date": null, "alias": "7560980313",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:30:52.796Z",
+        "updatedAt": "2024-06-15T20:29:14.438Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "08140b17-1419-42b6-9774-eacdc5742bd6"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "0860376d-db31-4173-bcf6-69620cb99c9f",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 53", "date": null, "alias": "7560980112",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-07T04:30:38.544Z",
+        "updatedAt": "2024-06-15T20:29:14.438Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "0860376d-db31-4173-bcf6-69620cb99c9f"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "0116d267-12a1-4279-b9ee-82a4725c581c",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 54", "date": null, "alias": "7560979522",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:29:07.077Z",
+        "updatedAt": "2024-06-15T20:29:14.437Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "0116d267-12a1-4279-b9ee-82a4725c581c"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "060ebc3f-ae02-4459-a3ab-54a5ec6c82e3",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 55", "date": null, "alias": "7560960658",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:29:06.488Z",
+        "updatedAt": "2024-06-15T20:29:14.437Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "060ebc3f-ae02-4459-a3ab-54a5ec6c82e3"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "f2f77b80-0fcc-4721-8628-71ec143c0943",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 56", "date": null, "alias": "7560960323",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:29:05.670Z",
+        "updatedAt": "2024-06-15T20:29:14.436Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "f2f77b80-0fcc-4721-8628-71ec143c0943"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "bb996a2c-83c2-4d88-95e8-c5a322c70c1a",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 57", "date": null, "alias": "7560960012",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:25:26.461Z",
+        "updatedAt": "2024-06-15T20:29:14.441Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "bb996a2c-83c2-4d88-95e8-c5a322c70c1a"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "f9744bf1-3392-489e-a85f-2f345cb2ccf1",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 58", "date": null, "alias": "7560958073",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:25:25.488Z",
+        "updatedAt": "2024-06-15T20:29:14.440Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "f9744bf1-3392-489e-a85f-2f345cb2ccf1"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "c145c40a-923c-4783-94fa-f45f16217d9d",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 59", "date": null, "alias": "7560902351",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:25:23.073Z",
+        "updatedAt": "2024-06-15T20:29:14.432Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "c145c40a-923c-4783-94fa-f45f16217d9d"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "29104b84-fd31-41b9-9cd5-b2b6a078b63e",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 60", "date": null, "alias": "7560883540",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:18:27.289Z",
+        "updatedAt": "2024-06-15T20:29:14.432Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "29104b84-fd31-41b9-9cd5-b2b6a078b63e"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "04ed6bcf-a807-4580-b882-168baaacadec",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 61", "date": null, "alias": "7560879459",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:18:24.751Z",
+        "updatedAt": "2024-06-15T20:29:14.431Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "04ed6bcf-a807-4580-b882-168baaacadec"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "0092675a-c093-4fe4-ba25-af6c36d0cad4",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 62", "date": null, "alias": "7560877598",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:18:20.276Z",
+        "updatedAt": "2024-06-15T20:29:14.431Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "0092675a-c093-4fe4-ba25-af6c36d0cad4"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "2ebbdef7-2359-46dd-b76f-bd98fdf2a2fa",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 63", "date": null, "alias": "7559881707",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:18:19.401Z",
+        "updatedAt": "2024-06-15T20:29:14.431Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "2ebbdef7-2359-46dd-b76f-bd98fdf2a2fa"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "d96c6b80-b0ae-4af3-a45c-4152dea47d56",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 64", "date": null, "alias": "7559681068",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:18:18.335Z",
+        "updatedAt": "2024-06-15T20:29:14.430Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "d96c6b80-b0ae-4af3-a45c-4152dea47d56"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "025f941c-2b81-4a0e-a7dc-7826743ef891",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -342.7722244053493, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 65", "date": null, "alias": "7555209349",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-06T23:18:17.789Z",
+        "updatedAt": "2024-06-15T20:29:14.430Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "025f941c-2b81-4a0e-a7dc-7826743ef891"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "bf05a554-8dd0-4ed8-8e8b-b68bc1c46af9",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "Test
+        notes", "tags": [], "value": -349.488050317058, "priority": 1, "attribute":
+        "str", "byHabitica": false, "text": "some test task 66", "date": null, "checklist":
+        [], "reminders": [], "createdAt": "2024-01-03T13:10:26.747Z", "updatedAt":
+        "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "bf05a554-8dd0-4ed8-8e8b-b68bc1c46af9"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "fd93ea28-9a91-49c5-aca8-2afa7dc91d18",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -352.8459632729124, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 67", "date": null, "alias": "7553118850",
+        "checklist": [], "reminders": [], "createdAt": "2024-01-03T04:43:04.064Z",
+        "updatedAt": "2024-06-15T20:29:14.433Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "fd93ea28-9a91-49c5-aca8-2afa7dc91d18"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "3ed2cb27-cc1f-4f47-b412-0fbab5dcf223",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 68", "date": null, "alias": "7540153842",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:35.535Z",
+        "updatedAt": "2024-06-15T20:29:14.428Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "3ed2cb27-cc1f-4f47-b412-0fbab5dcf223"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "c1c41ab2-ed9a-408c-aa78-4957f6baf258",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 69", "date": null, "alias": "7540152744",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:34.930Z",
+        "updatedAt": "2024-06-15T20:29:14.428Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "c1c41ab2-ed9a-408c-aa78-4957f6baf258"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "21e3b74e-146b-452f-abde-b1ced1c6f417",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 70", "date": null, "alias": "7540152506",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:34.258Z",
+        "updatedAt": "2024-06-15T20:29:14.427Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "21e3b74e-146b-452f-abde-b1ced1c6f417"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "b76a6745-44b7-4643-a1a2-82ad12b68e1a",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 71", "date": null, "alias": "7540152259",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:33.617Z",
+        "updatedAt": "2024-06-15T20:29:14.427Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "b76a6745-44b7-4643-a1a2-82ad12b68e1a"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "c886adfa-5d71-469f-868e-737f47b37fd5",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 72", "date": null, "alias": "7540150340",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:32.277Z",
+        "updatedAt": "2024-06-15T20:29:14.427Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "c886adfa-5d71-469f-868e-737f47b37fd5"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "41cf80f0-b525-4f41-ab1c-652bce106acf",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 73", "date": null, "alias": "7540149823",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:30.889Z",
+        "updatedAt": "2024-06-15T20:29:14.426Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "41cf80f0-b525-4f41-ab1c-652bce106acf"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "467d51af-92c7-4bd5-8ddb-d456eb8527a3",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 74", "date": null, "alias": "7540148541",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:29.970Z",
+        "updatedAt": "2024-06-15T20:29:14.429Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "467d51af-92c7-4bd5-8ddb-d456eb8527a3"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "2701cecd-2749-4b4a-bfb7-71551926d45b",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 75", "date": null, "alias": "7540147800",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:28.415Z",
+        "updatedAt": "2024-06-15T20:29:14.429Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "2701cecd-2749-4b4a-bfb7-71551926d45b"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "32543f80-af54-4704-8cef-5c3324b1389d",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 76", "date": null, "alias": "7540146080",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:05.719Z",
+        "updatedAt": "2024-06-15T20:29:14.429Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "32543f80-af54-4704-8cef-5c3324b1389d"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "e04ac5d8-a64a-40a8-8692-0bb0a2bc35d5",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 77", "date": null, "alias": "7540145333",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:04.948Z",
+        "updatedAt": "2024-06-15T20:29:14.424Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "e04ac5d8-a64a-40a8-8692-0bb0a2bc35d5"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "a477123a-e1cf-47c9-a975-8de305adba6e",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 78", "date": null, "alias": "7540144704",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:04.274Z",
+        "updatedAt": "2024-06-15T20:29:14.424Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "a477123a-e1cf-47c9-a975-8de305adba6e"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "f6265a1e-2dad-4579-b8a1-186cc76b4d95",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 79", "date": null, "alias": "7540142388",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:20:03.713Z",
+        "updatedAt": "2024-06-15T20:29:14.424Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "f6265a1e-2dad-4579-b8a1-186cc76b4d95"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "0ef2176f-fba3-46d2-ac6d-43009de0f572",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 80", "date": null, "alias": "7540139149",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:09:09.513Z",
+        "updatedAt": "2024-06-15T20:29:14.426Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "0ef2176f-fba3-46d2-ac6d-43009de0f572"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "c3e38999-9a29-4606-9b63-784f933c3fc6",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 81", "date": null, "alias": "7540136788",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:09:08.946Z",
+        "updatedAt": "2024-06-15T20:29:14.425Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "c3e38999-9a29-4606-9b63-784f933c3fc6"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "c142042c-d6bf-4dd5-afc5-d9d51058f5bc",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 82", "date": null, "alias": "7540134847",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:09:07.765Z",
+        "updatedAt": "2024-06-15T20:29:14.425Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "c142042c-d6bf-4dd5-afc5-d9d51058f5bc"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "849adda8-3899-4417-a06a-e6687546c229",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 83", "date": null, "alias": "7540132474",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:04:35.360Z",
+        "updatedAt": "2024-06-15T20:29:14.425Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "849adda8-3899-4417-a06a-e6687546c229"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "35a933af-2946-4911-b3de-eca69c3b9249",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 84", "date": null, "alias": "7540130284",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:03:34.863Z",
+        "updatedAt": "2024-06-15T20:29:14.422Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "35a933af-2946-4911-b3de-eca69c3b9249"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "fb83d91a-a762-432a-b80a-d8bc23785514",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 85", "date": null, "alias": "7540122581",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:00:52.227Z",
+        "updatedAt": "2024-06-15T20:29:14.422Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "fb83d91a-a762-432a-b80a-d8bc23785514"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "83b615fd-9ff0-4d08-bfa3-e3795c92630a",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 86", "date": null, "alias": "7540121533",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T23:00:51.406Z",
+        "updatedAt": "2024-06-15T20:29:14.423Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "83b615fd-9ff0-4d08-bfa3-e3795c92630a"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "2fa94bc8-ca8e-4006-a407-190e80d88cae",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 87", "date": null, "alias": "7540118482",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T22:56:23.874Z",
+        "updatedAt": "2024-06-15T20:29:14.423Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "2fa94bc8-ca8e-4006-a407-190e80d88cae"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "fb4088cf-97cd-431f-9d86-803951d2d324",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 88", "date": null, "alias": "7540114923",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T22:53:37.310Z",
+        "updatedAt": "2024-06-15T20:29:14.422Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "fb4088cf-97cd-431f-9d86-803951d2d324"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "b69866f2-4e8d-465e-b325-7aa0d2781ca5",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 89", "date": null, "alias": "7540060444",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T22:21:55.035Z",
+        "updatedAt": "2024-06-15T20:29:14.420Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "b69866f2-4e8d-465e-b325-7aa0d2781ca5"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "ea08713a-9a9c-4bbd-8d73-365da64a0567",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 90", "date": null, "alias": "7540059617",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T22:21:54.207Z",
+        "updatedAt": "2024-06-15T20:29:14.421Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "ea08713a-9a9c-4bbd-8d73-365da64a0567"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "cf8752ed-a3c4-460a-995b-1ea8821aab78",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -369.63552805218427, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 91", "date": null, "alias": "7540048302",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T22:15:17.719Z",
+        "updatedAt": "2024-06-15T20:29:14.423Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "cf8752ed-a3c4-460a-995b-1ea8821aab78"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "3fe96bfa-d3de-4463-a441-91ca4fa639ab",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -372.99344100803864, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 92", "date": null, "alias": "7537478714",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T21:57:04.948Z",
+        "updatedAt": "2024-06-15T20:29:14.420Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "3fe96bfa-d3de-4463-a441-91ca4fa639ab"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "625fe1ff-b9db-411f-a89d-ccd5601c9f90",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -372.99344100803864, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 93", "date": null, "alias": "7537456090",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T21:57:03.248Z",
+        "updatedAt": "2024-06-15T20:29:14.418Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "625fe1ff-b9db-411f-a89d-ccd5601c9f90"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "c0ed7c6e-5570-457a-b2ef-214cf3ed1acc",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -372.99344100803864, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 94", "date": null, "alias": "7537452805",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T21:56:57.005Z",
+        "updatedAt": "2024-06-15T20:29:14.419Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "c0ed7c6e-5570-457a-b2ef-214cf3ed1acc"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "48cbb0f7-065b-4c81-bd8b-7b7d241db557",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -372.99344100803864, "priority": 2, "attribute": "str",
+        "byHabitica": false, "text": "some test task 95", "date": null, "alias": "7537448677",
+        "checklist": [], "reminders": [], "createdAt": "2023-12-28T21:56:55.986Z",
+        "updatedAt": "2024-06-15T20:29:14.419Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "48cbb0f7-065b-4c81-bd8b-7b7d241db557"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "6d817628-cbdb-41da-a6f8-b6a6eb2ff080",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -376.351353963893, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 96", "date": "2023-12-26T00:00:00.000Z",
+        "alias": "7535313661", "checklist": [], "reminders": [], "createdAt": "2023-12-27T06:34:02.546Z",
+        "updatedAt": "2024-06-15T20:29:14.418Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "6d817628-cbdb-41da-a6f8-b6a6eb2ff080"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "034d5422-babe-433b-903d-5c9f2d4e0464",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -376.351353963893, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 97", "date": "2023-12-26T00:00:00.000Z",
+        "alias": "7535237188", "checklist": [], "reminders": [], "createdAt": "2023-12-27T05:24:37.631Z",
+        "updatedAt": "2024-06-15T20:29:14.417Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "034d5422-babe-433b-903d-5c9f2d4e0464"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "d09f0f21-df5d-4b27-80d9-290a1609253e",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -577.8261313151544, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 98", "date": null, "alias": "4838805235",
+        "checklist": [], "reminders": [], "createdAt": "2023-10-08T03:22:55.996Z",
+        "updatedAt": "2024-06-15T20:29:14.418Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "d09f0f21-df5d-4b27-80d9-290a1609253e"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "c1cf4736-74df-4a33-8df5-84e3de09e19c",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -644.9843904322407, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 99", "date": null, "alias": "5249822770",
+        "checklist": [], "reminders": [], "createdAt": "2023-09-03T02:15:55.953Z",
+        "updatedAt": "2024-06-15T20:29:14.417Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "c1cf4736-74df-4a33-8df5-84e3de09e19c"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "d3d54140-c15d-476e-b1e9-ba70fe28b517",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -644.9843904322407, "priority": 1.5, "attribute": "str",
+        "byHabitica": false, "text": "some test task 100", "date": null, "alias":
+        "5012141353", "checklist": [], "reminders": [], "createdAt": "2023-09-03T02:15:55.514Z",
+        "updatedAt": "2024-06-15T20:29:14.416Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "d3d54140-c15d-476e-b1e9-ba70fe28b517"}, {"challenge": {}, "group":
+        {"completedBy": {}, "assignedUsers": []}, "_id": "8c344f2e-43b7-4c9e-8c15-2b6129dfe014",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "",
+        "tags": [], "value": -1088.2289006050107, "priority": 1, "attribute": "str",
+        "byHabitica": false, "text": "some test task 101", "reminders": [], "checklist":
+        [], "createdAt": "2023-03-27T02:50:36.111Z", "updatedAt": "2024-06-15T20:29:14.382Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "date": null, "id": "8c344f2e-43b7-4c9e-8c15-2b6129dfe014"},
+        {"challenge": {"taskId": "9f4d74df-e6c0-410a-a636-5fd57980edc2", "id": "2ecdaa3f-c229-4590-889c-6ec22d56eb3d",
+        "shortName": "Test challenge", "broken": "CHALLENGE_CLOSED", "winner": "Bumbleshoot
+        (she/her)"}, "group": {"completedBy": {}, "assignedUsers": []}, "_id": "08aa3ff0-7f1c-4e6d-8c24-658c499d2dfd",
+        "completed": false, "collapseChecklist": false, "type": "todo", "notes": "Test
+        notes", "tags": ["2ecdaa3f-c229-4590-889c-6ec22d56eb3d"], "value": -1363.5777629850647,
+        "priority": 2, "attribute": "str", "byHabitica": false, "reminders": [], "text":
+        "some test task 102", "checklist": [], "createdAt": "2023-01-01T03:12:54.456Z",
+        "updatedAt": "2024-06-15T20:29:14.382Z", "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102",
+        "id": "08aa3ff0-7f1c-4e6d-8c24-658c499d2dfd"}, {"challenge": {}, "group":
+        {"completedBy": {}, "approval": {"required": false, "approved": false, "requested":
+        false}, "assignedUsers": [], "sharedCompletion": "singleCompletion"}, "_id":
+        "dc2f7866-56b6-4892-873b-b5347a89eb4f", "completed": false, "collapseChecklist":
+        false, "type": "todo", "notes": "", "tags": [], "value": -2894.7860708546336,
+        "priority": 1, "attribute": "str", "byHabitica": false, "text": "some test
+        task 103", "date": null, "alias": "5009431616", "checklist": [], "reminders":
+        [], "createdAt": "2021-07-22T03:39:33.683Z", "updatedAt": "2024-06-15T20:29:14.416Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "dc2f7866-56b6-4892-873b-b5347a89eb4f"},
+        {"challenge": {}, "group": {"completedBy": {}, "approval": {"required": false,
+        "approved": false, "requested": false}, "assignedUsers": [], "sharedCompletion":
+        "singleCompletion"}, "_id": "df3b5377-103a-401d-a2e5-b5011905ec86", "completed":
+        false, "collapseChecklist": false, "type": "todo", "notes": "", "tags": ["4eb8d4c0-12ee-4b9d-a5f9-d2342e327bb4",
+        "7788a72c-7d93-4779-b355-84db9b60e9ba"], "value": -2894.7860708546336, "priority":
+        1.5, "attribute": "str", "byHabitica": false, "text": "some test task 104",
+        "date": null, "alias": "5009433492", "checklist": [], "reminders": [], "createdAt":
+        "2021-07-22T03:39:33.386Z", "updatedAt": "2024-06-15T20:29:14.415Z", "userId":
+        "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "df3b5377-103a-401d-a2e5-b5011905ec86"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "d1c337da-7094-4018-993e-143f3064b097", "date": "2024-06-16T23:00:00.000Z",
+        "completed": false, "collapseChecklist": false, "type": "todo", "text": "some
+        test task 105", "notes": "", "alias": "7540066382", "tags": [], "value": -10.065641264772074,
+        "priority": 1, "attribute": "str", "byHabitica": false, "checklist": [], "reminders":
+        [], "createdAt": "2024-06-02T06:31:25.330Z", "updatedAt": "2024-06-15T20:29:48.287Z",
+        "userId": "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "d1c337da-7094-4018-993e-143f3064b097"},
+        {"challenge": {}, "group": {"completedBy": {}, "assignedUsers": []}, "_id":
+        "8b44357a-fb63-4951-ad39-ee76a857a57e", "type": "reward", "text": "some reward",
+        "notes": "Test notes", "alias": "sitepass", "tags": [], "value": 0, "priority":
+        1, "attribute": "str", "byHabitica": false, "reminders": [], "createdAt":
+        "2024-03-02T22:14:06.426Z", "updatedAt": "2024-03-02T22:14:06.426Z", "userId":
+        "cd18fc9f-b649-4384-932a-f3bda6fe8102", "id": "8b44357a-fb63-4951-ad39-ee76a857a57e"}],
+        "notifications": [{"type": "GROUP_INVITE_ACCEPTED", "data": {"headerText":
+        "Your Invitation has been Accepted", "bodyText": "username1 accepted your
+        invitation to username2''s Party!"}, "seen": false, "id": "b3ea6eb5-a3ef-451b-a844-a539e61bb9b2"},
+        {"type": "NEW_STUFF", "data": {"title": "COMING ON JUNE 21! NEW CONTENT, NEW
+        RELEASE SCHEDULE, NEW SHOP, AND SUMMER SPLASH KICKS OFF!"}, "seen": true,
+        "id": "ff1b1ef3-7a85-40af-adbb-fc7892dccff0"}], "appVersion": "5.25.2"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,Accept,Content-Encoding,X-Requested-With,x-api-user,x-api-key,x-client
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST,PUT,HEAD,DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset,Retry-After
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 16 Jun 2024 07:34:51 GMT
+      Set-Cookie:
+      - <redacted>
+      - <redacted>
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Amz-Cf-Id: <redacted>
+      X-Content-Type-Options:
+      - nosniff
+      X-DNS-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Express
+      X-RateLimit-Limit:
+      - '30'
+      X-RateLimit-Remaining:
+      - '29'
+      X-RateLimit-Reset:
+      - Sun Jun 16 2024 07:35:51 GMT+0000 (Coordinated Universal Time)
+      X-XSS-Protection:
+      - '0'
+      content-length:
+      - '116369'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer d1347120363c2b310653f610d382729bd51e13c6
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://api.todoist.com/rest/v2/tasks
+  response:
+    body:
+      string: '[{"id": "4838805235", "assigner_id": null, "assignee_id": null, "project_id":
+        "2325654971", "section_id": "142870400", "parent_id": null, "order": 3, "content":
+        "some test task 107", "description": "", "is_completed": false, "labels":
+        [], "priority": 2, "comment_count": 1, "creator_id": "33931948", "created_at":
+        "2021-05-19T02:17:28.278377Z", "due": null, "url": "https://todoist.com/app/task/4838805235",
+        "duration": null, "user_id": "34534534534"}, {"id": "4986052922", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325654971", "section_id": "142870400",
+        "parent_id": "4838805235", "order": 2, "content": "some test task 108", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2021-07-13T04:36:40.935458Z", "due":
+        null, "url": "https://todoist.com/app/task/4986052922", "duration": null,
+        "user_id": "34534534534"}, {"id": "5009431616", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325654971", "section_id": "142870400", "parent_id":
+        "4838805235", "order": 3, "content": "some test task 109", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2021-07-22T02:36:46.476358Z", "due":
+        null, "url": "https://todoist.com/app/task/5009431616", "duration": null,
+        "user_id": "34534534534"}, {"id": "5009433492", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325654971", "section_id": "142870409", "parent_id":
+        null, "order": 0, "content": "some test task 110", "description": "It appears
+        neglect from maintainers has caused program to be broken", "is_completed":
+        false, "labels": [], "priority": 3, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2021-07-22T02:38:33.067793Z", "due": null, "url": "https://todoist.com/app/task/5009433492",
+        "duration": null, "user_id": "34534534534"}, {"id": "5012141353", "assigner_id":
+        null, "assignee_id": null, "project_id": "2268090338", "section_id": "52413299",
+        "parent_id": null, "order": 1, "content": "some test task 111", "description":
+        "- If you can find one that works for you, start to wear it whenever you are
+        going to be around single women (i.e., at your singles ward).", "is_completed":
+        false, "labels": [], "priority": 3, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2021-07-23T02:54:10.039665Z", "due": null, "url": "https://todoist.com/app/task/5012141353",
+        "duration": null, "user_id": "34534534534"}, {"id": "5249822770", "assigner_id":
+        null, "assignee_id": null, "project_id": "2268090338", "section_id": "52413299",
+        "parent_id": "5012141353", "order": 1, "content": "some test task 112", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2021-10-18T02:47:25.592629Z", "due":
+        null, "url": "https://todoist.com/app/task/5249822770", "duration": null,
+        "user_id": "34534534534"}, {"id": "7535237188", "assigner_id": null, "assignee_id":
+        null, "project_id": "2265601233", "section_id": null, "parent_id": null, "order":
+        1, "content": "some test task 113", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-27T05:23:56.390295Z", "due": {"date": "2023-12-26",
+        "string": "Dec 26", "lang": "en", "is_recurring": false}, "url": "https://todoist.com/app/task/7535237188",
+        "duration": null, "user_id": "34534534534"}, {"id": "7535313661", "assigner_id":
+        null, "assignee_id": null, "project_id": "2265601233", "section_id": null,
+        "parent_id": null, "order": 2, "content": "some test task 114", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-27T06:29:13.179114Z", "due":
+        {"date": "2023-12-26", "string": "Dec 26", "lang": "en", "is_recurring": false},
+        "url": "https://todoist.com/app/task/7535313661", "duration": null, "user_id":
+        "34534534534"}, {"id": "7537448677", "assigner_id": null, "assignee_id": null,
+        "project_id": "2266383530", "section_id": null, "parent_id": null, "order":
+        1, "content": "some test task 115", "description": "", "is_completed": false,
+        "labels": [], "priority": 4, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-27T22:56:42.824640Z", "due": null, "url": "https://todoist.com/app/task/7537448677",
+        "duration": null, "user_id": "34534534534"}, {"id": "7537452805", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325654971", "section_id": "142870409",
+        "parent_id": null, "order": 1, "content": "some test task 116", "description":
+        "Important because: it potentially improves getting things done.", "is_completed":
+        false, "labels": [], "priority": 4, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-27T22:59:36.688300Z", "due": null, "url": "https://todoist.com/app/task/7537452805",
+        "duration": null, "user_id": "34534534534"}, {"id": "7537456090", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325654971", "section_id": "142870409",
+        "parent_id": null, "order": 2, "content": "some test task 117", "description":
+        "Important because: Get more stuff done!\n\nSee: [The 8 best apps to help
+        you focus and block distractions in 2024 | Zapier](https://zapier.com/blog/stay-focused-avoid-distractions/)",
+        "is_completed": false, "labels": [], "priority": 4, "comment_count": 0, "creator_id":
+        "33931948", "created_at": "2023-12-27T23:01:57.485359Z", "due": null, "url":
+        "https://todoist.com/app/task/7537456090", "duration": null, "user_id": "34534534534"},
+        {"id": "7537459267", "assigner_id": null, "assignee_id": null, "project_id":
+        "2325654971", "section_id": "142870409", "parent_id": null, "order": 3, "content":
+        "some test task 118", "description": "Important because: I get help with my
+        executive dysfunction.", "is_completed": false, "labels": [], "priority":
+        4, "comment_count": 0, "creator_id": "33931948", "created_at": "2023-12-27T23:04:20.959765Z",
+        "due": null, "url": "https://todoist.com/app/task/7537459267", "duration":
+        null, "user_id": "34534534534"}, {"id": "7537478714", "assigner_id": null,
+        "assignee_id": null, "project_id": "2266383484", "section_id": "49662025",
+        "parent_id": null, "order": 0, "content": "some test task 119", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-27T23:19:05.726944Z", "due":
+        null, "url": "https://todoist.com/app/task/7537478714", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540048302", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325701967", "section_id": null, "parent_id": null, "order":
+        1, "content": "some test task 120", "description": "Important because: more
+        room.", "is_completed": false, "labels": [], "priority": 2, "comment_count":
+        0, "creator_id": "33931948", "created_at": "2023-12-28T22:14:14.593856Z",
+        "due": null, "url": "https://todoist.com/app/task/7540048302", "duration":
+        null, "user_id": "34534534534"}, {"id": "7540059617", "assigner_id": null,
+        "assignee_id": null, "project_id": "2325701967", "section_id": null, "parent_id":
+        "7540048302", "order": 2, "content": "some test task 121", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T22:21:14.435167Z", "due":
+        null, "url": "https://todoist.com/app/task/7540059617", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540060444", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325701967", "section_id": null, "parent_id": "7540048302",
+        "order": 3, "content": "some test task 122", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T22:21:45.174059Z", "due": null, "url": "https://todoist.com/app/task/7540060444",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540066382", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": null, "order": 1, "content": "some test task 123", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T22:24:51.944175Z", "due":
+        {"date": "2024-06-16", "string": "Jun 16", "lang": "en", "is_recurring": false},
+        "url": "https://todoist.com/app/task/7540066382", "duration": null, "user_id":
+        "34534534534"}, {"id": "7540114923", "assigner_id": null, "assignee_id": null,
+        "project_id": "2325704627", "section_id": null, "parent_id": null, "order":
+        2, "content": "some test task 124", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T22:53:24.237277Z", "due": null, "url": "https://todoist.com/app/task/7540114923",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540118482", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": null, "order": 3, "content": "some test task 125", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T22:56:09.716609Z", "due":
+        null, "url": "https://todoist.com/app/task/7540118482", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540121533", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": null, "order":
+        4, "content": "some test task 126", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T22:58:17.744318Z", "due": null, "url": "https://todoist.com/app/task/7540121533",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540122581", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325701967", "section_id": null,
+        "parent_id": null, "order": 2, "content": "some test task 127", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 1,
+        "creator_id": "33931948", "created_at": "2023-12-28T22:59:02.159514Z", "due":
+        null, "url": "https://todoist.com/app/task/7540122581", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540130284", "assigner_id": null, "assignee_id":
+        null, "project_id": "2266383530", "section_id": null, "parent_id": null, "order":
+        2, "content": "some test task 128", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T23:03:10.330193Z", "due": null, "url": "https://todoist.com/app/task/7540130284",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540132474", "assigner_id":
+        null, "assignee_id": null, "project_id": "2266383530", "section_id": null,
+        "parent_id": null, "order": 3, "content": "some test task 129", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T23:04:17.179131Z", "due":
+        null, "url": "https://todoist.com/app/task/7540132474", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540134847", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": "7540121533",
+        "order": 7, "content": "some test task 130", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T23:05:48.097027Z", "due": null, "url": "https://todoist.com/app/task/7540134847",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540136788", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325701967", "section_id": null,
+        "parent_id": null, "order": 3, "content": "some test task 131", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T23:07:09.096765Z", "due":
+        null, "url": "https://todoist.com/app/task/7540136788", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540139149", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": null, "order":
+        5, "content": "some test task 132", "description": "I need to go back to the
+        urologist to get things checked out some more.", "is_completed": false, "labels":
+        [], "priority": 1, "comment_count": 0, "creator_id": "33931948", "created_at":
+        "2023-12-28T23:08:44.445862Z", "due": null, "url": "https://todoist.com/app/task/7540139149",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540142388", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": "7540121533", "order": 8, "content": "some test task 133", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T23:11:07.166876Z", "due":
+        null, "url": "https://todoist.com/app/task/7540142388", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540144704", "assigner_id": null, "assignee_id":
+        null, "project_id": "2268090338", "section_id": "52413283", "parent_id": null,
+        "order": 1, "content": "some test task 134", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T23:12:47.192260Z", "due": null, "url": "https://todoist.com/app/task/7540144704",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540145333", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325701967", "section_id": null,
+        "parent_id": null, "order": 4, "content": "some test task 135", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T23:13:12.812019Z", "due":
+        null, "url": "https://todoist.com/app/task/7540145333", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540146080", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325701967", "section_id": null, "parent_id": null, "order":
+        5, "content": "some test task 136", "description": "Not including getting
+        rid of grocery bags.", "is_completed": false, "labels": [], "priority": 1,
+        "comment_count": 0, "creator_id": "33931948", "created_at": "2023-12-28T23:13:47.926390Z",
+        "due": null, "url": "https://todoist.com/app/task/7540146080", "duration":
+        null, "user_id": "34534534534"}, {"id": "7540147800", "assigner_id": null,
+        "assignee_id": null, "project_id": "2266383484", "section_id": "49662010",
+        "parent_id": null, "order": 1, "content": "some test task 137", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T23:14:58.794845Z", "due":
+        null, "url": "https://todoist.com/app/task/7540147800", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540148541", "assigner_id": null, "assignee_id":
+        null, "project_id": "2266383530", "section_id": null, "parent_id": null, "order":
+        4, "content": "some test task 138", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T23:15:33.217060Z", "due": null, "url": "https://todoist.com/app/task/7540148541",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540149823", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": null, "order": 6, "content": "some test task 139", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T23:16:31.646097Z", "due":
+        null, "url": "https://todoist.com/app/task/7540149823", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540150340", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": null, "order":
+        7, "content": "some test task 140", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T23:16:57.548060Z", "due": null, "url": "https://todoist.com/app/task/7540150340",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540152259", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": "7540150340", "order": 11, "content": "some test task 141", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T23:18:27.983514Z", "due":
+        null, "url": "https://todoist.com/app/task/7540152259", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540152506", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": "7540150340",
+        "order": 12, "content": "some test task 142", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2023-12-28T23:18:39.679053Z", "due": null, "url": "https://todoist.com/app/task/7540152506",
+        "duration": null, "user_id": "34534534534"}, {"id": "7540152744", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": "7540150340", "order": 13, "content": "some test task 143", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2023-12-28T23:18:52.546189Z", "due":
+        null, "url": "https://todoist.com/app/task/7540152744", "duration": null,
+        "user_id": "34534534534"}, {"id": "7540153842", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": "7540150340",
+        "order": 14, "content": "some test task 144", "description": "Mail passport,
+        etc", "is_completed": false, "labels": [], "priority": 1, "comment_count":
+        0, "creator_id": "33931948", "created_at": "2023-12-28T23:19:42.764202Z",
+        "due": null, "url": "https://todoist.com/app/task/7540153842", "duration":
+        null, "user_id": "34534534534"}, {"id": "7553118850", "assigner_id": null,
+        "assignee_id": null, "project_id": "2266383484", "section_id": "49662010",
+        "parent_id": null, "order": 2, "content": "some test task 145", "description":
+        "Replace cmos battery for desktop.", "is_completed": false, "labels": [],
+        "priority": 1, "comment_count": 0, "creator_id": "33931948", "created_at":
+        "2024-01-03T04:37:28.652833Z", "due": null, "url": "https://todoist.com/app/task/7553118850",
+        "duration": null, "user_id": "34534534534"}, {"id": "7555209349", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325701967", "section_id": null,
+        "parent_id": "7540048302", "order": 4, "content": "some test task 146", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-03T17:06:38.945594Z", "due":
+        null, "url": "https://todoist.com/app/task/7555209349", "duration": null,
+        "user_id": "34534534534"}, {"id": "7559681068", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": "7540121533",
+        "order": 9, "content": "some test task 147", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-04T18:36:17.419580Z", "due": null, "url": "https://todoist.com/app/task/7559681068",
+        "duration": null, "user_id": "34534534534"}, {"id": "7559881707", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": "7540121533", "order": 10, "content": "some test task 148", "description":
+        "Need to get shower rod that is long enough.", "is_completed": false, "labels":
+        [], "priority": 1, "comment_count": 0, "creator_id": "33931948", "created_at":
+        "2024-01-04T19:39:08.558215Z", "due": null, "url": "https://todoist.com/app/task/7559881707",
+        "duration": null, "user_id": "34534534534"}, {"id": "7560879459", "assigner_id":
+        null, "assignee_id": null, "project_id": "2266383484", "section_id": "49662010",
+        "parent_id": null, "order": 3, "content": "some test task 149", "description":
+        "Important because: put in tasks when driving", "is_completed": false, "labels":
+        [], "priority": 1, "comment_count": 0, "creator_id": "33931948", "created_at":
+        "2024-01-05T03:04:38.845483Z", "due": null, "url": "https://todoist.com/app/task/7560879459",
+        "duration": null, "user_id": "34534534534"}, {"id": "7560883540", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": "7540121533", "order": 11, "content": "some test task 150", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-05T03:07:41.945334Z", "due":
+        null, "url": "https://todoist.com/app/task/7560883540", "duration": null,
+        "user_id": "34534534534"}, {"id": "7560902351", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325654971", "section_id": "142870409", "parent_id":
+        null, "order": 4, "content": "some test task 151", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-05T03:22:03.098946Z", "due": null, "url": "https://todoist.com/app/task/7560902351",
+        "duration": null, "user_id": "34534534534"}, {"id": "7560958073", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": null, "order": 9, "content": "some test task 152", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-05T04:00:48.847199Z", "due":
+        null, "url": "https://todoist.com/app/task/7560958073", "duration": null,
+        "user_id": "34534534534"}, {"id": "7560960012", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": "7560958073",
+        "order": 1, "content": "some test task 153", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-05T04:01:58.401245Z", "due": null, "url": "https://todoist.com/app/task/7560960012",
+        "duration": null, "user_id": "34534534534"}, {"id": "7560960323", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": "7560958073", "order": 2, "content": "some test task 154", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-05T04:02:17.641550Z", "due":
+        null, "url": "https://todoist.com/app/task/7560960323", "duration": null,
+        "user_id": "34534534534"}, {"id": "7560960658", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": "7560958073",
+        "order": 3, "content": "some test task 155", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-05T04:02:30.738556Z", "due": null, "url": "https://todoist.com/app/task/7560960658",
+        "duration": null, "user_id": "34534534534"}, {"id": "7560981204", "assigner_id":
+        null, "assignee_id": null, "project_id": "2326168809", "section_id": null,
+        "parent_id": null, "order": -1, "content": "some test task 156", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-05T04:18:16.101468Z", "due":
+        null, "url": "https://todoist.com/app/task/7560981204", "duration": null,
+        "user_id": "34534534534"}, {"id": "7560981747", "assigner_id": null, "assignee_id":
+        null, "project_id": "2326168809", "section_id": null, "parent_id": null, "order":
+        -2, "content": "some test task 157", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-05T04:18:45.105266Z", "due": null, "url": "https://todoist.com/app/task/7560981747",
+        "duration": null, "user_id": "34534534534"}, {"id": "7560982835", "assigner_id":
+        null, "assignee_id": null, "project_id": "2326168809", "section_id": null,
+        "parent_id": null, "order": 0, "content": "some test task 158", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-05T04:19:50.592916Z", "due":
+        null, "url": "https://todoist.com/app/task/7560982835", "duration": null,
+        "user_id": "34534534534"}, {"id": "7560990338", "assigner_id": null, "assignee_id":
+        null, "project_id": "2266383484", "section_id": "49662010", "parent_id": null,
+        "order": 5, "content": "some test task 159", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-05T04:26:33.613042Z", "due": null, "url": "https://todoist.com/app/task/7560990338",
+        "duration": null, "user_id": "34534534534"}, {"id": "7561032075", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325701967", "section_id": null,
+        "parent_id": "7540048302", "order": 5, "content": "some test task 160", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-05T05:02:01.348095Z", "due":
+        null, "url": "https://todoist.com/app/task/7561032075", "duration": null,
+        "user_id": "34534534534"}, {"id": "7561033180", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325701967", "section_id": null, "parent_id": null, "order":
+        6, "content": "some test task 161", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-05T05:02:49.593110Z", "due": null, "url": "https://todoist.com/app/task/7561033180",
+        "duration": null, "user_id": "34534534534"}, {"id": "7561035342", "assigner_id":
+        null, "assignee_id": null, "project_id": "2266383484", "section_id": "49662010",
+        "parent_id": null, "order": 6, "content": "some test task 162", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-05T05:04:26.548169Z", "due":
+        null, "url": "https://todoist.com/app/task/7561035342", "duration": null,
+        "user_id": "34534534534"}, {"id": "7561035934", "assigner_id": null, "assignee_id":
+        null, "project_id": "2266383484", "section_id": "49662010", "parent_id": null,
+        "order": 7, "content": "some test task 163", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-05T05:04:53.563677Z", "due": null, "url": "https://todoist.com/app/task/7561035934",
+        "duration": null, "user_id": "34534534534"}, {"id": "7561038910", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": "7540121533", "order": 13, "content": "some test task 164", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-05T05:07:27.414524Z", "due":
+        null, "url": "https://todoist.com/app/task/7561038910", "duration": null,
+        "user_id": "34534534534"}, {"id": "7593971961", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": null, "order":
+        10, "content": "some test task 165", "description": "", "is_completed": false,
+        "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-14T19:01:09.549986Z", "due": null, "url": "https://todoist.com/app/task/7593971961",
+        "duration": null, "user_id": "34534534534"}, {"id": "7593974424", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325704627", "section_id": null,
+        "parent_id": "7561038910", "order": 1, "content": "some test task 166", "description":
+        "", "is_completed": false, "labels": [], "priority": 1, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-01-14T19:02:23.970146Z", "due":
+        null, "url": "https://todoist.com/app/task/7593974424", "duration": null,
+        "user_id": "34534534534"}, {"id": "7593975409", "assigner_id": null, "assignee_id":
+        null, "project_id": "2325704627", "section_id": null, "parent_id": "7561038910",
+        "order": 2, "content": "some test task 167", "description": "", "is_completed":
+        false, "labels": [], "priority": 1, "comment_count": 0, "creator_id": "33931948",
+        "created_at": "2024-01-14T19:02:52.651962Z", "due": null, "url": "https://todoist.com/app/task/7593975409",
+        "duration": null, "user_id": "34534534534"}, {"id": "7659234747", "assigner_id":
+        null, "assignee_id": null, "project_id": "2325654971", "section_id": "142870409",
+        "parent_id": "7537452805", "order": 3, "content": "some test task 168", "description":
+        "", "is_completed": false, "labels": [], "priority": 4, "comment_count": 0,
+        "creator_id": "33931948", "created_at": "2024-02-02T20:14:03.603581Z", "due":
+        null, "url": "https://todoist.com/app/task/7659234747", "duration": null,
+        "user_id": "34534534534"}]'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'false'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 16 Jun 2024 07:34:52 GMT
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server:
+      - gunicorn
+      Set-Cookie:
+      - <redacted>
+      - <redacted>
+      - <redacted>
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 7c0015d1fbdfef60382a41612cc270a2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id: <redacted>
+      X-Amz-Cf-Pop:
+      - SLC52-P1
+      X-Cache:
+      - Miss from cloudfront
+      content-length:
+      - '30219'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer d1347120363c2b310653f610d382729bd51e13c6
+      Connection:
+      - keep-alive
+      Cookie:
+      - <redacted>
+      User-Agent:
+      - python-requests/2.28.2
+    method: GET
+    uri: https://api.todoist.com/sync/v9/completed/get_all
+  response:
+    body:
+      string: '{"items": [{"completed_at": "2024-04-27T02:36:29.000000Z", "content":
+        "some test task 169", "id": "7262898766", "item_object": null, "meta_data":
+        null, "note_count": 0, "notes": [], "project_id": "2325704627", "section_id":
+        null, "task_id": "7560933660", "user_id": "34534534534"}, {"completed_at":
+        "2024-03-31T01:05:38.000000Z", "content": "some test task 170", "id": "7186673574",
+        "item_object": null, "meta_data": null, "note_count": 0, "notes": [], "project_id":
+        "2325704627", "section_id": null, "task_id": "7540151791", "user_id": "34534534534"},
+        {"completed_at": "2024-03-02T20:42:04.000000Z", "content": "some test task
+        171", "id": "7107644292", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2325654971", "section_id": "142870409", "task_id":
+        "7659222383", "user_id": "34534534534"}, {"completed_at": "2024-03-02T20:28:42.000000Z",
+        "content": "some test task 172", "id": "7107620201", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2266383484",
+        "section_id": "49662010", "task_id": "7560880542", "user_id": "34534534534"},
+        {"completed_at": "2024-03-02T20:27:12.000000Z", "content": "some test task
+        173", "id": "7107617785", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2325654971", "section_id": "142870409", "task_id":
+        "7659228764", "user_id": "34534534534"}, {"completed_at": "2024-03-02T20:27:11.000000Z",
+        "content": "some test task 174", "id": "7107617731", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2325654971",
+        "section_id": "142870409", "task_id": "7659227006", "user_id": "34534534534"},
+        {"completed_at": "2024-01-14T18:52:40.000000Z", "content": "some test task
+        175", "id": "6968963357", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2325704627", "section_id": null, "task_id":
+        "7540174880", "user_id": "34534534534"}, {"completed_at": "2024-01-04T21:23:45.000000Z",
+        "content": "some test task 176", "id": "6941735560", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2325704627",
+        "section_id": null, "task_id": "7555216410", "user_id": "34534534534"}, {"completed_at":
+        "2024-01-03T17:13:03.000000Z", "content": "some test task 177", "id": "6938109164",
+        "item_object": null, "meta_data": null, "note_count": 0, "notes": [], "project_id":
+        "2325654971", "section_id": "142870409", "task_id": "7540533868", "user_id":
+        "34534534534"}, {"completed_at": "2024-01-03T04:34:44.000000Z", "content":
+        "some test task 178", "id": "6936446201", "item_object": null, "meta_data":
+        null, "note_count": 0, "notes": [], "project_id": "2325704627", "section_id":
+        null, "task_id": "7540180726", "user_id": "34534534534"}, {"completed_at":
+        "2023-11-12T02:00:36.000000Z", "content": "some test task 179", "id": "6798773064",
+        "item_object": null, "meta_data": null, "note_count": 0, "notes": [], "project_id":
+        "2265601233", "section_id": null, "task_id": "6898173531", "user_id": "34534534534"},
+        {"completed_at": "2023-03-18T17:34:15.000000Z", "content": "some test task
+        180", "id": "6160215218", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2266383484", "section_id": "49662025", "task_id":
+        "6672533087", "user_id": "34534534534"}, {"completed_at": "2022-05-15T15:40:22.000000Z",
+        "content": "some test task 181", "id": "5369156332", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2265601233",
+        "section_id": null, "task_id": "5781822369", "user_id": "34534534534"}, {"completed_at":
+        "2022-05-03T05:32:55.000000Z", "content": "some test task 182", "id": "5338670273",
+        "item_object": null, "meta_data": null, "note_count": 0, "notes": [], "project_id":
+        "2265601233", "section_id": null, "task_id": "5781822369", "user_id": "34534534534"},
+        {"completed_at": "2022-05-02T05:07:36.000000Z", "content": "some test task
+        183", "id": "5335693176", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2265601233", "section_id": null, "task_id":
+        "5781822369", "user_id": "34534534534"}, {"completed_at": "2022-04-28T17:37:26.000000Z",
+        "content": "some test task 184", "id": "5328322972", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2265601233",
+        "section_id": null, "task_id": "5781822369", "user_id": "34534534534"}, {"completed_at":
+        "2022-04-25T15:02:04.000000Z", "content": "some test task 185", "id": "5319548131",
+        "item_object": null, "meta_data": null, "note_count": 0, "notes": [], "project_id":
+        "2265601233", "section_id": null, "task_id": "5781822369", "user_id": "34534534534"},
+        {"completed_at": "2022-04-23T08:52:42.000000Z", "content": "some test task
+        186", "id": "5314613481", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2265601233", "section_id": null, "task_id":
+        "5781822369", "user_id": "34534534534"}, {"completed_at": "2022-04-23T00:40:25.000000Z",
+        "content": "some test task 187", "id": "5314148852", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2265601233",
+        "section_id": null, "task_id": "5781822369", "user_id": "34534534534"}, {"completed_at":
+        "2022-04-21T05:58:40.000000Z", "content": "some test task 188", "id": "5309427311",
+        "item_object": null, "meta_data": null, "note_count": 0, "notes": [], "project_id":
+        "2265601233", "section_id": null, "task_id": "5781822369", "user_id": "34534534534"},
+        {"completed_at": "2022-04-21T05:10:48.000000Z", "content": "some test task
+        189", "id": "5309365282", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2265601233", "section_id": null, "task_id":
+        "5781814888", "user_id": "34534534534"}, {"completed_at": "2022-04-11T05:28:50.000000Z",
+        "content": "some test task 190", "id": "5284485350", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2265601233",
+        "section_id": null, "task_id": "5754099459", "user_id": "34534534534"}, {"completed_at":
+        "2022-04-02T05:00:21.000000Z", "content": "some test task 191", "id": "5262629124",
+        "item_object": null, "meta_data": null, "note_count": 0, "notes": [], "project_id":
+        "2265601233", "section_id": null, "task_id": "5727158048", "user_id": "34534534534"},
+        {"completed_at": "2021-11-12T01:01:00.000000Z", "content": "some test task
+        192", "id": "4914999112", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2268090338", "section_id": "52413322", "task_id":
+        "5240052443", "user_id": "34534534534"}, {"completed_at": "2021-11-04T02:56:33.000000Z",
+        "content": "some test task 193", "id": "4895128791", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2268090338",
+        "section_id": "52413322", "task_id": "5240052443", "user_id": "34534534534"},
+        {"completed_at": "2021-11-01T03:09:59.000000Z", "content": "some test task
+        194", "id": "4886630221", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2268090338", "section_id": "52413322", "task_id":
+        "5240073276", "user_id": "34534534534"}, {"completed_at": "2021-10-29T04:21:10.000000Z",
+        "content": "some test task 195", "id": "4880589670", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2268090338",
+        "section_id": "52413322", "task_id": "5240052443", "user_id": "34534534534"},
+        {"completed_at": "2021-10-25T02:53:54.000000Z", "content": "some test task
+        196", "id": "4869430130", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2268090338", "section_id": "52413322", "task_id":
+        "5240067415", "user_id": "34534534534"}, {"completed_at": "2021-10-25T02:06:48.000000Z",
+        "content": "some test task 197", "id": "4869367943", "item_object": null,
+        "meta_data": null, "note_count": 0, "notes": [], "project_id": "2268090338",
+        "section_id": "52413322", "task_id": "5240075921", "user_id": "34534534534"},
+        {"completed_at": "2021-10-25T02:05:50.000000Z", "content": "some test task
+        198", "id": "4869366655", "item_object": null, "meta_data": null, "note_count":
+        0, "notes": [], "project_id": "2268090338", "section_id": "52413322", "task_id":
+        "5240076818", "user_id": "34534534534"}], "projects": {"2265601233": {"can_assign_tasks":
+        false, "child_order": 0, "collapsed": false, "color": "grey", "created_at":
+        "2023-07-13T10:00:51Z", "id": "2265601233", "inbox_project": true, "is_archived":
+        false, "is_deleted": false, "is_favorite": false, "name": "some test project
+        199", "parent_id": null, "shared": false, "sync_id": null, "updated_at": "1970-01-01T00:00:00Z",
+        "v2_id": "6FG463cPhJgjM8pw", "v2_parent_id": null, "view_style": "list"},
+        "2266383484": {"can_assign_tasks": false, "child_order": 4, "collapsed": false,
+        "color": "violet", "created_at": "2023-07-13T10:20:59Z", "id": "2266383484",
+        "is_archived": false, "is_deleted": false, "is_favorite": false, "name": "some
+        test project 200", "parent_id": null, "shared": false, "sync_id": null, "updated_at":
+        "1970-01-01T00:00:00Z", "v2_id": "6FJfhWVqQPv2VvjF", "v2_parent_id": null,
+        "view_style": "board"}, "2268090338": {"can_assign_tasks": false, "child_order":
+        6, "collapsed": false, "color": "charcoal", "created_at": "2023-07-13T10:00:51Z",
+        "id": "2268090338", "is_archived": false, "is_deleted": false, "is_favorite":
+        false, "name": "some test project 201", "parent_id": null, "shared": false,
+        "sync_id": null, "updated_at": "1970-01-01T00:00:00Z", "v2_id": "6FWj2vVF3fm4RXhQ",
+        "v2_parent_id": null, "view_style": "board"}, "2325654971": {"can_assign_tasks":
+        false, "child_order": 7, "collapsed": false, "color": "charcoal", "created_at":
+        "2023-12-27T22:57:38Z", "id": "2325654971", "is_archived": false, "is_deleted":
+        false, "is_favorite": false, "name": "some test project 202", "parent_id":
+        null, "shared": false, "sync_id": null, "updated_at": "2023-12-27T22:57:38Z",
+        "v2_id": "6RFvwxVpc9jCq535", "v2_parent_id": null, "view_style": "board"},
+        "2325704627": {"can_assign_tasks": false, "child_order": 9, "collapsed": false,
+        "color": "charcoal", "created_at": "2023-12-28T23:30:41Z", "id": "2325704627",
+        "is_archived": false, "is_deleted": false, "is_favorite": false, "name": "some
+        test project 203", "parent_id": null, "shared": false, "sync_id": null, "updated_at":
+        "2023-12-28T23:30:41Z", "v2_id": "6RG7cFQw4P9rx3w4", "v2_parent_id": null,
+        "view_style": "list"}}, "sections": {"49662010": {"added_at": "2021-05-27T04:06:00.027300Z",
+        "archived_at": null, "collapsed": false, "id": "49662010", "is_archived":
+        false, "is_deleted": false, "name": "To Do", "project_id": "2266383484", "section_order":
+        1, "sync_id": null, "user_id": "34534534534", "v2_id": "63g8FJGM5XwQmC3m",
+        "v2_project_id": "6FJfhWVqQPv2VvjF"}, "49662025": {"added_at": "2021-05-27T04:06:10.077200Z",
+        "archived_at": null, "collapsed": false, "id": "49662025", "is_archived":
+        false, "is_deleted": false, "name": "In Progress", "project_id": "2266383484",
+        "section_order": 2, "sync_id": null, "user_id": "34534534534", "v2_id": "63g8r4M5pMpJ9xHm",
+        "v2_project_id": "6FJfhWVqQPv2VvjF"}, "52413322": {"added_at": "2021-06-22T02:23:30.030700Z",
+        "archived_at": null, "collapsed": false, "id": "52413322", "is_archived":
+        false, "is_deleted": false, "name": "Scheduled", "project_id": "2268090338",
+        "section_order": 2, "sync_id": null, "user_id": "34534534534", "v2_id": "63g7WqrM79pWFJCx",
+        "v2_project_id": "6FWj2vVF3fm4RXhQ"}, "142870409": {"added_at": "2023-12-27T23:06:25.795153Z",
+        "archived_at": null, "collapsed": false, "id": "142870409", "is_archived":
+        false, "is_deleted": false, "name": "In Progress", "project_id": "2325654971",
+        "section_order": 2, "sync_id": null, "user_id": "34534534534", "v2_id": "6CFR49PjwM6q9MMX",
+        "v2_project_id": "6RFvwxVpc9jCq535"}}}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 16 Jun 2024 07:34:53 GMT
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server:
+      - gunicorn
+      Set-Cookie:
+      - <redacted>
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 7c0015d1fbdfef60382a41612cc270a2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id: <redacted>
+      X-Amz-Cf-Pop:
+      - SLC52-P1
+      X-Cache:
+      - Miss from cloudfront
+      content-length:
+      - '10668'
+    status:
+      code: 200
+      message: OK
+version: 1

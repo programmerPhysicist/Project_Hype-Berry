@@ -2,3 +2,4 @@
 auth.cfg
 *.pkl
 build/
+test/fixtures/cassettes/*.json
