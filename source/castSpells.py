@@ -6,7 +6,7 @@ import os
 import main
 import manaPull
 
-auth = main.get_started('auth.cfg')
+auth = main.get_habitica_login('auth.cfg')
 
 manaPull.cast_all_mana(auth,'valorousPresence')
 

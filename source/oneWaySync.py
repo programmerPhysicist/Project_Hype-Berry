@@ -1,18 +1,17 @@
 #!/usr/bin/env python
 
-"""
+'''
 One way sync. All the features of todoist-habitrpg; nothing newer or shinier.
 Well. Okay, not *technically* one-way--it will sync two way for simple tasks/
 habitica to-dos,
 just not for recurring todo tasks or dailies. I'm workin' on that.
-"""
+'''
 
 # Python library imports - this will be functionalities I want to shorten
 # from datetime import datetime, timedelta
 import pickle
 import time
 import json
-
 
 import main
 from todo_task import TodTask
@@ -35,13 +34,13 @@ def sync_todoist_to_habitica():
     # todayFilter = todo_api.filters.add('todayFilter', 'today')
 
     # Telling the site where the config stuff for Habitica can go and get a list of habitica tasks...
-    auth = config.get_started('auth.cfg')
+    auth = config.get_habitica_login('auth.cfg')
 
     # Getting all complete and incomplete habitica dailies and todos
     hab_tasks = habitica.get_all_habtasks(auth)
 
     # get token for todoist
-    todo_token = config.getTodoistToken('auth.cfg')
+    todo_token = config.get_todoist_token('auth.cfg')
 
     # Okay, now I need a list of todoist tasks.
     todoist_tasks, todo_api = get_tasks(todo_token) # todoist_tasks used to be tod_tasks
@@ -50,6 +49,7 @@ def sync_todoist_to_habitica():
     for i in range(0, len(todoist_tasks)):
         tod_tasks.append(TodTask(todoist_tasks[i]))
 
+    # TODO: add back to filter out repeating older than a certain amount?
     # date stuff
     # today = datetime.now()
     # today_str = today.strftime("%Y-%m-%d")
@@ -60,21 +60,20 @@ def sync_todoist_to_habitica():
     # Okay, I want to write a little script that checks whether or not a task is there or not and, if not, ports it.
     match_dict = main.openMatchDict()
 
+    # Get finished tasks for Todoist
+    tasks = todo_api.get_all_completed_items()
+    tod_done = [TodTask(task) for task in tasks]
+    tod_tasks = tod_tasks + tod_done
+
     # Also, update lists of tasks with match_dict file...
     match_dict = main.update_tod_matchDict(tod_tasks, match_dict)
     match_dict = main.update_hab_matchDict(hab_tasks, match_dict)
 
-    # We'll want to just... pull all the unmatched completed tasks out of our lists of tasks. Yeah?
-    tod_done = [TodTask(task) for task in todo_api.get_all_completed_items()]
-    tod_uniq, hab_uniq = main.get_uniqs(match_dict, tod_done, hab_tasks)
-
     # Okay, so what if there are two matched tasks in the two uniq lists that really should be paired?
-    match_dict = main.check_newMatches(match_dict, tod_uniq, hab_uniq)
+    match_dict = main.check_newMatches(match_dict, tod_tasks, hab_tasks)
 
-    # Here anything new in todoist gets added to habitica
-    tod_uniq = []
-    hab_uniq = []
-    tod_uniq, hab_uniq = main.getNewTodoTasks(match_dict, tod_tasks, hab_tasks)
+    # Pull all the unmatched completed Todoist tasks out of our lists of tasks.
+    tod_uniq = main.get_uniqs(match_dict, tod_tasks)
 
     for tod in tod_uniq:
         tid = tod.id
@@ -170,10 +169,10 @@ def sync_todoist_to_habitica():
                     hab.completed
                 except:
                     print(tid)
-                if hab.completed == False:
+                if not hab.completed:
                     matched_hab = main.sync_hab2todo(hab, tod)
                     response = main.update_hab(matched_hab)
-                elif hab.completed == True:
+                elif hab.completed:
                     fix_tod = todo_api.items.get_by_id(tid)
                     fix_tod.close()
                     print('completed tod %s' % tod.name)

@@ -5,6 +5,7 @@ import shutil
 import logging
 import json
 import pickle
+from urllib.parse import parse_qsl, urlencode
 import requests
 
 # test imports
@@ -49,19 +50,100 @@ class TestHelpers:
 
     def handle_request(self):
         def get_uri(request):
-            habitica_uri = "https://habitica.com/api/v3/tasks/user/"
             self.uri = request.uri
-            if request.uri == habitica_uri and request.method == "POST":
-                return None
-            else:
-                return request
+            if request.method == "PUT":
+                try:
+                    body = json.loads(request.body)
+                except ValueError:
+                    body = bytes.decode(request.body)
+                    query_dict = dict(parse_qsl(body))
+                    query_dict['text'] = "some test task " + str(self.counter)
+                    self.counter += 1
+                    body = urlencode(query_dict)
+                    request.body = body.encode()
+                else:
+                    body['text'] = "some test task " + str(self.counter)
+                    self.counter += 1
+                    request.body = json.dumps(body)
+            return request
         return get_uri
+
+    def scrub_habitica_resp(self, s_json):
+        data = s_json['data']
+        elem_num = len(data)
+        for i in range(elem_num):
+            if data[i]['type'] == 'habit':
+                data[i]['text'] = "some test habit " + str(self.counter)
+                if 'alias' in data[i].keys():
+                    data[i]['alias'] = "sometesthabit" + str(self.counter)
+            elif data[i]['type'] == 'todo' or data[i]['type'] == 'daily':
+                data[i]['text'] = "some test task " + str(self.counter)
+                if data[i]['checklist']:
+                    cl_count = len(data[i]['checklist'])
+                    for j in range(cl_count):
+                        data[i]['checklist'][j]['text'] = "item " + str(j)
+            elif data[i]['type'] == 'reward':
+                data[i]['text'] = "some reward"
+            else:
+                print('Warning: Unknown type')
+                breakpoint()
+            if data[i]['notes'] != "":
+                data[i]['notes'] = "Test notes"
+            if data[i]['challenge']:
+                data[i]['challenge']['shortName'] = "Test challenge"
+            data[i]['userId'] = 'cd18fc9f-b649-4384-932a-f3bda6fe8102'
+            self.counter += 1
+        s_json['data'] = data
+        notifications = s_json['notifications']
+        num_nots = len(notifications)
+        for i in range(num_nots):
+            msg = notifications[i]
+            if msg['type'] == 'GROUP_INVITE_ACCEPTED':
+                body_text = msg['data']['bodyText']
+                the_split = body_text.split(' accepted')
+                username1 = the_split[0]
+                body_text = body_text.replace(username1, "username1")
+                the_str = the_split[1]
+                the_str = the_str.split('to ')[1]
+                username2 = the_str.split('\'s')[0]
+                body_text = body_text.replace(username2, "username2")
+                s_json['notifications'][i]['data']['bodyText'] = body_text
+        return s_json
+
+    def scrub_habitica_put_resp(self, s_json):
+        s_json['data']['text'] = "some test task " + str(self.counter)
+        return s_json
+
+    def scrub_todoist_tasks(self, s_json):
+        items = s_json
+        num_items = len(items)
+        for i in range(num_items):
+            s_json[i]['content'] = "some test task " + str(self.counter)
+            s_json[i]['description'] = "some test description"
+            s_json[i]['user_id'] = "34534534534"
+            self.counter += 1
+        return s_json
+
+    def scrub_todoist_completed(self, s_json):
+        items = s_json['items']
+        num_items = len(items)
+        for i in range(num_items):
+            s_json['items'][i]['content'] = "some test task " + str(self.counter)
+            s_json['items'][i]['user_id'] = "34534534534"
+            self.counter += 1
+        for key in s_json['projects']:
+            s_json['projects'][key]['name'] = "some test project " + str(self.counter)
+            self.counter += 1
+        for key in s_json['sections']:
+            s_json['sections'][key]['user_id'] = "34534534534"
+        return s_json
 
     def scrub_response(self, debug=False):
         def before_record_response(response):
             todoist_uri1 = "https://api.todoist.com/rest/v2/tasks"
             todoist_uri2 = "https://api.todoist.com/sync/v9/completed/get_all"
-            habitica_uri = "https://habitica.com/api/v3/tasks/user/"
+            habitica_uri1 = "https://habitica.com/api/v3/tasks/user/"
+            habitica_uri2 = "https://habitica.com/api/v3/tasks"
 
             cookie = response['headers']['Set-Cookie']
             elem_num = len(cookie)
@@ -72,80 +154,30 @@ class TestHelpers:
 
             body = response['body']['string']
             s_json = json.loads(body)
-            if self.uri == habitica_uri and s_json['success']:
-                data = s_json['data']
-                elem_num = len(data)
-                for i in range(elem_num):
-                    if data[i]['type'] == 'habit':
-                        data[i]['text'] = "some test habit "+str(self.counter)
-                        if 'alias' in data[i].keys():
-                            data[i]['alias'] = "sometesthabit"+str(self.counter)
-                    elif data[i]['type'] == 'todo' or data[i]['type'] == 'daily':
-                        data[i]['text'] = "some test task "+str(self.counter)
-                        if data[i]['checklist']:
-                            cl_count = len(data[i]['checklist'])
-                            for j in range(cl_count):
-                                data[i]['checklist'][j]['text'] = "item "+str(j)
-                    elif data[i]['type'] == 'reward':
-                        data[i]['text'] = "some reward"
-                    else:
-                        print('Warning: Unknown type')
-                        breakpoint()
-                    if data[i]['notes'] != "":
-                        data[i]['notes'] = "Test notes"
-                    if data[i]['challenge']:
-                        data[i]['challenge']['shortName'] = "Test challenge"
-                    data[i]['userId'] = 'cd18fc9f-b649-4384-932a-f3bda6fe8102'
-                    self.counter += 1
-                s_json['data'] = data
-                notifications = s_json['notifications']
-                num_nots = len(notifications)
-                for i in range(num_nots):
-                    msg = notifications[i]
-                    if msg['type'] == 'GROUP_INVITE_ACCEPTED':
-                        body_text = msg['data']['bodyText']
-                        the_split = body_text.split(' accepted')
-                        username1 = the_split[0]
-                        body_text = body_text.replace(username1, "username1")
-                        the_str = the_split[1]
-                        the_str = the_str.split('to ')[1]
-                        username2 = the_str.split('\'s')[0]
-                        body_text = body_text.replace(username2, "username2")
-                        s_json['notifications'][i]['data']['bodyText'] = body_text
-                body = json.dumps(s_json)
-                response['body']['string'] = body.encode()
+            resp_type = ""
+            if self.uri == habitica_uri1 and s_json['success']:
+                s_json = self.scrub_habitica_resp(s_json)
+                resp_type = "habitica_"
+            elif habitica_uri2 in self.uri:
+                s_json = self.scrub_habitica_put_resp(s_json)
+                resp_type = "habitica_put_"
             elif self.uri == todoist_uri2:
-                items = s_json['items']
-                num_items = len(items)
-                for i in range(num_items):
-                    s_json['items'][i]['content'] = "some test task "+str(self.counter)
-                    s_json['items'][i]['user_id'] = "34534534534"
-                    self.counter += 1
-                for key in s_json['projects']:
-                    s_json['projects'][key]['name'] = "some test project "+str(self.counter)
-                    self.counter += 1
-                for key in s_json['sections']:
-                    s_json['sections'][key]['user_id'] = "34534534534"
-                body = json.dumps(s_json)
-                response['body']['string'] = body.encode()
+                s_json = self.scrub_todoist_completed(s_json)
+                resp_type = "todoist_completed_"
             elif self.uri == todoist_uri1:
-                items = s_json
-                num_items = len(items)
-                for i in range(num_items):
-                    s_json[i]['content'] = "some test task "+str(self.counter)
-                    s_json[i]['user_id'] = "34534534534"
-                    self.counter += 1
-                body = json.dumps(s_json)
-                response['body']['string'] = body.encode()
-                return response
+                s_json = self.scrub_todoist_tasks(s_json)
+                resp_type = "todoist_task_"
             if debug:
                 # output unminified json in separate files
                 json_object = json.dumps(s_json, indent=4)
-                name = "response_after"+str(self.resp_counter)+".json"
+                name = resp_type + "response" + str(self.resp_counter) + ".json"
                 fullpath = os.path.join(TestHelpers.get_cassette_dir(), name)
                 with open(fullpath, "w") as outfile:
                     outfile.write(json_object)
                 self.resp_counter += 1
+
+            body = json.dumps(s_json)
+            response['body']['string'] = body.encode()
             return response
         return before_record_response
 
@@ -170,15 +202,18 @@ def fake_post(url, data=None, json=None, **kwargs): # pylint: disable=unused-arg
     errors_result = [{'message': 'Task alias already used on another task.',
                       'path': 'alias',
                       'value': data['alias']}]
-    json_result = {'sucess': False,
+    json_result = {'success': False,
                    'error': 'BadRequest',
                    'message': 'todo validation failed',
                    'errors': errors_result}
+    # 'https://habitica.com/api/v3/tasks/4838805235'
+    # vs
+    # 'https://habitica.com/api/v3/tasks/user/'
 
     # set default response
     response = mock({'status': 400, 'ok': False,
                      'status_code': '400'},
-                     spec=requests.Response)
+                    spec=requests.Response)
 
     when(response).json().thenReturn(json_result)
     global fake_post_count
@@ -218,10 +253,16 @@ class TestIntegration2:
             # patch post to habitica with fake
             patch(requests, 'post', replacement=fake_post)
 
+            # mock read in of pickle file
+            pkl_file = mock()
+            pkl_load = mock()
+            when2(open, 'oneWay_matchDict.pkl', 'rb').thenReturn(pkl_file)
+            when(pickle).Unpickler(...).thenReturn(pkl_load)
+            when(pkl_load).load().thenReturn({})
+
             # mock dump of pickle file
             pkl_out = mock()
-            pkl_file = mock()
-            when2(open, ...).thenCallOriginalImplementation()
+            # when2(open, ...).thenCallOriginalImplementation()
             when2(open, 'oneWay_matchDict.pkl', 'wb').thenReturn(pkl_file)
             when(pickle).Pickler(...).thenReturn(pkl_out)
             when(pkl_out).dump(...)
@@ -233,11 +274,10 @@ class TestIntegration2:
             dump_dict = captor(ANY(dict))
             verify(pkl_out, times=1).dump(dump_dict)
             data = dump_dict.value
-            # assert not bool(data)
             assert bool(data)
 
             # check # of post to habitica
-            # assert fake_post_count == 62
+            # assert fake_post_count == 3
             assert fake_post_count == 0
 
             # clean-up

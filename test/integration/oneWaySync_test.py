@@ -5,7 +5,8 @@ import pickle
 import pytest
 from mockito import when, mock, unstub, when2, kwargs, verify, captor, ANY, arg_that
 from oneWaySync import sync_todoist_to_habitica
-from oneWaySync import get_all_completed_items # pylint: disable=unused-import
+# from oneWaySync import get_all_completed_items # pylint: disable=unused-import
+from todo_api_plus import TodoAPIPlus as todoAPI
 import oneWaySync
 from todoist_api_python import models
 import requests
@@ -58,12 +59,11 @@ def mocked_inputs(request):
 
     # mock call to Todoist
     tasks = request.param['todo_tasks']
-    api = mock()
-    when(oneWaySync).get_tasks(...).thenReturn((tasks, api))
+    when(oneWaySync).get_tasks(...).thenReturn((tasks, todoAPI))
 
     # mock out call to Todoist for completed tasks
     tasks = request.param['done_tasks']
-    when(oneWaySync).get_all_completed_items(...).thenReturn(tasks)
+    when(todoAPI).get_all_completed_items().thenReturn(tasks)
 
 
 def case1():
