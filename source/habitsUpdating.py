@@ -7,7 +7,7 @@ import requests
 def run_task():
     import main
     from habitsUpdating import get_all_habits
-    auth = main.get_started('auth.cfg')
+    auth = main.get_habitica_login('auth.cfg')
     habits, response = get_all_habits(auth)
     for i in range(len(habits)):
         print('[%s] %s'% (i, habits[i].name))
@@ -36,12 +36,12 @@ def get_all_habits(auth):
     response = requests.get(url,headers=auth)
     hab_raw = response.json()
     hab_tasklist = hab_raw['data'] #FINALLY getting something I can work with... this will be a list of dicts I want to turn into a list of objects with class hab_tasks. Hrm. Weeeelll, if I make a class elsewhere....
-    
+
     #keeping records of all our tasks
-    hab_tasks = [] 
-    
+    hab_tasks = []
+
     #No habits right now, I'm afraid, in hab_tasks--Todoist gets upset. So we're going to make a list of dailies and todos instead...
-    for task in hab_tasklist: 
+    for task in hab_tasklist:
         item = HabTask(task)
         if item.category == 'habit':
             hab_tasks.append(item)

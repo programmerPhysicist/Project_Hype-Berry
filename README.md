@@ -15,12 +15,7 @@ That means that if you create a task in Todoist and then check it off, right now
 
 There are a number dependencies you'll need to install, and the commands to install them are as follows:
 ```
-pip install todoist-python
-pip install requests
-pip install scriptabit
-pip install tzlocal
-pip install iso8601
-pip install python-dateutil
+pip install todoist_api_python requests scriptabit tzlocal iso8601 python-dateutil
 ```
 Finally, you need to add your API tokens to the `Habitica-Plus-Todoist/source/auth.cfg.example` file. You can find your Habitica API User ID and API key by visiting https://habitica.com/user/settings/api while logged in, and your Todoist API token can be found by visiting https://todoist.com/prefs/integrations while logged in. Once you've added these tokens, you should rename the file to `Habitica-Plus-Todoist/source/auth.cfg` (remove the '.example' at the end).
 
@@ -44,3 +39,10 @@ Try running `python oneWaySync.py` in your terminal. (You have to run the comman
 ## Credit
 
 This program is a hard fork of [Habitica-Todo](https://github.com/eringiglio/Habitica-todo), with some fixes added. Habitica-Todo has been abandoned by its original author.
+
+# Tests
+
+To run tests, you will need to run the following pip command to install additional dependencies:
+```
+pip install pytest vcrpy mockito
+```
