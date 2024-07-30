@@ -1,28 +1,20 @@
 #!/usr/bin/env python
 
-"""
-Main.py overdue for an overhaul! Let's see.
-"""
-
-"""Here's where we import stuff we need..."""
-#import todoist
-import requests
-import json
-from hab_task import HabTask
-from todo_task import TodTask
+# import json
+# from datetime import datetime
+# import todoist
+# import re
 import os
 import logging
 import configparser
-
-from datetime import datetime
+import sys
+import requests
 from dateutil import parser
-import re
+from hab_task import HabTask
+from todo_task import TodTask
 
-
-"""
-Version control, basic paths
-"""
-
+# TODO: Main.py overdue for an overhaul! Let's see.
+# Version control, basic paths
 VERSION = 'Habitica-Plus-Todoist version 2.1.0'
 TASK_VALUE_BASE = 0.9747  # http://habitica.wikia.com/wiki/Task_Value
 HABITICA_REQUEST_WAIT_TIME = 0.5  # time to pause between concurrent requests
@@ -128,8 +120,9 @@ def check_matchDict(matchDict):
         else:
             print("something is weird check tod %s" % t)
 
-def check_newMatches(matchDict,tod_uniq,hab_uniq):
-    #from main import add_hab_id
+
+def check_newMatches(matchDict, tod_uniq, hab_uniq):
+    # from main import add_hab_id
     matchesHab = []
     matchesTod = []
     for tod in tod_uniq:
@@ -174,6 +167,7 @@ def clean_matchDict(matchDict):
         tod = matchDict[tid]['tod']
     return matchDict
 
+
 def complete_hab(hab):
     import requests
     import json
@@ -197,16 +191,18 @@ def delete_hab(hab):
     return r
 
 def get_all_habtasks(auth):
-    #Todoist tasks are, I think, classes. Let's make Habitica tasks classes, too.
+    # Todoist tasks are, I think, classes. Let's make Habitica tasks classes, too.
     url = 'https://habitica.com/api/v3/tasks/user/'
-    response = requests.get(url,headers=auth)
+    response = requests.get(url, headers=auth)
     hab_raw = response.json()
-    hab_tasklist = hab_raw['data'] #FINALLY getting something I can work with... this will be a list of dicts I want to turn into a list of objects with class hab_tasks. Hrm. Weeeelll, if I make a class elsewhere....
+    # FINALLY getting something I can work with... this will be a list of dicts I want to turn into a list of objects
+    # with class hab_tasks. Hrm. Weeeelll, if I make a class elsewhere....
+    hab_tasklist = hab_raw['data']
 
-    #keeping records of all our tasks
+    # keeping records of all our tasks
     hab_tasks = []
 
-    #No habits right now, I'm afraid, in hab_tasks--Todoist gets upset. So we're going to make a list of dailies and todos instead...
+    # No habits right now, I'm afraid, in hab_tasks--Todoist gets upset. So we're going to make a list of dailies and todos instead...
     for task in hab_tasklist:
         item = HabTask(task)
         if item.category == 'reward':
@@ -215,7 +211,8 @@ def get_all_habtasks(auth):
             pass
         else:
             hab_tasks.append(item)
-    return(hab_tasks, response)
+    return (hab_tasks, response)
+
 
 def get_hab_fromID(tid):
     import requests
@@ -223,14 +220,15 @@ def get_hab_fromID(tid):
     auth = get_started('auth.cfg')
     url = 'https://habitica.com/api/v3/tasks/'
     url += str(tid)
-    r = requests.get(headers=auth, url=url)
-    if r.ok == True:
-        task = r.json()
+    response = requests.get(headers=auth, url=url)
+    if response.ok:
+        task = response.json()
         hab = HabTask(task['data'])
     else:
-        #TODO: log error
+        # TODO: log error
         hab = HabTask()
     return hab
+
 
 def get_started(configfile):
     """Get Habitica authentication data from the AUTH_CONF file."""
@@ -267,8 +265,9 @@ def get_started(configfile):
     # Return auth data as a dictionnary
     return rv
 
-def get_uniqs(matchDict,tod_tasks,hab_tasks):
-# TODO: Rename this function
+
+def get_uniqs(matchDict, tod_tasks, hab_tasks):
+    # TODO: Rename this function
     tod_uniq = []
     hab_uniq = []
 
@@ -285,7 +284,8 @@ def get_uniqs(matchDict,tod_tasks,hab_tasks):
 
     return tod_uniq, hab_uniq
 
-def getNewTodoTasks(matchDict,tod_tasks,hab_tasks):
+
+def getNewTodoTasks(matchDict, tod_tasks, hab_tasks):
     tod_uniq = []
     hab_uniq = []
 
@@ -367,6 +367,8 @@ def make_daily_from_tod(tod):
     finished_hab = HabTask(new_hab)
     return finished_hab
 '''
+
+
 def make_hab_from_tod(tod_task):
     new_hab = {'type':'todo'}
     new_hab['text'] = tod_task.name
@@ -430,10 +432,11 @@ def make_tod_from_hab(hab):
             rList.append(r,hab.name)
 '''
 
+
 def openMatchDict():
     import pickle
     try:
-        pkl_file = open('oneWay_matchDict.pkl','rb')
+        pkl_file = open('oneWay_matchDict.pkl', 'rb')
         pkl_load = pickle.Unpickler(pkl_file)
         matchDict = pkl_load.load()
         pkl_file.close()
@@ -474,22 +477,24 @@ def purge_habs(hab_uniq, matchDict):
 
     return hab_uniqest
 
+
 def sync_hab2todo(hab, tod):
     if hab.category == 'daily':
-        new_hab = sync_hab2todo_daily(hab,tod)
+        new_hab = sync_hab2todo_daily(hab, tod)
         return new_hab
     elif hab.category == 'todo':
-        new_hab = sync_hab2todo_todo(hab,tod)
+        new_hab = sync_hab2todo_todo(hab, tod)
         return new_hab
     else:
         print("Error! Hab of incorrect type!")
-        exit(1)
+        sys.exit(1)
+
 
 def sync_hab2todo_daily(hab, tod):
     from dates import parse_date_utc
-    from datetime import datetime
+    # from datetime import datetime
     from datetime import timedelta
-    import pytz
+    # import pytz
     habDict = hab.task_dict
     if tod.priority == 4:
         habDict['priority'] = 2
@@ -498,7 +503,7 @@ def sync_hab2todo_daily(hab, tod):
     else:
         habDict['priority'] = 1
 
-    now = datetime.now().replace(tzinfo=pytz.utc).date()
+    # now = datetime.now().replace(tzinfo=pytz.utc).date()
 
     if hab.due.date() != (tod.due.date() - timedelta(days=1)):
         habDict['startDate'] = str(tod.due.date() - timedelta(days=1))
@@ -599,6 +604,7 @@ def syncHistories(matchDict):
     return matchDict
 '''
 
+
 def update_hab(hab):
     # TODO: Only update when there are actual changes
     import requests
@@ -618,6 +624,7 @@ def update_hab(hab):
     if r.ok == 'No':
         print(r.text)
     return r
+
 
 def update_hab_matchDict(hab_tasks, matchDict):
     from main import delete_hab
@@ -685,6 +692,7 @@ def update_hab_matchDict(hab_tasks, matchDict):
 
     return matchDict
 
+
 def update_tod_matchDict(tod_tasks, matchDict):
     tid_list = []
     for tod in tod_tasks:
@@ -696,6 +704,7 @@ def update_tod_matchDict(tod_tasks, matchDict):
             matchDict.pop(tid)
 
     return matchDict
+
 
 def write_hab_task(task):
     """

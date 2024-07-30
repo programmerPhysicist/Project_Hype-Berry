@@ -2,6 +2,7 @@
 import logging
 import configparser
 
+
 def getTodoistToken(configfile):
     logging.debug('Loading todoist auth data from %s' % configfile)
 
