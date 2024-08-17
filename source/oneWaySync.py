@@ -11,42 +11,22 @@ just not for recurring todo tasks or dailies. I'm workin' on that.
 import pickle
 import time
 
-from todoist_api_python.api import TodoistAPI
-from todoist_api_python.endpoints import get_sync_url
-from todoist_api_python.http_requests import get
-from todoist_api_python.models import Task
+
 import main
 from todo_task import TodTask
+from todo_api_plus import TodoAPIPlus
 import config
 import habitica
 
 
 def get_tasks(token):
     tasks = []
-    api = TodoistAPI(token)
+    api = TodoAPIPlus(token)
     try:
         tasks = api.get_tasks()
     except Exception as error:
         print(error)
     return tasks, api
-
-
-def dict_to_task(obj, url):
-    obj['comment_count'] = obj['note_count']
-    obj['is_completed'] = (obj['completed_at'] != '')
-    obj['created_at'] = "unknown"
-    obj['creator_id'] = obj['user_id']
-    obj['description'] = obj['content']
-    obj["priority"] = ''
-    obj['url'] = url
-    return Task.from_dict(obj)
-
-
-def get_all_completed_items(api):
-    url = get_sync_url('completed/get_all')
-    completed_items = get(api._session, url, api._token)
-    tasks = completed_items['items']
-    return [dict_to_task(obj, url) for obj in tasks]
 
 
 def sync_todoist_to_habitica():
@@ -84,7 +64,7 @@ def sync_todoist_to_habitica():
     match_dict = main.update_hab_matchDict(hab_tasks, match_dict)
 
     # We'll want to just... pull all the unmatched completed tasks out of our lists of tasks. Yeah?
-    tod_done = [TodTask(task) for task in get_all_completed_items(todo_api)]
+    tod_done = [TodTask(task) for task in todo_api.get_all_completed_items()]
     tod_uniq, hab_uniq = main.get_uniqs(match_dict, tod_done, hab_tasks)
 
     # Okay, so what if there are two matched tasks in the two uniq lists that really should be paired?
