@@ -12,8 +12,8 @@ source/oneWaySync.py
 source/task.py
 source/todo_task.py
 source/twoWaySync.py
-habiticaPlusTodoist.egg-info/PKG-INFO
-habiticaPlusTodoist.egg-info/SOURCES.txt
-habiticaPlusTodoist.egg-info/dependency_links.txt
-habiticaPlusTodoist.egg-info/not-zip-safe
-habiticaPlusTodoist.egg-info/top_level.txt
+ProjectHypeBerry.egg-info/PKG-INFO
+ProjectHypeBerry.egg-info/SOURCES.txt
+ProjectHypeBerry.egg-info/dependency_links.txt
+ProjectHypeBerry.egg-info/not-zip-safe
+ProjectHypeBerry.egg-info/top_level.txt

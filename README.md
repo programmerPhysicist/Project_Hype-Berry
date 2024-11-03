@@ -22,7 +22,7 @@ pip install tzlocal
 pip install iso8601
 pip install python-dateutil
 ```
-Finally, you need to add your API tokens to the `Habitica-Plus-Todoist/source/auth.cfg.example` file. You can find your Habitica API User ID and API key by visiting https://habitica.com/user/settings/api while logged in, and your Todoist API token can be found by visiting https://todoist.com/prefs/integrations while logged in. Once you've added these tokens, you should rename the file to `Habitica-Plus-Todoist/source/auth.cfg` (remove the '.example' at the end).
+Finally, you need to add your API tokens to the `Project_Hype-Berry/source/auth.cfg.example` file. You can find your Habitica API User ID and API key by visiting https://habitica.com/user/settings/api while logged in, and your Todoist API token can be found by visiting https://todoist.com/prefs/integrations while logged in. Once you've added these tokens, you should rename the file to `Project_Hype-Berry/source/auth.cfg` (remove the '.example' at the end).
 
 ## TASK DIFFICULTY
 

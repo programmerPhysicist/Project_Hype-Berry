@@ -7,12 +7,12 @@ Logging in via pytodoist...
 
 
 
-	# If you want to insert your own filepath, you *must* insert a full filepath starting from ~. 
+	# If you want to insert your own filepath, you *must* insert a full filepath starting from ~.
 	# if len(sys.argv) == 1:
-		# config = '~/Habitica-Plus-Todoist/auth.cfg'
+		# config = '~/Project_Hype-Berry/auth.cfg'
 	# else:
-		# config = path.expanduser(file_path) 
-		
+		# config = path.expanduser(file_path)
+
 #Now we'll want to check each task in habitica against the todoist ones. Let's get a lisk of task names.
 tod_uniq_tasks = list(set(tod_names) - set(hab_names))
 hab_uniq_tasks = list(set(hab_names) - set(tod_names))
@@ -22,7 +22,7 @@ class HabTasks(object):
     """
     We're gonna turn the dictionaries the API outputs into a class of variable that can be more easily manipulated.
     Attribute lists:
-    
+
     """
     def __init__(self, 'topic'):
         # for key in dictionary:
@@ -44,12 +44,12 @@ class HabTasks(object):
         self.challenge = ''
         self.createdAt = ''
         self.history = ''
-	
+
     # def complete(self):
         # """
         # Mark task complete.
         # """
         # print(self)
 
-    # def __eq__(self, other): 
-        # return self.text == other.content 
+    # def __eq__(self, other):
+        # return self.text == other.content

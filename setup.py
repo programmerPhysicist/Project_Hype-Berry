@@ -3,9 +3,9 @@
 from setuptools import setup
 
 setup(
-    name='Habitica-Plus-Todoist',
+    name='Project_Hype-Berry',
     version='2.0.1',
-    url='https://github.com/programmerPhysicist/Habitica-Plus-Todoist',
+    url='https://github.com/programmerPhysicist/Project_Hype-Berry',
     description='An API app for syncing todoist and habitica tasks',
-    packages=['Habitica-Plus-Todoist'],
+    packages=['Project_Hype-Berry'],
     zip_safe=False)
