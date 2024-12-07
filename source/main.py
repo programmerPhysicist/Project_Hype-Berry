@@ -16,7 +16,7 @@ from dates import parse_date_utc
 
 # TODO: Main.py overdue for an overhaul! Let's see.
 # Version control, basic paths
-VERSION = 'Project_Hype-Berry version 2.1.0'
+VERSION = 'Project_Hype-Berry version 2.1.1'
 TASK_VALUE_BASE = 0.9747  # http://habitica.wikia.com/wiki/Task_Value
 HABITICA_REQUEST_WAIT_TIME = 0.5  # time to pause between concurrent requests
 HABITICA_TASKS_PAGE = '/#/tasks'
@@ -312,13 +312,14 @@ def make_daily_from_tod(tod):
 def make_hab_from_tod(tod_task):
     new_hab = {'type': 'todo'}
     new_hab['text'] = tod_task.name
-    try:
-        date_listed = list(tod_task.task_dict['due'])
-        due_now = str(parser.parse(date_listed).date())
-    except:
-        due_now = ''
+    due = tod_task.due_date
+    #try:
+        #date_listed = list(tod_task.task_dict['due'])
+        #due_now = str(parser.parse(date_listed).date())
+    #except:
+        #due_now = ''
 
-    new_hab['date'] = due_now
+    new_hab['date'] = due
     new_hab['alias'] = tod_task.id
     if tod_task.priority == 1:
         new_hab['priority'] = '2'
@@ -463,16 +464,20 @@ def sync_hab2todo_todo(hab, tod):
         habDict['priority'] = 1
 
     try:
-        due_now = tod.due.date()
+        due_now = tod.due_date
     except:
         due_now = ''
     try:
-        due_old = parse_date_utc(hab.date).date()
+        due_old = hab.due
     except:
         due_old = ''
 
     if due_old != due_now:
-        habDict['date'] = str(due_now)
+        if due_now is not None:
+            habDict['date'] = str(due_now)
+            print("INFO: Due date will be updated to " + habDict['date'])
+        else:
+            habDict['date'] = ''
 
     new_hab = HabTask(habDict)
     return new_hab
