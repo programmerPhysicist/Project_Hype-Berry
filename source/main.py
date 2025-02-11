@@ -463,16 +463,16 @@ def sync_hab2todo_todo(hab, tod):
         habDict['priority'] = 1
 
     try:
-        dueNow = tod.due.date()
+        due_now = tod.due.date()
     except:
-        dueNow = ''
+        due_now = ''
     try:
-        dueOld = parse_date_utc(hab.date).date()
+        due_old = parse_date_utc(hab.date).date()
     except:
-        dueOld = ''
+        due_old = ''
 
-    if dueOld != dueNow:
-        habDict['date'] = str(dueNow)
+    if due_old != due_now:
+        habDict['date'] = str(due_now)
 
     new_hab = HabTask(habDict)
     return new_hab

@@ -17,7 +17,9 @@ import pytz
 from dates import parse_date_utc
 from task import CharacterAttribute, ChecklistItem, Difficulty, Task
 
-class HabTask(object):
+
+class HabTask():
+    """Class to hold data for a single Habitica task """
     def __init__(self, task_dict=None):
         """ Initialise the task.
 
@@ -74,8 +76,8 @@ class HabTask(object):
             return ''
 
     @property
-    #When did the daily start running? (That is, is it active now?)
     def starting(self):
+        """When did the daily start running? (That is, is it active now?)"""
         from dateutil import parser
         import datetime
         if self.__task_dict['type'] == 'daily':
