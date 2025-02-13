@@ -13,7 +13,8 @@ class TestHelpers:
     @staticmethod
     def get_root():
         dir_path = os.path.dirname(os.path.realpath(__file__))
-        root = dir_path.split("test")[0]
+        root = dir_path.split("Project_Hype-Berry")[0]
+        root = os.path.join(root, "Project_Hype-Berry")
         return root
 
     @staticmethod

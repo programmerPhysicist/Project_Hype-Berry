@@ -131,7 +131,6 @@ class TestEndToEndIntegration:
             # mock read in of pickle file
             pkl_file = mock()
             pkl_load = mock()
-            when2(open, ...).thenCallOriginalImplementation()
             when2(open, 'oneWay_matchDict.pkl', 'rb').thenReturn(pkl_file)
             when(pickle).Unpickler(...).thenReturn(pkl_load)
             when(pkl_load).load().thenReturn({})

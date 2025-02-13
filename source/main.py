@@ -16,7 +16,7 @@ from dates import parse_date_utc
 
 # TODO: Main.py overdue for an overhaul! Let's see.
 # Version control, basic paths
-VERSION = 'Project_Hype-Berry version 2.1.2'
+VERSION = 'Project_Hype-Berry version 2.1.1'
 TASK_VALUE_BASE = 0.9747  # http://habitica.wikia.com/wiki/Task_Value
 HABITICA_REQUEST_WAIT_TIME = 0.5  # time to pause between concurrent requests
 HABITICA_TASKS_PAGE = '/#/tasks'
