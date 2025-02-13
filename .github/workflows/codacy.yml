@@ -15,12 +15,13 @@ name: Codacy Security Scan
 
 on:
   push:
-    branches: 
+    branches:
     - master
     - develop
+    - fix-warnings-2
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: 
+    branches:
     - master
     - develop
 

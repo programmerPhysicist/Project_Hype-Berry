@@ -1,17 +1,10 @@
 # -*- coding: utf-8 -*-
 """ Implements a Todoist synchronisation task.
 """
-# Ensure backwards compatibility with Python 2
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals)
-from builtins import *
-from datetime import datetime
-from tzlocal import get_localzone
-
-
+from datetime import datetime, timedelta
+import pytz
+from dateutil import parser
+import main
 #from .dates import parse_date_utc
 #from .task import CharacterAttribute, ChecklistItem, Difficulty, Task
 
@@ -19,7 +12,9 @@ from tzlocal import get_localzone
 So what if I did todoist work a sliiiightly different way, using all my task IDs?
 """
 
-class TodTask(object):
+
+class TodTask():
+    '''Hold a Todoist task '''
     def __init__(self, task=None):
         """ Initialise the task.
 
@@ -70,7 +65,6 @@ class TodTask(object):
     @property
     #task name
     def history(self):
-        import main
         tod_user = main.tod_login('auth.cfg')
         activity = tod_user.activity.get(object_type='item', object_id = self.__task_dict['id'], event_type='completed')
         return activity
@@ -125,20 +119,17 @@ class TodTask(object):
     @property
     #due date
     def due(self):
-        from dateutil import parser
-        import datetime
         if self.__task_dict['due'] is not None:
-            date = parser.parse(self.__task_dict['due']['date'])
+            if isinstance(self.__task_dict['due'], dict):
+                date = parser.parse(self.__task_dict['due']['date'])
+            else:
+                date = self.__task_dict['due']
             return date
         return ''
 
     @property
     #is it due TODAY?
     def dueToday(self):
-        from dateutil import parser
-        from datetime import datetime
-        from datetime import timedelta
-        import pytz
         today = datetime.utcnow().replace(tzinfo=pytz.UTC)
         try:
             # that datetime thing is pulling todoist's due dates to my time zone
@@ -163,10 +154,7 @@ class TodTask(object):
     @property
     #should it be due today?
     def dueLater(self):
-        from dateutil import parser
-        import datetime
-        import pytz
-        today = datetime.datetime.utcnow().replace(tzinfo=pytz.UTC)
+        today = datetime.utcnow().replace(tzinfo=pytz.UTC)
         try:
             wobble = parser.parse(self.__task_dict['due'])
             dueDate = wobble.date()

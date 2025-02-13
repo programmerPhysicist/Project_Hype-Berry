@@ -52,6 +52,7 @@ def complete_todoist(todo_api, task_id):
 
 
 def sync_todoist_to_habitica():
+    '''Main function for syncing one-way from Todoist to Habitica '''
     # todayFilter = todo_api.filters.add('todayFilter', 'today')
 
     # Telling the site where the config stuff for Habitica can go and get a list of habitica tasks...
@@ -179,7 +180,7 @@ def sync_todoist_to_habitica():
                         continue
                     else:
                         print("error, check todoist daily")
-            elif hab.dueToday == False:
+            elif not hab.dueToday:
                 try:
                     match_dict[tid]['duelast']
                 except:
@@ -188,7 +189,7 @@ def sync_todoist_to_habitica():
                     # this is me keeping a record of recurring tods being completed or not for some of
                     # the complicated bits
                     match_dict[tid]['duelast'] = 'Yes'
-                if hab.completed == False:
+                if not hab.completed:
                     if match_dict[tid]['duelast'] == 'Yes':
                         if tod.dueToday == 'No':
                             response = main.complete_hab(hab)
@@ -219,7 +220,7 @@ def sync_todoist_to_habitica():
                     print("ERROR: check HAB %s" % tid)
                     # match_dict.pop(tid)
             elif tod.complete == 1:
-                if hab.completed == False:
+                if not hab.completed:
                     response = main.complete_hab(hab)
                     print(response)
                     if response.ok:

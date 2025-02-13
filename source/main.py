@@ -8,7 +8,7 @@ import sys
 import pickle
 import time
 import requests
-from dateutil import parser
+# from dateutil import parser
 from hab_task import HabTask
 import config
 

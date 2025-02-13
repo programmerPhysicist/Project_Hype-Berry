@@ -2,17 +2,8 @@
 """ Implements a Habitica synchronisation task.
 This is borrowed essentially wholesale from scriptabit by DeeDee (see README).
 """
-# Ensure backwards compatibility with Python 2
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals)
-from builtins import *
 from datetime import datetime
 import copy
-import time
-# from tzlocal import get_localzone
 import pytz
 
 from dates import parse_date_utc
@@ -68,7 +59,7 @@ class HabTask():
             return date
         elif self.__task_dict['type'] == 'daily':
             if self.__task_dict['isDue'] == True:
-                date = datetime.now().replace(tzinfo=pytz.utc,hour=0,minute=0,second=0,microsecond=0)
+                date = datetime.now().replace(tzinfo=pytz.utc, hour=0, minute=0, second=0, microsecond=0)
             elif self.__task_dict['nextDue'] != '':
                 date = parser.parse(self.__task_dict['nextDue'][0])
             return date
@@ -78,8 +69,6 @@ class HabTask():
     @property
     def starting(self):
         """When did the daily start running? (That is, is it active now?)"""
-        from dateutil import parser
-        import datetime
         if self.__task_dict['type'] == 'daily':
             start = parser.parse(self.__task_dictself.__task_dict['startDate'])
         else:
@@ -137,7 +126,6 @@ class HabTask():
     @property
     #Is this task due today?
     def due_now(self):
-        now = time.strftime()
         if self.__task_dict['type'] == 'daily':
             return ''
         else:
