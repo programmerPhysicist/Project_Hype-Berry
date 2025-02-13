@@ -2,7 +2,7 @@
 
 '''
 One way sync. All the features of todoist-habitrpg; nothing newer or shinier.
-Well. Okay, not *technically* one-way--it will sync two way for simple tasks/
+Well. Okay, not *technically* oneway - it will sync two way for simple tasks/
 habitica to-dos,
 just not for recurring todo tasks or dailies. I'm workin' on that.
 '''
@@ -12,6 +12,9 @@ just not for recurring todo tasks or dailies. I'm workin' on that.
 import pickle
 import time
 import json
+import pytz
+import requests
+from tzlocal import get_localzone
 
 import main
 from todo_task import TodTask
@@ -28,6 +31,8 @@ def get_tasks(token):
     try:
         tasks = api.get_tasks()
     except ConnectionError as error:
+        print(error)
+    except requests.exceptions.HTTPError as error:
         print(error)
     return tasks, api
 
@@ -62,8 +67,18 @@ def sync_todoist_to_habitica():
     todoist_tasks, todo_api = get_tasks(todo_token) # todoist_tasks used to be tod_tasks
 
     tod_tasks = []
-    for i in range(0, len(todoist_tasks)):
-        tod_tasks.append(TodTask(todoist_tasks[i]))
+    tzone = None
+    for task in todoist_tasks:
+        tod_tasks.append(TodTask(task))
+
+    if tzone is None:
+        # assumption is that timezone from Todoist
+        # is the same as local timezone
+        tzone = pytz.timezone(str(get_localzone()))
+
+        for task in tod_tasks:
+            if task.due != '':
+                task.due_date = task.due.astimezone(tzone)
 
     # TODO: add back to filter out repeating older than a certain amount?
     # date stuff
@@ -98,7 +113,7 @@ def sync_todoist_to_habitica():
             new_hab = main.make_daily_from_tod(tod)
         else:
             new_hab = main.make_hab_from_tod(tod)
-        new_dict = new_hab.task_dict
+        new_dict = new_hab.get_dict()
 
         # sleep to stay within rate limits
         time.sleep(2)
@@ -195,6 +210,7 @@ def sync_todoist_to_habitica():
                 if not hab.completed:
                     matched_hab = main.sync_hab2todo(hab, tod)
                     response = main.update_hab(matched_hab)
+                    # TODO: handle error if response bad
                 elif hab.completed:
                     # fix_tod = todo_api.items.get_by_id(tid)
                     # fix_tod.close()
