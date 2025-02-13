@@ -313,11 +313,13 @@ def make_hab_from_tod(tod_task):
     new_hab = {'type': 'todo'}
     new_hab['text'] = tod_task.name
     due = tod_task.due_date
-    #try:
-        #date_listed = list(tod_task.task_dict['due'])
-        #due_now = str(parser.parse(date_listed).date())
-    #except:
-        #due_now = ''
+    '''
+    try:
+        date_listed = list(tod_task.task_dict['due'])
+        due_now = str(parser.parse(date_listed).date())
+    except:
+        due_now = ''
+    '''
 
     new_hab['date'] = due
     new_hab['alias'] = tod_task.id
