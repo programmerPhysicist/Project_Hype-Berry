@@ -84,7 +84,7 @@ def verify_pickle_dump(dump_dict):
     # check 'simple' values
     assert '8296278113' in data.keys()
     data = data['8296278113']
-    assert data['recurs'] == 'No'
+    assert not data['recurs']
     assert data['duelast'] == 'NA'
     # Get objects to verify
     assert 'tod' in data.keys()

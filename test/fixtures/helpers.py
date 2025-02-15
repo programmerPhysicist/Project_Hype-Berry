@@ -1,8 +1,13 @@
 # pylint: disable=missing-function-docstring, missing-class-docstring, missing-module-docstring
+from pathlib import Path
 import os
 import json
-
+import sys
+import pickle
 from urllib.parse import parse_qsl, urlencode
+from mockito import when2
+sys.path.append("../../source")
+import hab_task # pylint: disable=import-error, wrong-import-position, unused-import
 
 
 class TestHelpers:
@@ -19,6 +24,7 @@ class TestHelpers:
     @staticmethod
     def get_cassette_dir():
         the_dir = os.path.join(TestHelpers.get_repo_path(), 'test/fixtures/cassettes')
+        assert os.path.isdir(the_dir)
         return the_dir
 
     @staticmethod
@@ -29,8 +35,9 @@ class TestHelpers:
             self_name = locals()['__file__']
         else:
             self_name = __name__
-        file_path = self_name.split("Project_Hype-Berry")[0]
-        root = os.path.join(file_path, "Project_Hype-Berry")
+        assert 'helpers.py' in self_name
+        root = self_name.split("test")[0]
+        assert 'helpers.py' not in root
         return root
 
     @classmethod
@@ -172,3 +179,57 @@ class TestHelpers:
             response['body']['string'] = body.encode()
             return response
         return before_record_response
+
+    @staticmethod
+    def count_types(data):
+        todos = 0
+        habits = 0
+        dailies = 0
+        other = 0
+        for value in data.values():
+            hab = value['hab']
+            hab_type = hab.task_dict['type']
+            if hab_type == 'todo':
+                todos += 1
+            elif hab_type == 'habit':
+                habits += 1
+            elif hab_type == 'daily':
+                dailies += 1
+            else:
+                other += 1
+        return todos, habits, dailies, other
+
+
+class DebugHelpers:
+    @staticmethod
+    def pretty_print_ct(data):
+        vals = TestHelpers.count_types(data)
+        print('------+--------+---------+------')
+        print('todos | habits | dailies | other')
+        print('------+--------+---------+------')
+        print(f'{vals[0]:^6}|{vals[1]:^8}|{vals[2]:^9}|{vals[3]:^5}')
+        print('------+--------+---------+------')
+
+    @staticmethod
+    def save_data_item(data, filename):
+        with open(filename, 'wb') as pkl_file:
+            when2(pickle.Pickler, ...).thenCallOriginalImplementation()
+            pkl_out = pickle.Pickler(pkl_file, -1)
+            pkl_out.dump(data)
+            pkl_file.close()
+
+    @staticmethod
+    def load_data_item(filename):
+        data = None
+        with open(filename, 'rb') as pkl_file:
+            pkl_load = pickle.Unpickler(pkl_file)
+            data = pkl_load.load()
+            pkl_file.close()
+        return data
+
+    @staticmethod
+    def save_breakpoint(pt, filepath):
+        home = Path.home()
+        pdbrcpath = os.path.join(home, ".pdbrc")
+        with open(pdbrcpath, "a") as pdbrc:
+            pdbrc.write("\nbreak " + filepath + f":{pt!s}")

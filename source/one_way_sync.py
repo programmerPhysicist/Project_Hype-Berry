@@ -12,10 +12,8 @@ just not for recurring todo tasks or dailies. I'm workin' on that.
 import pickle
 import time
 import json
-import pytz
 import requests
-from tzlocal import get_localzone
-
+# pylint: disable=import-error
 import main
 from todo_task import TodTask
 from hab_task import HabTask
@@ -67,18 +65,8 @@ def sync_todoist_to_habitica():
     todoist_tasks, todo_api = get_tasks(todo_token) # todoist_tasks used to be tod_tasks
 
     tod_tasks = []
-    tzone = None
     for task in todoist_tasks:
         tod_tasks.append(TodTask(task))
-
-    if tzone is None:
-        # assumption is that timezone from Todoist
-        # is the same as local timezone
-        tzone = pytz.timezone(str(get_localzone()))
-
-        for task in tod_tasks:
-            if task.due != '':
-                task.due_date = task.due.astimezone(tzone)
 
     # TODO: add back to filter out repeating older than a certain amount?
     # date stuff
@@ -108,7 +96,7 @@ def sync_todoist_to_habitica():
 
     for tod in tod_uniq:
         tid = tod.id
-        if tod.recurring == "Yes":
+        if tod.recurring:
             # TODO fix make_daily_from_tod
             new_hab = main.make_daily_from_tod(tod)
         else:
@@ -133,13 +121,13 @@ def sync_todoist_to_habitica():
                         print(err_msg)
                     print("WARNING: Bad request, already existing task - " + alias)
                     complete_todoist(todo_api, alias)
-                    hab = HabTask()
-                    hab.task_dict['completed'] = True
-                    hab.task_dict['alias'] = alias
+                    # hab = HabTask()
+                    new_hab.task_dict['completed'] = True
+                    # new_hab.task_dict['alias'] = alias
 
                     match_dict[alias] = {}
                     match_dict[alias]['tod'] = tod
-                    match_dict[alias]['hab'] = hab
+                    match_dict[alias]['hab'] = new_hab
         else:
             print("Added hab to %s!" % tod.name)
             fin_hab = main.get_hab_fromID(tid)
@@ -147,8 +135,8 @@ def sync_todoist_to_habitica():
             match_dict[tid]['tod'] = tod
             match_dict[tid]['hab'] = fin_hab
             match_dict[tid]['recurs'] = tod.recurring
-            if match_dict[tid]['recurs'] == 'Yes':
-                if tod.dueToday == 'Yes':
+            if match_dict[tid]['recurs']:
+                if tod.dueToday:
                     match_dict[tid]['duelast'] = 'Yes'
                 else:
                     match_dict[tid]['duelast'] = 'No'
@@ -159,38 +147,38 @@ def sync_todoist_to_habitica():
     for tid in match_dict:
         tod = match_dict[tid]['tod']
         hab = match_dict[tid]['hab']
-        if tod.recurring == 'Yes':
+        if tod.recurring:
             if hab.dueToday:
                 if not hab.completed:
-                    if tod.dueToday == 'Yes':
+                    if tod.dueToday:
                         matched_hab = main.sync_hab2todo(hab, tod)
                         response = main.update_hab(matched_hab)
-                    elif tod.dueToday == 'No':
+                    elif not tod.dueToday:
                         response = main.complete_hab(hab)
                         print('Completed daily hab %s' % hab.name)
                     else:
                         print("error in daily Hab")
                 elif hab.completed:
-                    if tod.dueToday == 'Yes':
+                    if tod.dueToday:
                         # fix_tod = todo_api.items.get_by_id(tid)
                         # fix_tod.close()
                         print('fix the tod! TID %s, NAMED %s' %(tid, tod.name))
-                    elif tod.dueToday == 'No':
+                    elif not tod.dueToday:
                         continue
                     else:
                         print("error, check todoist daily")
-            elif hab.dueToday == False:
+            elif not hab.dueToday:
                 try:
                     match_dict[tid]['duelast']
                 except:
                     match_dict[tid]['duelast'] = 'No'
-                if tod.dueToday == 'Yes':
+                if tod.dueToday:
                     # this is me keeping a record of recurring tods being completed or not for some of
                     # the complicated bits
                     match_dict[tid]['duelast'] = 'Yes'
-                if hab.completed == False:
+                if not hab.completed:
                     if match_dict[tid]['duelast'] == 'Yes':
-                        if tod.dueToday == 'No':
+                        if not tod.dueToday:
                             response = main.complete_hab(hab)
                             if response.ok:
                                 print('Completed Habitica task: %s' % hab.name)
@@ -201,7 +189,7 @@ def sync_todoist_to_habitica():
             else:
                 print("error, check hab daily")
                 print(hab.id)
-        elif tod.recurring == 'No':
+        elif not tod.recurring:
             if tod.complete == 0:
                 try:
                     hab.completed
@@ -243,6 +231,7 @@ def sync_todoist_to_habitica():
     #        response = main.update_hab(match_dict[tid]['hab'])
 
     pkl_file = open('oneWay_matchDict.pkl', 'wb')
+    # TODO: Change -1 to other number, so backwards compatible
     pkl_out = pickle.Pickler(pkl_file, -1)
     pkl_out.dump(match_dict)
     pkl_file.close()

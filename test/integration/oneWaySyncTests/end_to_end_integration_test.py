@@ -4,6 +4,8 @@ import os
 import logging
 from pathlib import Path
 import pickle
+from collections import namedtuple
+import json as j
 import yaml
 import pytest
 from mockito import when, mock, unstub, when2, verify, captor, ANY, patch, not_, arg_that
@@ -25,18 +27,29 @@ filepath = Path(os.path.join(TestHelpers.get_root(), 'test/fixtures/dump.yaml'))
 
 
 def fake_post(url, data=None, json=None, **kwargs): # pylint: disable=unused-argument, redefined-outer-name
-    errors_result = [{'message': 'Task alias already used on another task.',
-                      'path': 'alias',
-                      'value': data['alias']}]
-    json_result = {'success': False,
-                   'error': 'BadRequest',
-                   'message': 'todo validation failed',
-                   'errors': errors_result}
-
     # set default response
     response = mock({'status': 400, 'ok': False,
                      'status_code': '400'},
                     spec=requests.Response)
+    if data:
+        if isinstance(data, str):
+            data = j.loads(data)
+        if data['alias'] != '8882931750':
+            errors_result = [{'message': 'Task alias already used on another task.',
+                              'path': 'alias',
+                              'value': data['alias']}]
+            json_result = {'success': False,
+                           'error': 'BadRequest',
+                           'message': 'todo validation failed',
+                           'errors': errors_result}
+        else:
+            json_result = {'success': True}
+            response = mock({'status': 200, 'ok': True,
+                            'status_code': '200'},
+                            spec=requests.Response)
+
+    else:
+        json_result = ''
 
     when(response).json().thenReturn(json_result)
     global POST_COUNT
@@ -68,13 +81,14 @@ def read_pickle():
 
 
 @pytest.fixture
-def expected(request):
-    return request.param
+def expected_vals(request):
+    # Declaring namedtuple()
+    Expected = namedtuple('Expected', ['posts', 'keys', 'iters'])
 
-
-@pytest.fixture
-def iters(request):
-    return request.param
+    # Adding values
+    param = request.param
+    result = Expected(param[0], param[1], param[2])
+    return result
 
 
 @pytest.fixture
@@ -109,13 +123,12 @@ class TestEndToEndIntegration:
     )
 
     # pylint: disable=redefined-outer-name, unused-argument
-    @pytest.mark.parametrize("pickle_in,expected,iters",
-                             [(empty_pickle(), 4, 0), (read_pickle(), 8, 69)],
+    @pytest.mark.parametrize("pickle_in,expected_vals",
+                             [(empty_pickle(), [3, 98, 0]), (read_pickle(), [6, 98, 92])],
                              indirect=True)
     def test_end_to_end(self,
                         auth_cfg,
-                        expected,
-                        iters,
+                        expected_vals,
                         clean_up):
         # pylint: enable=redefined-outer-name, unused-argument
         ''' you need to initialize logging,
@@ -147,6 +160,17 @@ class TestEndToEndIntegration:
             response = mock({'status': 200, 'ok': True}, spec=requests.Response)
             when(requests).put(...).thenReturn(response)
 
+            # mock out web call to get id, full task
+            '''hab_val = {"data": {}}
+            response2 = mock({'status': 200, 'ok': True}, spec=requests.Response)
+            task_url = 'https://habitica.com/api/v3/tasks/8882931750'
+            when2(requests.get, ...).thenCallOriginalImplementation()
+            when(requests).get(headers={'url': task_url,
+                                        'x-api-user': 'cd18fc9f-b649-4384-932a-f3bda6fe8102',
+                                        'x-api-key': '18f22441-2c87-6d8e-fb2a-3fa670837b5a'},
+                               url=task_url).thenReturn(response2)
+            when(response2).json().thenReturn(hab_val)'''
+
             # execute
             sync_todoist_to_habitica()
 
@@ -155,19 +179,25 @@ class TestEndToEndIntegration:
             verify(pkl_out, times=1).dump(dump_dict)
             data = dump_dict.value
             save_pickle_for_test(data)
-            assert len(data.keys()) == 77
+            assert len(data.keys()) == expected_vals.keys
+
+            h_types = TestHelpers.count_types(data)
+            assert h_types[0] == 97
+            assert h_types[1] == 0
+            assert h_types[2] > 0
+            assert h_types[3] == 0
 
             # check put
-            if iters != 0:
+            if expected_vals.iters != 0:
                 the_url = captor(ANY(str))
                 the_headers = captor(ANY(dict))
 
                 # catch-all matcher
-                verify(requests, times=81).put(...)
+                verify(requests, times=93).put(...)
 
-                verify(requests, times=iters).put(url=the_url,
-                                                  data=not_(arg_that(date_matcher)),
-                                                  headers=the_headers)
+                verify(requests, times=expected_vals.iters).put(url=the_url,
+                                                                data=not_(arg_that(date_matcher)),
+                                                                headers=the_headers)
                 '''
                 the_data = captor(arg_that(date_matcher))
                 verify(requests, times=6).put(url=the_url,
@@ -177,4 +207,4 @@ class TestEndToEndIntegration:
                 # result = the_data.value
                 # print(result)
             # check # of post to habitica
-            assert POST_COUNT == expected
+            assert POST_COUNT == expected_vals.posts

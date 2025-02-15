@@ -1,0 +1,4 @@
+alias cwd import os; os.getcwd();
+alias ppd from helpers import DebugHelpers;; DebugHelpers.pretty_print_ct(%1)
+alias sd from helpers import DebugHelpers;; DebugHelpers.save_data_item(%1,%2)
+alias bs from helpers import DebugHelpers;; DebugHelpers.save_breakpoint(%1, __file__)

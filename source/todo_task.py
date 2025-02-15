@@ -8,8 +8,11 @@ from __future__ import (
     print_function,
     unicode_literals)
 from builtins import *
+import datetime
 from datetime import datetime
+from dateutil import parser
 from tzlocal import get_localzone
+import pytz
 
 
 #from .dates import parse_date_utc
@@ -19,7 +22,8 @@ from tzlocal import get_localzone
 So what if I did todoist work a sliiiightly different way, using all my task IDs?
 """
 
-class TodTask(object):
+
+class TodTask():
     def __init__(self, task=None):
         """ Initialise the task.
 
@@ -38,20 +42,28 @@ class TodTask(object):
 
         self.__task_dict = task_dict
 
+        if 'due' in task_dict:
+            due = self.__task_dict['due']
+            if due is not None:
+                date = due['date']
+                tzone = pytz.timezone(str(get_localzone()))
+                if isinstance(date, datetime):
+                    self.__task_dict['due']['date'] = date.astimezone(tzone)
+                elif isinstance(date, str):
+                    date = parser.parse(date)
+                    self.__task_dict['due']['date'] = date.astimezone(tzone)
+
     @property
     #Get the task dictionary as is
     def task_dict(self):
         return self.__task_dict
 
     @property
-    #Is this task recurring?
     def recurring(self):
-        if self.__task_dict.get('date_string', None) == None:
-            return 'No'
-        elif 'ev' in self.__task_dict['date_string']:
-            return  'Yes'
-        else:
-            return 'No'
+        ''' Is this task recurring?'''
+        if self.__task_dict['due'] is not None:
+            return self.__task_dict['due']['is_recurring']
+        return False
 
     @property
     #Get the task dictionary as is
@@ -125,46 +137,25 @@ class TodTask(object):
     @property
     #due date
     def due(self):
-        from dateutil import parser
-        import datetime
-        if self.__task_dict['due'] is not None:
-            date = parser.parse(self.__task_dict['due']['date'])
-            return date
-        return ''
+        return self.__task_dict['due']['date']
 
     @property
     #is it due TODAY?
     def dueToday(self):
-        from dateutil import parser
-        from datetime import datetime
-        from datetime import timedelta
-        import pytz
-        today = datetime.utcnow().replace(tzinfo=pytz.UTC)
-        try:
-            # that datetime thing is pulling todoist's due dates to my time zone
-            wobble = parser.parse(self.__task_dict['due']) - timedelta(hours=6)
-            dueDate = wobble.date()
-        except:
-            dueDate = ""
-
-        if today.date() >= dueDate:
-            return 'Yes'
-        elif dueDate == "":
-            return "No due date"
-        else:
-            return 'No'
-
+        today = datetime.now(get_localzone())
+        return today >= self.due
 
     @property
-    #date in string form
     def date_string(self):
-        return self.__task_dict['date_string']
+        ''' date in string form'''
+        due = self.__task_dict['due']
+        if due is not None:
+            return due['date'].strftime("%m/%d/%Y, %H:%M:%S")
+        return ''
 
     @property
     #should it be due today?
     def dueLater(self):
-        from dateutil import parser
-        import datetime
         import pytz
         today = datetime.datetime.utcnow().replace(tzinfo=pytz.UTC)
         try:

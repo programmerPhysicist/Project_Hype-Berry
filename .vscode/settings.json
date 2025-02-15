@@ -8,5 +8,6 @@
     "flake8.args": [
         "--ignore=E261",
         "--max-line-length=120",
-    ]
+    ],
+    "github.copilot.nextEditSuggestions.enabled": false
 }
