@@ -10,6 +10,7 @@ from __future__ import (
 from builtins import *
 from datetime import datetime
 from tzlocal import get_localzone
+import pytz
 
 
 #from .dates import parse_date_utc
@@ -37,6 +38,11 @@ class TodTask(object):
             raise TypeError(type(task_dict))
 
         self.__task_dict = task_dict
+
+        tzone = pytz.timezone(str(get_localzone()))
+        date = self.due
+        if date is not None:
+            self.__task_dict['due']['date'] = date.astimezone(tzone)
 
     @property
     #Get the task dictionary as is
@@ -128,9 +134,12 @@ class TodTask(object):
         from dateutil import parser
         import datetime
         if self.__task_dict['due'] is not None:
-            date = parser.parse(self.__task_dict['due']['date'])
+            if isinstance(self.__task_dict['due'], dict):
+                date = parser.parse(self.__task_dict['due']['date'])
+            else:
+                date = self.__task_dict['due']
             return date
-        return ''
+        return None
 
     @property
     #is it due TODAY?
