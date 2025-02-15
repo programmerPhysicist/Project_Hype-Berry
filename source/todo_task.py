@@ -128,7 +128,10 @@ class TodTask(object):
         from dateutil import parser
         import datetime
         if self.__task_dict['due'] is not None:
-            date = parser.parse(self.__task_dict['due']['date'])
+            if isinstance(self.__task_dict['due'], dict):
+                date = parser.parse(self.__task_dict['due']['date'])
+            else:
+                date = self.__task_dict['due']
             return date
         return ''
 

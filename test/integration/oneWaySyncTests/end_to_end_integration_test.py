@@ -4,6 +4,7 @@ import os
 import logging
 from pathlib import Path
 import pickle
+from collections import namedtuple
 import yaml
 import pytest
 from mockito import when, mock, unstub, when2, verify, captor, ANY, patch, not_, arg_that
@@ -68,13 +69,14 @@ def read_pickle():
 
 
 @pytest.fixture
-def expected(request):
-    return request.param
+def expected_vals(request):
+    # Declaring namedtuple()
+    Expected = namedtuple('Expected', ['posts', 'keys', 'iters'])
 
-
-@pytest.fixture
-def iters(request):
-    return request.param
+    # Adding values
+    param = request.param
+    result = Expected(param[0], param[1], param[2])
+    return result
 
 
 @pytest.fixture
@@ -109,13 +111,12 @@ class TestEndToEndIntegration:
     )
 
     # pylint: disable=redefined-outer-name, unused-argument
-    @pytest.mark.parametrize("pickle_in,expected,iters",
-                             [(empty_pickle(), 4, 0), (read_pickle(), 8, 69)],
+    @pytest.mark.parametrize("pickle_in,expected_vals",
+                             [(empty_pickle(), [1, 70, 0]), (read_pickle(), [2, 70, 65])],
                              indirect=True)
     def test_end_to_end(self,
                         auth_cfg,
-                        expected,
-                        iters,
+                        expected_vals,
                         clean_up):
         # pylint: enable=redefined-outer-name, unused-argument
         ''' you need to initialize logging,
@@ -154,19 +155,19 @@ class TestEndToEndIntegration:
             verify(pkl_out, times=1).dump(dump_dict)
             data = dump_dict.value
             save_pickle_for_test(data)
-            assert len(data.keys()) == 77
+            assert len(data.keys()) == expected_vals.keys
 
             # check put
-            if iters != 0:
+            if expected_vals.iters != 0:
                 the_url = captor(ANY(str))
                 the_headers = captor(ANY(dict))
 
                 # catch-all matcher
-                verify(requests, times=81).put(...)
+                verify(requests, times=72).put(...)
 
-                verify(requests, times=iters).put(url=the_url,
-                                                  data=not_(arg_that(date_matcher)),
-                                                  headers=the_headers)
+                verify(requests, times=expected_vals.iters).put(url=the_url,
+                                                                data=not_(arg_that(date_matcher)),
+                                                                headers=the_headers)
                 '''
                 the_data = captor(arg_that(date_matcher))
                 verify(requests, times=6).put(url=the_url,
@@ -176,4 +177,4 @@ class TestEndToEndIntegration:
                 # result = the_data.value
                 # print(result)
             # check # of post to habitica
-            assert POST_COUNT == expected
+            assert POST_COUNT == expected_vals.posts

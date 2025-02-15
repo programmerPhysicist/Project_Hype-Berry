@@ -78,7 +78,7 @@ def sync_todoist_to_habitica():
 
         for task in tod_tasks:
             if task.due != '':
-                task.due_date = task.due.astimezone(tzone)
+                task.task_dict['due'] = task.due.astimezone(tzone)
 
     # TODO: add back to filter out repeating older than a certain amount?
     # date stuff
