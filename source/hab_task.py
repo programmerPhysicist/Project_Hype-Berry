@@ -308,6 +308,6 @@ class HabTask():
         """ Get string representation of hab_task class. """
         result_dict = copy.deepcopy(self.__task_dict)
         if result_dict['date'] is not None:
-            due = result_dict['date'].strftime("%m/%d/%Y, %H:%M:%S")
+            due = result_dict['date']['date'].strftime("%m/%d/%Y, %H:%M:%S")
             result_dict['date'] = due
         return result_dict

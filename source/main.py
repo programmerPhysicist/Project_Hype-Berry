@@ -466,7 +466,7 @@ def sync_hab2todo_todo(hab, tod):
         habDict['priority'] = 1
 
     try:
-        due_now = tod.due_date
+        due_now = tod.due_date['date']
     except:
         due_now = ''
     try:
