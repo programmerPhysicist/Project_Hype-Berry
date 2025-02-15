@@ -228,7 +228,7 @@ def sync_todoist_to_habitica():
                     else:
                         print('check hab ID %s' %tid)
                         print(response.reason)
-                elif hab.completed == True:
+                elif hab.completed:
                     continue
                 else:
                     print("ERROR: check HAB %s" % tid)
