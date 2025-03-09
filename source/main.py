@@ -7,6 +7,7 @@ import os
 import sys
 import pickle
 import time
+import re
 import requests
 from dateutil import parser
 from hab_task import HabTask
@@ -239,10 +240,10 @@ def get_uniqs(match_dict, tod_tasks):
                 tod_uniq.append(tod)
 
     return tod_uniq
-'''
+
+
 def make_daily_from_tod(tod):
-    import re
-    new_hab = {'type':'daily'}
+    new_hab = {'type': 'daily'}
     new_hab['text'] = tod.name
     new_hab['alias'] = tod.id
     reg = re.compile(r"ev.{0,}(?<!other)\b (mon[^t]|tues|wed|thurs|fri|sun|sat|w(or|ee)kday|weekend)", re.I)
@@ -252,35 +253,35 @@ def make_daily_from_tod(tod):
         new_hab['frequency'] = 'weekly'
         daysofWeek = {}
         if 'sun' in tod.date_string:
-            daysofWeek['su']  = True
+            daysofWeek['su'] = True
         else:
             daysofWeek['su'] = False
         if 'mon' in tod.date_string:
-            daysofWeek['m']  = True
+            daysofWeek['m'] = True
         else:
             daysofWeek['m'] = False
         if 'tues' in tod.date_string:
-            daysofWeek['t']  = True
+            daysofWeek['t'] = True
         else:
             daysofWeek['t'] = False
         if 'wed' in tod.date_string:
-            daysofWeek['w']  = True
+            daysofWeek['w'] = True
         else:
             daysofWeek['w'] = False
         if 'thurs' in tod.date_string:
-            daysofWeek['th']  = True
+            daysofWeek['th'] = True
         else:
             daysofWeek['th'] = False
         if 'fri' in tod.date_string:
-            daysofWeek['f']  = True
+            daysofWeek['f'] = True
         else:
             daysofWeek['f'] = False
         if 'sat' in tod.date_string:
-            daysofWeek['s']  = True
+            daysofWeek['s'] = True
         else:
             daysofWeek['s'] = False
         if 'weekday' in tod.date_string:
-            daysofWeek['m']  = True
+            daysofWeek['m'] = True
             daysofWeek['t'] = True
             daysofWeek['w'] = True
             daysofWeek['th'] = True
@@ -291,7 +292,7 @@ def make_daily_from_tod(tod):
         new_hab['repeat'] = daysofWeek
     else:
         new_hab['frequency'] = 'daily'
-        todStart = str(parser.parse(tod.due_date).date())
+        todStart = tod.due_date['date']
         new_hab['startDate'] = todStart
         new_hab['everyX'] = 1
 
@@ -306,7 +307,6 @@ def make_daily_from_tod(tod):
 
     finished_hab = HabTask(new_hab)
     return finished_hab
-'''
 
 
 def make_hab_from_tod(tod_task):

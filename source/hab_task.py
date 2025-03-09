@@ -63,17 +63,10 @@ class HabTask():
     @property
     def due(self):
         """ returns UTC due date """
-        if self.__task_dict['type'] == 'todo' and self.__task_dict['date'] != '':
+        if self.__task_dict['date'] != '':
             date = parser.parse(self.__task_dict['date'])
             return date
-        elif self.__task_dict['type'] == 'daily':
-            if self.__task_dict['isDue'] == True:
-                date = datetime.now().replace(tzinfo=pytz.utc,hour=0,minute=0,second=0,microsecond=0)
-            elif self.__task_dict['nextDue'] != '':
-                date = parser.parse(self.__task_dict['nextDue'][0])
-            return date
-        else:
-            return ''
+        return ''
 
     @property
     def starting(self):
@@ -307,7 +300,9 @@ class HabTask():
     def get_dict(self):
         """ Get string representation of hab_task class. """
         result_dict = copy.deepcopy(self.__task_dict)
-        if result_dict['date'] is not None:
-            due = result_dict['date']['date'].strftime("%m/%d/%Y, %H:%M:%S")
-            result_dict['date'] = due
+        if 'date' in result_dict:
+            if result_dict['date'] is not None:
+                date = result_dict['date']['date']
+                due = date.strftime("%m/%d/%Y, %H:%M:%S")
+                result_dict['date'] = due
         return result_dict

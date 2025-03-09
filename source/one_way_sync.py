@@ -98,7 +98,7 @@ def sync_todoist_to_habitica():
 
     for tod in tod_uniq:
         tid = tod.id
-        if tod.recurring == "Yes":
+        if tod.recurring:
             # TODO fix make_daily_from_tod
             new_hab = main.make_daily_from_tod(tod)
         else:
@@ -149,7 +149,7 @@ def sync_todoist_to_habitica():
     for tid in match_dict:
         tod = match_dict[tid]['tod']
         hab = match_dict[tid]['hab']
-        if tod.recurring == 'Yes':
+        if tod.recurring:
             if hab.dueToday:
                 if not hab.completed:
                     if tod.dueToday == 'Yes':
@@ -191,7 +191,7 @@ def sync_todoist_to_habitica():
             else:
                 print("error, check hab daily")
                 print(hab.id)
-        elif tod.recurring == 'No':
+        elif not tod.recurring:
             if tod.complete == 0:
                 try:
                     hab.completed

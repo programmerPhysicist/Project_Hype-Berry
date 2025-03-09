@@ -50,14 +50,11 @@ class TodTask(object):
         return self.__task_dict
 
     @property
-    #Is this task recurring?
     def recurring(self):
-        if self.__task_dict.get('date_string', None) == None:
-            return 'No'
-        elif 'ev' in self.__task_dict['date_string']:
-            return  'Yes'
-        else:
-            return 'No'
+        ''' Is this task recurring?'''
+        if self.__task_dict['due'] is not None:
+            return self.__task_dict['due']['is_recurring']
+        return False
 
     @property
     #Get the task dictionary as is
@@ -163,11 +160,13 @@ class TodTask(object):
         else:
             return 'No'
 
-
     @property
-    #date in string form
     def date_string(self):
-        return self.__task_dict['date_string']
+        ''' date in string form'''
+        due = self.__task_dict['due']
+        if due is not None:
+            return due['date'].strftime("%m/%d/%Y, %H:%M:%S")
+        return ''
 
     @property
     #should it be due today?
