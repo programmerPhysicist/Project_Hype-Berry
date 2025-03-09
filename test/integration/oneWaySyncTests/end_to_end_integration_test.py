@@ -168,6 +168,7 @@ class TestEndToEndIntegration:
             num_habits = 0
             num_dailies = 0
             num_other = 0
+            breakpoint()
             for value in data.values():
                 hab = value['hab']
                 hab_type = hab.task_dict['type']
