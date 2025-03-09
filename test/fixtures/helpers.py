@@ -19,6 +19,7 @@ class TestHelpers:
     @staticmethod
     def get_cassette_dir():
         the_dir = os.path.join(TestHelpers.get_repo_path(), 'test/fixtures/cassettes')
+        assert os.path.isdir(the_dir)
         return the_dir
 
     @staticmethod
@@ -29,8 +30,9 @@ class TestHelpers:
             self_name = locals()['__file__']
         else:
             self_name = __name__
-        file_path = self_name.split("Project_Hype-Berry")[0]
-        root = os.path.join(file_path, "Project_Hype-Berry")
+        assert 'helpers.py' in self_name
+        root = self_name.split("test")[0]
+        assert 'helpers.py' not in root
         return root
 
     @classmethod

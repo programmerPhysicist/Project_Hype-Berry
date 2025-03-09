@@ -10,6 +10,7 @@ import pytest
 from mockito import when, mock, unstub, when2, verify, captor, ANY, patch, not_, arg_that
 import vcr
 import requests
+import json as j
 
 # test imports
 # pylint: disable=import-error
@@ -26,13 +27,18 @@ filepath = Path(os.path.join(TestHelpers.get_root(), 'test/fixtures/dump.yaml'))
 
 
 def fake_post(url, data=None, json=None, **kwargs): # pylint: disable=unused-argument, redefined-outer-name
-    errors_result = [{'message': 'Task alias already used on another task.',
-                      'path': 'alias',
-                      'value': data['alias']}]
-    json_result = {'success': False,
-                   'error': 'BadRequest',
-                   'message': 'todo validation failed',
-                   'errors': errors_result}
+    if data:
+        if isinstance(data, str):
+            data = j.loads(data)
+        errors_result = [{'message': 'Task alias already used on another task.',
+                          'path': 'alias',
+                          'value': data['alias']}]
+        json_result = {'success': False,
+                       'error': 'BadRequest',
+                       'message': 'todo validation failed',
+                       'errors': errors_result}
+    else:
+        json_result = ''
 
     # set default response
     response = mock({'status': 400, 'ok': False,
@@ -163,7 +169,8 @@ class TestEndToEndIntegration:
             num_dailies = 0
             num_other = 0
             for value in data.values():
-                hab_type = value['hab'].category
+                hab = value['hab']
+                hab_type = hab.task_dict['type']
                 if hab_type == 'todo':
                     num_todos += 1
                 elif hab_type == 'habit':
@@ -174,7 +181,7 @@ class TestEndToEndIntegration:
                     num_other += 1
             assert num_todos == 70
             assert num_habits == 0
-            assert num_dailies < 0
+            assert num_dailies > 0
             assert num_other == 0
 
             # check put

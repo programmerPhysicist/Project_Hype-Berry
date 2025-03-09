@@ -2,11 +2,11 @@
 # integration test for one_way_sync.py
 import pickle
 from datetime import datetime
-from dateutil.tz import tzoffset
 import pytest
 import requests
 import vcr
-from mockito import when, mock, when2, verify, captor, ANY, arg_that
+from tzlocal import get_localzone
+from mockito import when, mock, when2, verify, captor, ANY
 from one_way_sync import sync_todoist_to_habitica
 from todoist_api_python import models
 from common_fixtures import empty_pickle, fake_config_file, mock_web_calls # pylint: disable=unused-import
@@ -54,13 +54,6 @@ def case1():
     return inputs
 
 
-'''def check_headers(headers):
-    assert headers['url'] == 'https://habitica.com'
-    assert headers['x-api-user'] == 'cd18fc9f-b649-4384-932a-f3bda6fe8102'
-    assert headers['x-api-key'] == '18f22441-2c87-6d8e-fb2a-3fa670837b5a'
-'''
-
-
 def verify_post_request(data):
     if data['text'] == 'Test task 1':
         assert data['type'] == 'todo'
@@ -72,22 +65,13 @@ def verify_post_request(data):
         return True
     return False
 
-'''
-def verify_put_request(the_url, the_data):
-    assert the_url.value == 'https://habitica.com/api/v3/tasks/96935939'
-    data = the_data.value
-    assert data['alias'] == '96935939'
-    assert data['text'] == 'Some test task'
-    assert data['priority'] == 1
-'''
-
 
 def verify_pickle_dump(dump_dict):
     data = dump_dict.value
     # check 'simple' values
     assert '8296278113' in data.keys()
     data = data['8296278113']
-    assert data['recurs'] == 'No'
+    assert data['recurs']
     assert data['duelast'] == 'NA'
     # Get objects to verify
     assert 'tod' in data.keys()
@@ -106,7 +90,7 @@ def verify_pickle_dump(dump_dict):
     assert hab_data['alias'] == '96935939'
     assert hab_data['text'] == 'Some test task'
     assert hab_data['priority'] == 1
-    expected_due = datetime(2024, 12, 27, tzinfo=tzoffset(None, -25200))
+    expected_due = datetime(2024, 12, 27, tzinfo=get_localzone())
     due = hab_task.due
     assert due == expected_due
 
@@ -137,8 +121,8 @@ class TestDailies:
         when(requests).put(...).thenReturn(response)
 
         # mock out web call to get id
-        hab_task = {'text': 'Some test task', 'priority': '', 'attribute': '',
-                    'type': 'todo', '_id': 'a94e8f46-5c14-f14a-f189-e669e239730a',
+        hab_task = {'text': 'Some test task', 'priority': '2', 'attribute': '',
+                    'type': 'daily', '_id': 'a94e8f46-5c14-f14a-f189-e669e239730a',
                     'completed': False, 'alias': '96935939', 'date': '12/27/2024, 00:00:00'}
         hab_val2 = {"data": hab_task}
 
@@ -163,19 +147,14 @@ class TestDailies:
             sync_todoist_to_habitica()
 
         # verify post request
-        '''the_url = captor(ANY(str))
         the_data = captor(ANY(dict))
         the_headers = captor(ANY(dict))
         verify(requests, times=1).post(url='https://habitica.com/api/v3/tasks/user/',
-                                       data=arg_that(verify_post_request),
+                                       data=the_data,
                                        headers=the_headers)
-        # check_headers(the_headers.value)'''
-
-        # verify put request
-        '''the_url = captor(ANY(str))
-        verify(requests, times=1).put(headers=the_headers, url=the_url, data=the_data)'''
-        # check_headers(the_headers.value)
-        # verify_put_request(the_url, the_data)
+        task = the_data.value
+        assert task['type'] == 'daily'
+        assert task['frequency'] == 'daily'
 
         # verify pickle dump
         dump_dict = captor(ANY(dict))

@@ -9,10 +9,10 @@ from __future__ import (
     print_function,
     unicode_literals)
 from builtins import *
-from datetime import datetime
 import copy
 import time
-# from tzlocal import get_localzone
+from datetime import datetime, timezone
+from tzlocal import get_localzone
 import pytz
 
 from dates import parse_date_utc
@@ -55,6 +55,20 @@ class HabTask():
         else:
             self.existing_checklist_items = []
 
+        if 'date' in task_dict:
+            tzone = pytz.timezone(str(get_localzone()))
+            date = self.__task_dict['date']
+            if isinstance(date, datetime):
+                self.__task_dict['date'] = date.astimezone(tzone)
+            elif isinstance(date, str):
+                if date != '':
+                    date = parser.parse(self.__task_dict['date'])
+                    self.__task_dict['date'] = date.astimezone(tzone)
+                else:
+                    self.__task_dict['date'] = None
+            elif isinstance(date, dict):
+                self.__task_dict['date'] = date['date']
+
     @property
     def task_dict(self):
         """ Gets the internal task dictionary. """
@@ -63,17 +77,7 @@ class HabTask():
     @property
     def due(self):
         """ returns UTC due date """
-        if self.__task_dict['type'] == 'todo' and self.__task_dict['date'] != '':
-            date = parser.parse(self.__task_dict['date'])
-            return date
-        elif self.__task_dict['type'] == 'daily':
-            if self.__task_dict['isDue'] == True:
-                date = datetime.now().replace(tzinfo=pytz.utc,hour=0,minute=0,second=0,microsecond=0)
-            elif self.__task_dict['nextDue'] != '':
-                date = parser.parse(self.__task_dict['nextDue'][0])
-            return date
-        else:
-            return ''
+        return self.__task_dict['date']
 
     @property
     def starting(self):
@@ -201,9 +205,9 @@ class HabTask():
     def dueToday(self):
         """This is intended to tell us if a given daily is due today or not."""
         if self.__task_dict['type'] == 'daily':
-            return self.__task_dict['isDue']
-        else:
-            return 'TODO, NA'
+            today = datetime.now(get_localzone())
+            return today >= self.due
+        return False
 
     @property
     def category(self):
@@ -307,7 +311,9 @@ class HabTask():
     def get_dict(self):
         """ Get string representation of hab_task class. """
         result_dict = copy.deepcopy(self.__task_dict)
-        if result_dict['date'] is not None:
-            due = result_dict['date']['date'].strftime("%m/%d/%Y, %H:%M:%S")
-            result_dict['date'] = due
+        if 'date' in result_dict:
+            if result_dict['date'] is not None:
+                date = result_dict['date']
+                due = date.strftime("%m/%d/%Y, %H:%M:%S")
+                result_dict['date'] = due
         return result_dict
