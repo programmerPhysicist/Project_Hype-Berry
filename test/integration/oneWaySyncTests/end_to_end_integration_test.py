@@ -157,6 +157,25 @@ class TestEndToEndIntegration:
             save_pickle_for_test(data)
             assert len(data.keys()) == expected_vals.keys
 
+            num_todos = 0
+            num_habits = 0
+            num_dailies = 0
+            num_other = 0
+            for value in data.values():
+                hab_type = value['hab'].category
+                if hab_type == 'todo':
+                    num_todos += 1
+                elif hab_type == 'habit':
+                    num_habits += 1
+                elif hab_type == 'daily':
+                    num_dailies += 1
+                else:
+                    num_other += 1
+            assert num_todos == 77
+            assert num_habits == 0
+            assert num_dailies < 0
+            assert num_other == 0
+
             # check put
             if expected_vals.iters != 0:
                 the_url = captor(ANY(str))

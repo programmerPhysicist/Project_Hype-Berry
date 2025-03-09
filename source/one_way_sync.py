@@ -67,18 +67,8 @@ def sync_todoist_to_habitica():
     todoist_tasks, todo_api = get_tasks(todo_token) # todoist_tasks used to be tod_tasks
 
     tod_tasks = []
-    tzone = None
     for task in todoist_tasks:
         tod_tasks.append(TodTask(task))
-
-    if tzone is None:
-        # assumption is that timezone from Todoist
-        # is the same as local timezone
-        tzone = pytz.timezone(str(get_localzone()))
-
-        for task in tod_tasks:
-            if task.due != '':
-                task.task_dict['due'] = task.due.astimezone(tzone)
 
     # TODO: add back to filter out repeating older than a certain amount?
     # date stuff

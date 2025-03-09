@@ -10,6 +10,7 @@ from __future__ import (
 from builtins import *
 from datetime import datetime
 from tzlocal import get_localzone
+import pytz
 
 
 #from .dates import parse_date_utc
@@ -37,6 +38,9 @@ class TodTask(object):
             raise TypeError(type(task_dict))
 
         self.__task_dict = task_dict
+
+        tzone = pytz.timezone(str(get_localzone()))
+        self.__task_dict['due']['date'] = self.due.astimezone(tzone)
 
     @property
     #Get the task dictionary as is
