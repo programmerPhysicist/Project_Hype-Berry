@@ -1,0 +1,12 @@
+{
+    "python.testing.pytestArgs": [
+        "test"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "debugpy.debugJustMyCode": false,
+    "flake8.args": [
+        "--ignore=E261",
+        "--max-line-length=120",
+    ]
+}

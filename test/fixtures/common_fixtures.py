@@ -45,6 +45,8 @@ def auth_cfg(tmp_path_factory):
     if os.path.exists(src_path):
         shutil.copy(src_path, cfg_test)
         os.chdir(tmp)
+    else:
+        raise AssertionError
 
     yield
     # clean-up
