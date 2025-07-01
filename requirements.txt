@@ -1,0 +1,9 @@
+iso8601==2.1.0
+mockito==1.5.0
+pytest==8.3.1
+python-dateutil==2.9.0.post0
+pytz==2022.1
+requests==2.32.3
+todoist_api_python==2.1.5
+tzlocal==5.2
+vcrpy==6.0.1
