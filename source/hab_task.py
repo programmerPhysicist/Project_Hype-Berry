@@ -77,8 +77,12 @@ class HabTask():
     @property
     def due(self):
         """ returns UTC due date """
-        return self.__task_dict['date']
-        # return self.__task_dict['nextDue'][0]
+        if 'date' in self.__task_dict:
+            return self.__task_dict['date']
+        elif 'nextDue' in self.__task_dict:
+            return self.__task_dict['nextDue'][0]
+        else:
+            return None
 
     @property
     def starting(self):

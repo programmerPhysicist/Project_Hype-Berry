@@ -2,11 +2,9 @@
 from pathlib import Path
 import os
 import json
-import sys
 import pickle
 from urllib.parse import parse_qsl, urlencode
 from mockito import when2
-sys.path.append("../../source")
 import hab_task # pylint: disable=import-error, wrong-import-position, unused-import
 
 
@@ -233,3 +231,7 @@ class DebugHelpers:
         pdbrcpath = os.path.join(home, ".pdbrc")
         with open(pdbrcpath, "a") as pdbrc:
             pdbrc.write("\nbreak " + filepath + f":{pt!s}")
+
+    @staticmethod
+    def display_todoist_class(todo):
+        print(todo)

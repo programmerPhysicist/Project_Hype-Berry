@@ -116,10 +116,10 @@ def sync_todoist_to_habitica():
                 else:
                     if 'errors' in json_str.keys():
                         alias = json_str['errors'][0]['value']
+                        print("WARNING: Bad request, already existing task - " + alias)
                     elif 'error' in json_str.keys():
                         err_msg = json_str['message']
                         print(err_msg)
-                    print("WARNING: Bad request, already existing task - " + alias)
                     complete_todoist(todo_api, alias)
                     # hab = HabTask()
                     new_hab.task_dict['completed'] = True
@@ -144,6 +144,7 @@ def sync_todoist_to_habitica():
                 match_dict[tid]['duelast'] = 'NA'
 
     # Check that anything which has recently been completed gets updated in habitica
+    # Also update stuff
     for tid in match_dict:
         tod = match_dict[tid]['tod']
         hab = match_dict[tid]['hab']

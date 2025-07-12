@@ -5,10 +5,9 @@ import shutil
 import pytest
 import requests
 from mockito import mock, when, unstub, kwargs
+# pylint: disable=import-error
 import one_way_sync
 from todo_api_plus import TodoAPIPlus as todoAPI
-
-# pylint: disable=import-error
 from helpers import TestHelpers
 
 

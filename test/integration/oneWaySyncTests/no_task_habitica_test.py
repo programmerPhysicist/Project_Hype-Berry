@@ -137,7 +137,8 @@ class TestNoTasksHabitica:
         task_url = 'https://habitica.com/api/v3/tasks/8296278113'
         when(requests).get(headers={'url': 'https://habitica.com',
                                     'x-api-user': 'cd18fc9f-b649-4384-932a-f3bda6fe8102',
-                                    'x-api-key': '18f22441-2c87-6d8e-fb2a-3fa670837b5a'},
+                                    'x-api-key': '18f22441-2c87-6d8e-fb2a-3fa670837b5a',
+                                    'X-Client': '518b34ec-0992-457d-a6cb-58e5bd20f522-ProjectHypeBerry'},
                            url=task_url).thenReturn(response2)
         when(response2).json().thenReturn(hab_val2)
 

@@ -94,6 +94,8 @@ def add_hab_id(tid, hab):
     url = 'https://habitica.com/api/v3/tasks/'
     hab.task_dict['alias'] = str(tid)
     url += hab.task_dict['id']
+    # TODO fix this call, sometimes won't
+    # convert to json cleanly.
     data = json.dumps(hab.task_dict)
     response = requests.put(headers=auth, url=url, data=data)
     return response
@@ -448,8 +450,12 @@ def sync_hab2todo_daily(hab, tod):
         habDict['priority'] = 1
 
     # now = datetime.now().replace(tzinfo=pytz.utc).date()
-    if hab.due.date() != (tod.due.date() - timedelta(days=1)):
-        habDict['startDate'] = str(tod.due.date() - timedelta(days=1))
+    hab_due = hab.due
+    if isinstance(hab_due, str):
+        hab_due = parser.parse(hab_due)
+
+    if hab_due.date() != (tod.due.date() - timedelta(days=1)):
+            habDict['startDate'] = str(tod.due.date() - timedelta(days=1))
 
     new_hab = HabTask(habDict)
 
@@ -563,7 +569,11 @@ def update_hab(hab):
     wanted_keys = ['alias', 'text', 'priority', 'date']
     data = {x: hab.task_dict[x] for x in wanted_keys if x in hab.task_dict}
     time.sleep(2)
-    response = requests.put(headers=auth, url=url, data=data)
+    try:
+        response = requests.put(headers=auth, url=url, data=data)
+    except requests.exceptions.RequestException as errex:
+        breakpoint()
+        print("Exception request")
     if response.ok == 'No':
         print(response.text)
     return response

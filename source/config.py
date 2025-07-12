@@ -41,6 +41,8 @@ def get_habitica_login(configfile):
             auth_data = {'url': config.get('Habitica', 'url'),
                          'x-api-user': config.get('Habitica', 'login'),
                          'x-api-key': config.get('Habitica', 'password')}
+            
+            auth_data['X-Client'] = '518b34ec-0992-457d-a6cb-58e5bd20f522-ProjectHypeBerry'
 
         except configparser.NoOptionError as error:
             logging.error("Missing option in auth file " + configfile + ":" + error.message)
