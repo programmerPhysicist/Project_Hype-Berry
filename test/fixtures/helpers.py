@@ -29,8 +29,9 @@ class TestHelpers:
             self_name = locals()['__file__']
         else:
             self_name = __name__
-        file_path = self_name.split("Project_Hype-Berry")[0]
-        root = os.path.join(file_path, "Project_Hype-Berry")
+        assert 'helpers.py' in self_name
+        root = self_name.split("test")[0]
+        assert 'helpers.py' not in root
         return root
 
     @classmethod

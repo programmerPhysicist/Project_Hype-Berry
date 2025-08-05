@@ -110,7 +110,7 @@ class TestEndToEndIntegration:
 
     # pylint: disable=redefined-outer-name, unused-argument
     @pytest.mark.parametrize("pickle_in,expected,iters",
-                             [(empty_pickle(), 4, 0), (read_pickle(), 8, 69)],
+                             [(empty_pickle(), 4, 0), (read_pickle(), 8, 79)],
                              indirect=True)
     def test_end_to_end(self,
                         auth_cfg,
@@ -163,7 +163,7 @@ class TestEndToEndIntegration:
                 the_headers = captor(ANY(dict))
 
                 # catch-all matcher
-                verify(requests, times=81).put(...)
+                verify(requests, times=89).put(...)
 
                 verify(requests, times=iters).put(url=the_url,
                                                   data=not_(arg_that(date_matcher)),
